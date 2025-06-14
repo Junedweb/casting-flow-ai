@@ -1,9 +1,9 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ImageModal } from "./ImageModal";
 import { 
   RefreshCw, 
-  Upload, 
   Users, 
   Filter, 
   Scan, 
@@ -17,7 +17,8 @@ import {
   Lock,
   User,
   Check,
-  LayoutDashboard
+  LayoutDashboard,
+  Share2
 } from "lucide-react";
 
 export const FeaturesSection = () => {
@@ -38,9 +39,9 @@ export const FeaturesSection = () => {
       imageSrc: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
     },
     {
-      icon: "upload",
-      title: "Upload Old Data",
-      description: "JAMZ imports and auto-organizes your existing database.",
+      icon: "social-campaign",
+      title: "All Social Media Campaign for New Talent Search",
+      description: "Post talent requirements across all social platforms in a single click. Reach thousands of potential candidates instantly.",
       imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
     },
     {
@@ -100,11 +101,16 @@ export const FeaturesSection = () => {
             <RefreshCw className={`w-8 h-8 text-blue-600 ${iconClasses} group-hover:rotate-180`} />
           </div>
         );
-      case "upload":
+      case "social-campaign":
         return (
-          <div className="relative">
-            <div className="absolute inset-0 bg-green-100 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-            <Upload className={`w-8 h-8 text-green-600 ${iconClasses} group-hover:-translate-y-1`} />
+          <div className="relative flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+            <div className="relative grid grid-cols-2 gap-1">
+              <Share2 className={`w-4 h-4 text-purple-600 ${iconClasses} group-hover:animate-pulse`} />
+              <Instagram className={`w-4 h-4 text-pink-500 ${iconClasses}`} />
+              <MessageCircle className={`w-4 h-4 text-green-500 ${iconClasses}`} />
+              <Globe className={`w-4 h-4 text-blue-500 ${iconClasses}`} />
+            </div>
           </div>
         );
       case "users":
