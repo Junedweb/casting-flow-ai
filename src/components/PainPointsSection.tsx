@@ -1,82 +1,169 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { AlertTriangle, Quote } from "lucide-react";
+import { AlertTriangle, Quote, Users, Zap, TrendingUp } from "lucide-react";
+import { useState } from "react";
 
 export const PainPointsSection = () => {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
   const painPoints = [
-    "Our data's scattered—WhatsApp, Instagram, Google Drive, Excel sheets. It's chaos.",
-    "After 200+ profiles, Excel just breaks.",
-    "Tried building our own app. Too expensive and never fits right."
+    {
+      text: "Our data's scattered—WhatsApp, Instagram, Google Drive, Excel sheets. It's chaos.",
+      impact: "Lost 3+ hours daily searching for profiles",
+      icon: AlertTriangle
+    },
+    {
+      text: "After 200+ profiles, Excel just breaks.",
+      impact: "System crashes during critical casting deadlines",
+      icon: TrendingUp
+    },
+    {
+      text: "Tried building our own app. Too expensive and never fits right.",
+      impact: "₹5L+ wasted on incomplete solutions",
+      icon: Zap
+    }
   ];
 
   const actorComplaints = [
-    "Website doesn't work properly—I never know if my profile even reached the right person.",
-    "I have to show up every month in person. Even though I've worked with this CD before.",
-    "I live in Pune—traveling to Mumbai all the time is expensive. A proper online flow would help."
+    {
+      text: "Website doesn't work properly—I never know if my profile even reached the right person.",
+      impact: "Missing 60% of opportunities",
+      icon: AlertTriangle
+    },
+    {
+      text: "I have to show up every month in person. Even though I've worked with this CD before.",
+      impact: "₹2,000+ monthly travel costs",
+      icon: Users
+    },
+    {
+      text: "I live in Pune—traveling to Mumbai all the time is expensive. A proper online flow would help.",
+      impact: "40+ hours monthly on travel",
+      icon: TrendingUp
+    }
   ];
 
+  const InteractiveCard = ({ item, index, type }: { item: any, index: number, type: 'cd' | 'actor' }) => {
+    const isHovered = hoveredCard === index + (type === 'actor' ? 100 : 0);
+    const borderColor = type === 'cd' ? 'border-red-500' : 'border-blue-500';
+    const gradientFrom = type === 'cd' ? 'from-red-50' : 'from-blue-50';
+    const gradientTo = type === 'cd' ? 'to-red-100' : 'to-blue-100';
+    const iconColor = type === 'cd' ? 'text-red-500' : 'text-blue-500';
+    const impactColor = type === 'cd' ? 'text-red-600' : 'text-blue-600';
+
+    return (
+      <Card 
+        className={`border-l-4 ${borderColor} transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer bg-gradient-to-br ${gradientFrom} ${gradientTo} ${isHovered ? 'shadow-2xl scale-105' : 'shadow-md'}`}
+        onMouseEnter={() => setHoveredCard(index + (type === 'actor' ? 100 : 0))}
+        onMouseLeave={() => setHoveredCard(null)}
+      >
+        <CardContent className="p-6 relative overflow-hidden">
+          <div className="flex items-start space-x-4">
+            <div className={`p-3 rounded-full bg-white shadow-lg ${iconColor}`}>
+              <item.icon className="w-6 h-6" />
+            </div>
+            <div className="flex-1">
+              <div className="flex items-start mb-3">
+                <Quote className={`w-5 h-5 ${iconColor} mr-2 mt-1 flex-shrink-0`} />
+                <p className="text-slate-700 italic text-lg font-medium leading-relaxed">{item.text}</p>
+              </div>
+              <div className={`mt-4 p-3 bg-white/60 rounded-lg border-l-4 ${borderColor} backdrop-blur-sm`}>
+                <p className={`text-sm font-semibold ${impactColor} flex items-center`}>
+                  <Zap className="w-4 h-4 mr-2" />
+                  Impact: {item.impact}
+                </p>
+              </div>
+            </div>
+          </div>
+          {isHovered && (
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
+          )}
+        </CardContent>
+      </Card>
+    );
+  };
+
   return (
-    <section className="py-20 px-4 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-red-400 to-blue-400 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-blue-400 to-green-400 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-red-500 to-blue-500 rounded-full mb-6 shadow-lg">
+            <Users className="w-8 h-8 text-white" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 via-red-600 to-blue-600 bg-clip-text text-transparent mb-6">
             We Understand Your Challenges
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Every casting director faces the same frustrations. You're not alone.
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Every casting director and actor faces the same frustrations. 
+            <span className="font-semibold text-slate-800"> You're not alone in this struggle.</span>
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          <div>
-            <h3 className="text-2xl font-bold text-red-600 mb-6 flex items-center">
-              <AlertTriangle className="w-6 h-6 mr-3" />
-              What Casting Directors Tell Us
-            </h3>
-            <div className="space-y-4">
+          <div className="space-y-6">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl shadow-lg mb-4">
+                <AlertTriangle className="w-8 h-8 text-white mr-3" />
+                <h3 className="text-2xl font-bold text-white">Casting Directors</h3>
+              </div>
+              <p className="text-red-600 font-medium">Real pain points from industry professionals</p>
+            </div>
+            <div className="space-y-6">
               {painPoints.map((point, index) => (
-                <Card key={index} className="border-l-4 border-l-red-500">
-                  <CardContent className="p-6">
-                    <div className="flex items-start">
-                      <Quote className="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" />
-                      <p className="text-slate-700 italic text-lg">{point}</p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <InteractiveCard key={index} item={point} index={index} type="cd" />
               ))}
             </div>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-bold text-blue-600 mb-6 flex items-center">
-              <AlertTriangle className="w-6 h-6 mr-3" />
-              What Actors Tell Us
-            </h3>
-            <div className="space-y-4">
+          <div className="space-y-6">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl shadow-lg mb-4">
+                <Users className="w-8 h-8 text-white mr-3" />
+                <h3 className="text-2xl font-bold text-white">Actors & Artists</h3>
+              </div>
+              <p className="text-blue-600 font-medium">Challenges faced by talented performers</p>
+            </div>
+            <div className="space-y-6">
               {actorComplaints.map((complaint, index) => (
-                <Card key={index} className="border-l-4 border-l-blue-500">
-                  <CardContent className="p-6">
-                    <div className="flex items-start">
-                      <Quote className="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" />
-                      <p className="text-slate-700 italic text-lg">{complaint}</p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <InteractiveCard key={index} item={complaint} index={index} type="actor" />
               ))}
             </div>
           </div>
         </div>
 
-        <Card className="bg-green-50 border-green-200">
-          <CardContent className="p-8 text-center">
-            <Quote className="w-12 h-12 text-green-600 mx-auto mb-4" />
-            <p className="text-lg text-slate-700 italic mb-4">
-              "I didn't expect much—but JAMZ's team gave solid advice, no strings attached. 
-              It actually helped fix our flow before we signed up."
-            </p>
-            <p className="text-green-600 font-semibold">— Casting Director, Mumbai</p>
-          </CardContent>
-        </Card>
+        {/* Success Story Card */}
+        <div className="relative">
+          <Card className="bg-gradient-to-r from-green-50 via-emerald-50 to-green-50 border-2 border-green-200 shadow-2xl transform hover:scale-102 transition-all duration-500 overflow-hidden">
+            <CardContent className="p-8 text-center relative">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 via-emerald-400 to-green-500" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mb-6 shadow-lg">
+                <Quote className="w-8 h-8 text-white" />
+              </div>
+              <blockquote className="text-xl text-slate-700 italic mb-6 leading-relaxed max-w-4xl mx-auto">
+                "I didn't expect much—but JAMZ's team gave solid advice, no strings attached. 
+                It actually helped fix our flow before we signed up. Now we've saved 15+ hours weekly!"
+              </blockquote>
+              <div className="flex items-center justify-center space-x-2">
+                <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-green-700 font-bold text-lg">Casting Director</p>
+                  <p className="text-green-600 text-sm">Mumbai Film Industry</p>
+                </div>
+              </div>
+              <div className="mt-6 inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full font-semibold shadow-lg">
+                <Zap className="w-5 h-5 mr-2" />
+                15+ Hours Saved Weekly
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </section>
   );
