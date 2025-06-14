@@ -14,7 +14,7 @@ export const ComparisonTable = () => {
     {
       feature: "Setup Time",
       inHouse: "6–12 months",
-      jamz: "Instant",
+      jamz: "As per custom requirement",
       inHouseIcon: Clock,
       jamzIcon: Check
     },
