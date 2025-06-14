@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, Phone, User, Clock, ExternalLink } from "lucide-react";
+import { Calendar, Phone, User, Clock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
@@ -14,12 +14,14 @@ const Contact = () => {
     countryCode: "+91",
     phone: "",
     preferredDate: "",
-    preferredTime: "",
-    zapierWebhook: "https://hooks.zapier.com/hooks/catch/23376283/uy7xs18/"
+    preferredTime: ""
   });
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
+
+  // Hidden backend configuration
+  const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/23376283/uy7xs18/";
 
   const validateIndianMobile = (phone: string) => {
     // Indian mobile numbers are 10 digits and start with 6, 7, 8, or 9
@@ -56,42 +58,34 @@ const Contact = () => {
     submissions.push(newSubmission);
     localStorage.setItem('consultationSubmissions', JSON.stringify(submissions));
 
-    // Send to Zapier webhook if provided
-    if (formData.zapierWebhook) {
-      try {
-        await fetch(formData.zapierWebhook, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          mode: "no-cors",
-          body: JSON.stringify({
-            name: formData.name,
-            phone: fullPhone,
-            preferredDate: formData.preferredDate,
-            preferredTime: formData.preferredTime,
-            timestamp: new Date().toISOString(),
-            source: "JAMZ Consultation Form"
-          }),
-        });
-        
-        toast({
-          title: "🎉 Thanks for your interest!",
-          description: "Welcome to the first step towards the future. Your consultation request has been sent to Google Sheets via Zapier.",
-          className: "w-full max-w-md mx-auto text-center [&>div]:text-center [&>div]:font-bold [&>div]:text-lg [&>div+div]:font-semibold"
-        });
-      } catch (error) {
-        console.error("Zapier webhook error:", error);
-        toast({
-          title: "🎉 Thanks for your interest!",
-          description: "Welcome to the first step towards the future. Your request was sent to Zapier.",
-          className: "w-full max-w-md mx-auto text-center [&>div]:text-center [&>div]:font-bold [&>div]:text-lg [&>div+div]:font-semibold"
-        });
-      }
-    } else {
+    // Send to Zapier webhook
+    try {
+      await fetch(ZAPIER_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          name: formData.name,
+          phone: fullPhone,
+          preferredDate: formData.preferredDate,
+          preferredTime: formData.preferredTime,
+          timestamp: new Date().toISOString(),
+          source: "JAMZ Consultation Form"
+        }),
+      });
+      
       toast({
         title: "🎉 Thanks for your interest!",
-        description: "Welcome to the first step towards the future. Your consultation request has been saved.",
+        description: "Welcome to the first step towards the future. Your consultation request has been sent to Google Sheets via Zapier.",
+        className: "w-full max-w-md mx-auto text-center [&>div]:text-center [&>div]:font-bold [&>div]:text-lg [&>div+div]:font-semibold"
+      });
+    } catch (error) {
+      console.error("Zapier webhook error:", error);
+      toast({
+        title: "🎉 Thanks for your interest!",
+        description: "Welcome to the first step towards the future. Your request was sent to Zapier.",
         className: "w-full max-w-md mx-auto text-center [&>div]:text-center [&>div]:font-bold [&>div]:text-lg [&>div+div]:font-semibold"
       });
     }
@@ -103,8 +97,7 @@ const Contact = () => {
       countryCode: "+91",
       phone: "",
       preferredDate: "",
-      preferredTime: "",
-      zapierWebhook: formData.zapierWebhook // Keep webhook URL
+      preferredTime: ""
     });
   };
 
@@ -215,23 +208,6 @@ const Contact = () => {
                   onChange={(e) => handleInputChange("preferredTime", e.target.value)}
                   required
                 />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="webhook" className="text-sm font-medium text-slate-700 flex items-center">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Zapier Webhook URL (Optional)
-                </label>
-                <Textarea
-                  id="webhook"
-                  value={formData.zapierWebhook}
-                  onChange={(e) => handleInputChange("zapierWebhook", e.target.value)}
-                  placeholder="Paste your Zapier webhook URL here to save submissions to Google Sheets"
-                  className="min-h-[60px]"
-                />
-                <p className="text-xs text-slate-500">
-                  Create a Zap with "Webhooks by Zapier" trigger and "Google Sheets" action to automatically save form submissions.
-                </p>
               </div>
 
               <div className="space-y-4">
