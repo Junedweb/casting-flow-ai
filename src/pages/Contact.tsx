@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Calendar, Phone, User, Clock, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
+    countryCode: "+91",
     phone: "",
     preferredDate: "",
     preferredTime: "",
@@ -20,16 +21,35 @@ const Contact = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  const validateIndianMobile = (phone: string) => {
+    // Indian mobile numbers are 10 digits and start with 6, 7, 8, or 9
+    const indianMobileRegex = /^[6-9]\d{9}$/;
+    return indianMobileRegex.test(phone);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate Indian mobile number if +91 is selected
+    if (formData.countryCode === "+91" && !validateIndianMobile(formData.phone)) {
+      toast({
+        title: "Invalid Mobile Number",
+        description: "Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsLoading(true);
     
-    console.log("Form submitted:", formData);
+    const fullPhone = `${formData.countryCode}${formData.phone}`;
+    console.log("Form submitted:", { ...formData, fullPhone });
     
     // Save to local storage as backup
     const submissions = JSON.parse(localStorage.getItem('consultationSubmissions') || '[]');
     const newSubmission = {
       ...formData,
+      phone: fullPhone,
       timestamp: new Date().toISOString(),
       id: Date.now()
     };
@@ -47,7 +67,7 @@ const Contact = () => {
           mode: "no-cors",
           body: JSON.stringify({
             name: formData.name,
-            phone: formData.phone,
+            phone: fullPhone,
             preferredDate: formData.preferredDate,
             preferredTime: formData.preferredTime,
             timestamp: new Date().toISOString(),
@@ -56,20 +76,20 @@ const Contact = () => {
         });
         
         toast({
-          title: "Success!",
-          description: "Your consultation request has been sent to Google Sheets via Zapier.",
+          title: "Thanks for your interest! 🎉",
+          description: "Welcome to the first step towards the future. Your consultation request has been sent to Google Sheets via Zapier.",
         });
       } catch (error) {
         console.error("Zapier webhook error:", error);
         toast({
-          title: "Webhook Sent",
-          description: "Your request was sent to Zapier. Please check your Zap history to confirm it was received.",
+          title: "Thanks for your interest! 🎉",
+          description: "Welcome to the first step towards the future. Your request was sent to Zapier.",
         });
       }
     } else {
       toast({
-        title: "Form Submitted!",
-        description: "Your consultation request has been saved locally. Add a Zapier webhook to save to Google Sheets.",
+        title: "Thanks for your interest! 🎉",
+        description: "Welcome to the first step towards the future. Your consultation request has been saved.",
       });
     }
 
@@ -77,6 +97,7 @@ const Contact = () => {
     // Reset form
     setFormData({
       name: "",
+      countryCode: "+91",
       phone: "",
       preferredDate: "",
       preferredTime: "",
@@ -87,6 +108,15 @@ const Contact = () => {
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
+
+  const countryCodes = [
+    { code: "+91", country: "India", flag: "🇮🇳" },
+    { code: "+1", country: "USA/Canada", flag: "🇺🇸" },
+    { code: "+44", country: "UK", flag: "🇬🇧" },
+    { code: "+61", country: "Australia", flag: "🇦🇺" },
+    { code: "+971", country: "UAE", flag: "🇦🇪" },
+    { code: "+65", country: "Singapore", flag: "🇸🇬" },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center px-4 py-8">
@@ -120,16 +150,40 @@ const Contact = () => {
               <div className="space-y-2">
                 <label htmlFor="phone" className="text-sm font-medium text-slate-700 flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
-                  Phone Number *
+                  Mobile Number *
                 </label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange("phone", e.target.value)}
-                  placeholder="Enter your phone number"
-                  required
-                />
+                <div className="flex gap-2">
+                  <Select value={formData.countryCode} onValueChange={(value) => handleInputChange("countryCode", value)}>
+                    <SelectTrigger className="w-32">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {countryCodes.map((country) => (
+                        <SelectItem key={country.code} value={country.code}>
+                          {country.flag} {country.code}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/\D/g, ''); // Only allow digits
+                      handleInputChange("phone", value);
+                    }}
+                    placeholder={formData.countryCode === "+91" ? "10-digit mobile number" : "Mobile number"}
+                    maxLength={formData.countryCode === "+91" ? 10 : undefined}
+                    className="flex-1"
+                    required
+                  />
+                </div>
+                {formData.countryCode === "+91" && (
+                  <p className="text-xs text-slate-500">
+                    Enter 10-digit Indian mobile number (starting with 6, 7, 8, or 9)
+                  </p>
+                )}
               </div>
 
               <div className="space-y-2">
