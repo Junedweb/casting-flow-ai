@@ -37,7 +37,7 @@ export const PainPointsSection = () => {
     },
     {
       text: "I live in Pune—traveling to Mumbai all the time is expensive. A proper online flow would help.",
-      impact: "40+ hours monthly on travel",
+      impact: "10+ hours monthly on travel",
       icon: TrendingUp
     }
   ];
