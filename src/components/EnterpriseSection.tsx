@@ -16,7 +16,7 @@ export const EnterpriseSection = () => {
     },
     {
       icon: Crown,
-      title: "White-Label Solution",
+      title: "Co-branded App",
       description: "Complete branding control - your studio identity preserved",
       highlight: "Your Brand"
     },
@@ -95,7 +95,7 @@ export const EnterpriseSection = () => {
 
         <div className="text-center">
           <p className="text-slate-300 text-lg">
-            Limited partnership slots available. Join studios already scaling with JAMZ technology.
+            <strong>Limited partnership slots available.</strong> Exclusively for India's major casting agencies and directors already scaling with JAMZ technology.
           </p>
         </div>
       </div>
