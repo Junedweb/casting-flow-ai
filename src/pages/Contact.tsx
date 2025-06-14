@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -76,23 +77,23 @@ const Contact = () => {
         });
         
         toast({
-          title: <div className="text-center font-bold text-lg">🎉 Thanks for your interest!</div>,
-          description: <div className="text-center font-semibold">Welcome to the first step towards the future. Your consultation request has been sent to Google Sheets via Zapier.</div>,
-          className: "w-full max-w-md mx-auto"
+          title: "🎉 Thanks for your interest!",
+          description: "Welcome to the first step towards the future. Your consultation request has been sent to Google Sheets via Zapier.",
+          className: "w-full max-w-md mx-auto text-center [&>div]:text-center [&>div]:font-bold [&>div]:text-lg [&>div+div]:font-semibold"
         });
       } catch (error) {
         console.error("Zapier webhook error:", error);
         toast({
-          title: <div className="text-center font-bold text-lg">🎉 Thanks for your interest!</div>,
-          description: <div className="text-center font-semibold">Welcome to the first step towards the future. Your request was sent to Zapier.</div>,
-          className: "w-full max-w-md mx-auto"
+          title: "🎉 Thanks for your interest!",
+          description: "Welcome to the first step towards the future. Your request was sent to Zapier.",
+          className: "w-full max-w-md mx-auto text-center [&>div]:text-center [&>div]:font-bold [&>div]:text-lg [&>div+div]:font-semibold"
         });
       }
     } else {
       toast({
-        title: <div className="text-center font-bold text-lg">🎉 Thanks for your interest!</div>,
-        description: <div className="text-center font-semibold">Welcome to the first step towards the future. Your consultation request has been saved.</div>,
-        className: "w-full max-w-md mx-auto"
+        title: "🎉 Thanks for your interest!",
+        description: "Welcome to the first step towards the future. Your consultation request has been saved.",
+        className: "w-full max-w-md mx-auto text-center [&>div]:text-center [&>div]:font-bold [&>div]:text-lg [&>div+div]:font-semibold"
       });
     }
 
