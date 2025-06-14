@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Crown, Zap, Users, TrendingUp } from "lucide-react";
+import { Crown, Zap, Users, TrendingUp, Clock, Target } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export const EnterpriseSection = () => {
@@ -9,28 +9,28 @@ export const EnterpriseSection = () => {
 
   const features = [
     {
+      icon: Clock,
+      title: "60% Faster Casting",
+      description: "Cut casting turnaround time (TAT) by over 60% with AI-powered workflows",
+      highlight: "Proven Results"
+    },
+    {
       icon: Crown,
-      title: "White-label",
-      description: "Brand-first studios preserve legacy",
+      title: "White-Label Solution",
+      description: "Complete branding control - your studio identity preserved",
       highlight: "Your Brand"
     },
     {
-      icon: Zap,
-      title: "Premium Access",
-      description: "Always a step ahead in features",
-      highlight: "Early Access"
-    },
-    {
-      icon: Users,
-      title: "Feature-Shaping",
-      description: "You shape the tool, not the other way around",
-      highlight: "Your Voice"
+      icon: Target,
+      title: "Zero Technology Cost",
+      description: "No upfront fees, no monthly charges for partnership tier",
+      highlight: "Cost-Free Tech"
     },
     {
       icon: TrendingUp,
-      title: "Revenue-Sharing",
-      description: "Shared upside = long-term partnership",
-      highlight: "Mutual Growth"
+      title: "30% Revenue Share",
+      description: "We earn only when you grow - 30% of incremental casting revenue",
+      highlight: "Win-Win Model"
     }
   ];
 
@@ -39,10 +39,10 @@ export const EnterpriseSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Enterprise Partner Benefits
+            Technology Partnership Program
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Switch mindset from "vendor" to "co-pilot". Get emotional + strategic buy-in.
+          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            Scale your casting business with our proven technology. We reduce your operational time by 60%+ while you focus on taking more projects and growing revenue.
           </p>
         </div>
 
@@ -67,23 +67,37 @@ export const EnterpriseSection = () => {
           ))}
         </div>
 
-        <Card className="bg-gradient-to-r from-orange-500 to-red-600 border-none">
+        <Card className="bg-gradient-to-r from-orange-500 to-red-600 border-none mb-8">
           <CardContent className="p-12 text-center">
             <h3 className="text-3xl font-bold text-white mb-6">
-              Join JAMZ Founding Circle
+              The Partnership Deal
             </h3>
-            <p className="text-xl text-white/90 mb-8">
-              Shape the future of casting tech. Exclusive access, premium features, and revenue sharing opportunities.
-            </p>
+            <div className="text-white/95 text-lg space-y-4 mb-8">
+              <p className="font-semibold">
+                🚀 <strong>You Get:</strong> 60%+ faster casting operations + Zero technology costs
+              </p>
+              <p className="font-semibold">
+                💰 <strong>You Give:</strong> 30% share of incremental business revenue (quarterly basis)
+              </p>
+              <p className="text-white/90">
+                Take on more casting projects with saved time. We grow together as your technology partner.
+              </p>
+            </div>
             <Button 
               size="lg" 
               className="bg-white text-orange-600 hover:bg-slate-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               onClick={() => navigate("/contact")}
             >
-              Join Founding Circle
+              Become a Technology Partner
             </Button>
           </CardContent>
         </Card>
+
+        <div className="text-center">
+          <p className="text-slate-300 text-lg">
+            Limited partnership slots available. Join studios already scaling with JAMZ technology.
+          </p>
+        </div>
       </div>
     </section>
   );
