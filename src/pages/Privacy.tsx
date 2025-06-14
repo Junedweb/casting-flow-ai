@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Privacy = () => {
@@ -82,7 +81,7 @@ const Privacy = () => {
             </CardHeader>
             <CardContent>
               <p className="text-slate-600">
-                If you have any questions about this Privacy Policy, please contact us at privacy@jamz.tech
+                If you have any questions about this Privacy Policy, please contact us at JAMz.techconnect@gmail.com
               </p>
             </CardContent>
           </Card>
