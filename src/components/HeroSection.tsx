@@ -12,27 +12,34 @@ export const HeroSection = () => {
         <div className="w-full h-full bg-gradient-to-br from-slate-800/20 to-slate-900/20"></div>
       </div>
       
-      <div className="relative max-w-6xl mx-auto text-center">
+      <div className="relative max-w-5xl mx-auto text-center">
         <div className="mb-8">
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tight">
+          <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight">
             <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent">
               JAMZ
             </span>
           </h1>
         </div>
         
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-          Your Talent Database.<br />
-          <span className="text-blue-400">Organized. Clear. Clean.</span><br />
-          <span className="text-green-400">With AI by Your Side.</span>
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
+          Stop Losing Perfect Talent in<br />
+          <span className="text-red-400">Messy Spreadsheets</span>
         </h2>
         
-        <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-          JAMZ empowers your casting process with smart dashboards, a clean user interface, and encrypted data.
-          Discover searchable profiles with filters for screen age, sex, languages, ethnicity, past work, and AI-powered face-matching for faster, better decisions—all while adding value to your current system.
+        <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <span className="text-yellow-400 font-semibold">JAMZ</span> transforms your chaotic casting process into a 
+          <span className="text-green-400 font-semibold"> smart, searchable database</span> with AI-powered matching.
         </p>
+
+        <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-6 mb-8 max-w-2xl mx-auto border border-slate-700">
+          <p className="text-slate-300 text-lg">
+            ✓ Find talent by face, age, ethnicity, or past work in seconds<br />
+            ✓ GDPR compliant with military-grade encryption<br />
+            ✓ Integrates with your existing workflow
+          </p>
+        </div>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
           <Button 
             size="lg" 
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
@@ -42,25 +49,25 @@ export const HeroSection = () => {
           </Button>
         </div>
         
-        <p className="text-slate-400 mt-6 text-lg">
-          Meet tech and data experts who listen first, advise second. Zero pressure. 100% support.
+        <p className="text-slate-400 text-base mb-12">
+          Zero pressure. 100% support. Tech experts who listen first.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto">
-          <div className="flex flex-col items-center text-center">
-            <Database className="w-12 h-12 text-blue-400 mb-4" />
-            <h3 className="text-white font-semibold mb-2">Centralized Data</h3>
-            <p className="text-slate-400">All profiles in one secure place</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="flex flex-col items-center text-center bg-slate-800/30 rounded-lg p-4 backdrop-blur-sm">
+            <Database className="w-10 h-10 text-blue-400 mb-3" />
+            <h3 className="text-white font-semibold mb-1 text-sm">Centralized Database</h3>
+            <p className="text-slate-400 text-sm">All profiles in one secure place</p>
           </div>
-          <div className="flex flex-col items-center text-center">
-            <Users className="w-12 h-12 text-green-400 mb-4" />
-            <h3 className="text-white font-semibold mb-2">AI-Powered Matching</h3>
-            <p className="text-slate-400">Find the perfect talent instantly</p>
+          <div className="flex flex-col items-center text-center bg-slate-800/30 rounded-lg p-4 backdrop-blur-sm">
+            <Users className="w-10 h-10 text-green-400 mb-3" />
+            <h3 className="text-white font-semibold mb-1 text-sm">AI Face Matching</h3>
+            <p className="text-slate-400 text-sm">Find perfect talent instantly</p>
           </div>
-          <div className="flex flex-col items-center text-center">
-            <Shield className="w-12 h-12 text-orange-400 mb-4" />
-            <h3 className="text-white font-semibold mb-2">GDPR Compliant</h3>
-            <p className="text-slate-400">End-to-end encryption & security</p>
+          <div className="flex flex-col items-center text-center bg-slate-800/30 rounded-lg p-4 backdrop-blur-sm">
+            <Shield className="w-10 h-10 text-orange-400 mb-3" />
+            <h3 className="text-white font-semibold mb-1 text-sm">GDPR Secure</h3>
+            <p className="text-slate-400 text-sm">End-to-end encryption</p>
           </div>
         </div>
       </div>
