@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Shield, Users, Database } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -14,11 +13,11 @@ export const HeroSection = () => {
       
       <div className="relative max-w-5xl mx-auto text-center">
         <div className="mb-8">
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight">
-            <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              JAMZ
-            </span>
-          </h1>
+          <img 
+            src="/lovable-uploads/63c340ac-9936-409d-a1aa-4d63608998ec.png" 
+            alt="JAMZ Logo" 
+            className="w-64 h-64 md:w-80 md:h-80 mx-auto mb-6"
+          />
         </div>
         
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
