@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calendar, Phone, User, Clock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { trackButtonClick } from "@/utils/buttonTracker";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,6 +32,9 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Track form submission
+    trackButtonClick("Book Consultation - Form Submit");
     
     // Validate Indian mobile number if +91 is selected
     if (formData.countryCode === "+91" && !validateIndianMobile(formData.phone)) {
@@ -103,6 +107,16 @@ const Contact = () => {
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleBackToHome = () => {
+    trackButtonClick("Back to Home - Contact Page");
+    navigate("/");
+  };
+
+  const handleViewSubmissions = () => {
+    trackButtonClick("View All Form Submissions");
+    navigate("/submissions");
   };
 
   const countryCodes = [
@@ -222,7 +236,7 @@ const Contact = () => {
                 <Button 
                   type="button"
                   variant="outline"
-                  onClick={() => navigate("/")}
+                  onClick={handleBackToHome}
                   className="w-full"
                 >
                   Back to Home
@@ -238,7 +252,7 @@ const Contact = () => {
           </CardHeader>
           <CardContent>
             <Button 
-              onClick={() => navigate("/submissions")}
+              onClick={handleViewSubmissions}
               variant="outline"
               className="w-full"
             >

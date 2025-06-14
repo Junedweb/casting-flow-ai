@@ -3,9 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, MessageCircle, CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { trackButtonClick } from "@/utils/buttonTracker";
 
 export const CtaSection = () => {
   const navigate = useNavigate();
+
+  const handleConsultationClick = () => {
+    trackButtonClick("Book Free Consultation - CTA");
+    navigate("/contact");
+  };
 
   return (
     <section className="py-20 px-4 bg-slate-50">
@@ -44,7 +50,7 @@ export const CtaSection = () => {
             <Button 
               size="lg" 
               className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 text-xl font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              onClick={() => navigate("/contact")}
+              onClick={handleConsultationClick}
             >
               Book Free Consultation
             </Button>
