@@ -1,5 +1,6 @@
 
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -22,8 +23,8 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Legal</h3>
             <ul className="space-y-2 text-slate-300">
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Data Use Policy</a></li>
               <li><a href="#" className="hover:text-white transition-colors">GDPR Compliance</a></li>
             </ul>
@@ -32,10 +33,10 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-2 text-slate-300">
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
+              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Partner With Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -43,7 +44,7 @@ export const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Resources</h3>
             <ul className="space-y-2 text-slate-300">
               <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Support Center</a></li>
+              <li><Link to="/support" className="hover:text-white transition-colors">Support Center</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
             </ul>
@@ -52,10 +53,10 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Connect</h3>
             <ul className="space-y-2 text-slate-300">
-              <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Twitter</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">YouTube</a></li>
+              <li><a href="https://linkedin.com/company/jamz" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
+              <li><a href="https://twitter.com/jamztech" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a></li>
+              <li><a href="https://instagram.com/jamz.tech" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
+              <li><a href="https://youtube.com/@jamztech" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">YouTube</a></li>
             </ul>
           </div>
         </div>
