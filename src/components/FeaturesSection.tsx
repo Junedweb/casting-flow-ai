@@ -1,7 +1,5 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
-  Inbox, 
   RefreshCw, 
   Upload, 
   Users, 
@@ -10,13 +8,22 @@ import {
   Bell,
   IndianRupee,
   Shield,
-  AlertTriangle
+  AlertTriangle,
+  MessageCircle,
+  Globe
 } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export const FeaturesSection = () => {
   const features = [
     {
-      icon: Inbox,
+      icon: () => (
+        <div className="flex items-center justify-center space-x-2">
+          <MessageCircle className="w-6 h-6 text-green-500" />
+          <Instagram className="w-6 h-6 text-pink-500" />
+          <Globe className="w-6 h-6 text-blue-500" />
+        </div>
+      ),
       title: "Centralized Inbox",
       description: "Profiles from WhatsApp, Insta, site—synced and organized."
     },
@@ -68,7 +75,13 @@ export const FeaturesSection = () => {
           {features.map((feature, index) => (
             <Card key={index} className="h-full hover:shadow-lg transition-shadow duration-300">
               <CardHeader className="text-center pb-4">
-                <feature.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                {typeof feature.icon === 'function' ? (
+                  <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                    <feature.icon />
+                  </div>
+                ) : (
+                  <feature.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                )}
                 <CardTitle className="text-xl font-bold text-slate-900">
                   {feature.title}
                 </CardTitle>
