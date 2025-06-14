@@ -27,28 +27,10 @@ export const FeaturesSection = () => {
 
   const features = [
     {
-      icon: "centralized",
-      title: "Centralized Inbox",
-      description: "Profiles from WhatsApp, Insta, site—synced and organized.",
-      imageSrc: "/public/lovable-uploads/63c340ac-9936-409d-a1aa-4d63608998ec.png"
-    },
-    {
-      icon: "refresh",
-      title: "Self-Updating Talent Profiles",
-      description: "Actor interest refreshes in real-time. Never chase old data again.",
-      imageSrc: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
-    },
-    {
       icon: "social-campaign",
       title: "All Social Media Campaign for New Talent Search",
       description: "Post talent requirements across all social platforms in a single click. Reach thousands of potential candidates instantly.",
       imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-    },
-    {
-      icon: "users",
-      title: "Multi-user Access Control",
-      description: "Team-based permissions with role management. Secure access logs and visibility control for casting teams.",
-      imageSrc: "https://images.unsplash.com/photo-1518770660439-4636190af475"
     },
     {
       icon: "filter",
@@ -63,16 +45,34 @@ export const FeaturesSection = () => {
       imageSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
     },
     {
+      icon: "centralized",
+      title: "Centralized Inbox",
+      description: "Profiles from WhatsApp, Insta, site—synced and organized.",
+      imageSrc: "/public/lovable-uploads/63c340ac-9936-409d-a1aa-4d63608998ec.png"
+    },
+    {
       icon: "bell",
       title: "Talent Interest Tracker",
       description: "Actors update availability directly. You save 100s of back-and-forth calls.",
       imageSrc: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
     },
     {
+      icon: "refresh",
+      title: "Self-Updating Talent Profiles",
+      description: "Actor interest refreshes in real-time. Never chase old data again.",
+      imageSrc: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+    },
+    {
       icon: "dashboard",
       title: "Team and Project Dashboard Visibility",
       description: "Real-time project tracking with completion status, timelines, and team collaboration. Monitor multiple productions simultaneously.",
       imageSrc: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+    },
+    {
+      icon: "users",
+      title: "Multi-user Access Control",
+      description: "Team-based permissions with role management. Secure access logs and visibility control for casting teams.",
+      imageSrc: "https://images.unsplash.com/photo-1518770660439-4636190af475"
     }
   ];
 
