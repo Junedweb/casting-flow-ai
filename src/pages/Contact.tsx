@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,7 +15,7 @@ const Contact = () => {
     phone: "",
     preferredDate: "",
     preferredTime: "",
-    zapierWebhook: ""
+    zapierWebhook: "https://hooks.zapier.com/hooks/catch/23376283/uy7xs18/"
   });
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
