@@ -6,11 +6,11 @@ export const Footer = () => {
     <footer className="bg-slate-900 text-white py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <img 
-            src="/lovable-uploads/63c340ac-9936-409d-a1aa-4d63608998ec.png" 
-            alt="JAMZ Logo" 
-            className="w-32 h-32 mx-auto mb-4"
-          />
+          <div className="inline-flex items-center justify-center w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-lg">
+            <h2 className="text-3xl font-bold text-white">
+              JAMZ
+            </h2>
+          </div>
           <p className="text-slate-300 text-lg">
             Empowering the future of casting with AI and smart technology
           </p>
