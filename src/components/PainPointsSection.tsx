@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, Quote, Users, Zap, TrendingUp } from "lucide-react";
 import { useState } from "react";
@@ -135,31 +136,31 @@ export const PainPointsSection = () => {
           </div>
         </div>
 
-        {/* Success Story Card */}
+        {/* Success Story Card - More Subtle Design */}
         <div className="relative">
-          <Card className="bg-gradient-to-r from-green-50 via-emerald-50 to-green-50 border-2 border-green-200 shadow-2xl transform hover:scale-102 transition-all duration-500 overflow-hidden">
+          <Card className="bg-gradient-to-r from-slate-50 via-white to-slate-50 border border-slate-200 shadow-lg transform hover:scale-[1.01] transition-all duration-500 overflow-hidden">
             <CardContent className="p-8 text-center relative">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 via-emerald-400 to-green-500" />
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mb-6 shadow-lg">
-                <Quote className="w-8 h-8 text-white" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-slate-300 via-slate-400 to-slate-300" />
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-slate-400 to-slate-500 rounded-full mb-6 shadow-md">
+                <Quote className="w-6 h-6 text-white" />
               </div>
-              <blockquote className="text-xl text-slate-700 italic mb-6 leading-relaxed max-w-4xl mx-auto">
+              <blockquote className="text-lg text-slate-600 italic mb-6 leading-relaxed max-w-4xl mx-auto">
                 "JAMZ didn't charge a penny as my scale is small and I don't need a complex process. 
                 They provided excellent support and guidance that truly helped streamline my workflow. 
                 All the best and best wishes for all the good work they're doing!"
               </blockquote>
-              <div className="flex items-center justify-center space-x-2">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center">
-                  <Users className="w-6 h-6 text-white" />
+              <div className="flex items-center justify-center space-x-3">
+                <div className="w-10 h-10 bg-gradient-to-r from-slate-300 to-slate-400 rounded-full flex items-center justify-center">
+                  <Users className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-green-700 font-bold text-lg">Small-Scale Casting Director</p>
-                  <p className="text-green-600 text-sm">Mumbai Film Industry</p>
+                  <p className="text-slate-700 font-semibold text-base">Small-Scale Casting Director</p>
+                  <p className="text-slate-500 text-sm">Mumbai Film Industry</p>
                 </div>
               </div>
-              <div className="mt-6 inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full font-semibold shadow-lg">
-                <Zap className="w-5 h-5 mr-2" />
-                Free Support for Small-Scale Operations
+              <div className="mt-6 inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-slate-400 to-slate-500 text-white rounded-full font-medium shadow-md text-sm">
+                <Zap className="w-4 h-4 mr-2" />
+                Dedicated Support & Guidance
               </div>
             </CardContent>
           </Card>
