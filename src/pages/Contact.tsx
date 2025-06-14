@@ -76,20 +76,23 @@ const Contact = () => {
         });
         
         toast({
-          title: "Thanks for your interest! 🎉",
-          description: "Welcome to the first step towards the future. Your consultation request has been sent to Google Sheets via Zapier.",
+          title: <div className="text-center font-bold text-lg">🎉 Thanks for your interest!</div>,
+          description: <div className="text-center font-semibold">Welcome to the first step towards the future. Your consultation request has been sent to Google Sheets via Zapier.</div>,
+          className: "w-full max-w-md mx-auto"
         });
       } catch (error) {
         console.error("Zapier webhook error:", error);
         toast({
-          title: "Thanks for your interest! 🎉",
-          description: "Welcome to the first step towards the future. Your request was sent to Zapier.",
+          title: <div className="text-center font-bold text-lg">🎉 Thanks for your interest!</div>,
+          description: <div className="text-center font-semibold">Welcome to the first step towards the future. Your request was sent to Zapier.</div>,
+          className: "w-full max-w-md mx-auto"
         });
       }
     } else {
       toast({
-        title: "Thanks for your interest! 🎉",
-        description: "Welcome to the first step towards the future. Your consultation request has been saved.",
+        title: <div className="text-center font-bold text-lg">🎉 Thanks for your interest!</div>,
+        description: <div className="text-center font-semibold">Welcome to the first step towards the future. Your consultation request has been saved.</div>,
+        className: "w-full max-w-md mx-auto"
       });
     }
 
