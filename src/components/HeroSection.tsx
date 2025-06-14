@@ -22,12 +22,12 @@ export const HeroSection = () => {
         </div>
         
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-          Stop Losing Perfect Talent in<br />
-          <span className="text-red-400">Messy Spreadsheets</span>
+          You Know Casting,<br />
+          <span className="text-orange-400">We Know Technology</span>
         </h2>
         
         <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-          <span className="text-yellow-400 font-semibold">JAMZ</span> transforms your chaotic casting process into a 
+          Let's bring synergies between the best. <span className="text-yellow-400 font-semibold">JAMZ</span> transforms your casting workflow into a 
           <span className="text-green-400 font-semibold"> smart, searchable database</span> with AI-powered matching.
         </p>
 
@@ -35,7 +35,7 @@ export const HeroSection = () => {
           <p className="text-slate-300 text-lg">
             ✓ Find talent by face, age, ethnicity, or past work in seconds<br />
             ✓ GDPR compliant with military-grade encryption<br />
-            ✓ Integrates with your existing workflow
+            ✓ Integrates seamlessly with your existing workflow
           </p>
         </div>
         
