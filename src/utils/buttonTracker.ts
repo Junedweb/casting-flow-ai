@@ -9,9 +9,10 @@ interface ButtonClickData {
 const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/23376283/uy7xs18/";
 
 export const trackButtonClick = async (buttonName: string) => {
+  const timestamp = new Date().toISOString();
   const clickData: ButtonClickData = {
     buttonName,
-    timestamp: new Date().toISOString(),
+    timestamp,
     page: window.location.pathname,
     userAgent: navigator.userAgent
   };
@@ -33,6 +34,7 @@ export const trackButtonClick = async (buttonName: string) => {
       mode: "no-cors",
       body: JSON.stringify({
         ...clickData,
+        submitted: `${timestamp} - ${buttonName}`,
         source: "JAMZ Button Tracking"
       }),
     });
