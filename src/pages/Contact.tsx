@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -49,6 +50,7 @@ const Contact = () => {
     setIsLoading(true);
     
     const fullPhone = `${formData.countryCode}${formData.phone}`;
+    const submissionTimestamp = new Date().toISOString();
     console.log("Form submitted:", { ...formData, fullPhone });
     
     // Save to local storage as backup
@@ -56,7 +58,7 @@ const Contact = () => {
     const newSubmission = {
       ...formData,
       phone: fullPhone,
-      timestamp: new Date().toISOString(),
+      timestamp: submissionTimestamp,
       id: Date.now()
     };
     submissions.push(newSubmission);
@@ -75,7 +77,9 @@ const Contact = () => {
           phone: fullPhone,
           preferredDate: formData.preferredDate,
           preferredTime: formData.preferredTime,
-          timestamp: new Date().toISOString(),
+          timestamp: submissionTimestamp,
+          buttonName: "Book Consultation - Form Submit",
+          submitted: `${submissionTimestamp} - Book Consultation - Form Submit`,
           source: "JAMZ Consultation Form"
         }),
       });
