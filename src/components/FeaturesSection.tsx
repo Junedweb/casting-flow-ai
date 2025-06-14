@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ImageModal } from "./ImageModal";
@@ -8,7 +7,6 @@ import {
   Filter, 
   Scan, 
   Bell,
-  IndianRupee,
   Shield,
   AlertTriangle,
   MessageCircle,
@@ -200,19 +198,6 @@ export const FeaturesSection = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl p-8 text-white mb-16 hover:shadow-2xl transition-shadow duration-300">
-          <div className="flex items-center justify-center mb-4">
-            <div className="relative">
-              <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse"></div>
-              <IndianRupee className="w-8 h-8 mr-3 relative z-10" />
-            </div>
-            <h3 className="text-2xl font-bold">Cost Positioning</h3>
-          </div>
-          <p className="text-center text-lg">
-            Your average assistant costs ₹20K/month. JAMZ is your virtual assistant, analyst, and database—all in one.
-          </p>
         </div>
 
         <Card className="bg-red-50 border-red-200 hover:shadow-xl transition-shadow duration-300">
