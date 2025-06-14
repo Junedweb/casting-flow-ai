@@ -1,5 +1,6 @@
-
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ImageModal } from "./ImageModal";
 import { 
   RefreshCw, 
   Upload, 
@@ -20,48 +21,64 @@ import {
 } from "lucide-react";
 
 export const FeaturesSection = () => {
+  const [selectedFeature, setSelectedFeature] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const features = [
     {
       icon: "centralized",
       title: "Centralized Inbox",
-      description: "Profiles from WhatsApp, Insta, site—synced and organized."
+      description: "Profiles from WhatsApp, Insta, site—synced and organized.",
+      imageSrc: "/public/lovable-uploads/63c340ac-9936-409d-a1aa-4d63608998ec.png"
     },
     {
       icon: "refresh",
       title: "Self-Updating Talent Profiles",
-      description: "Actor interest refreshes in real-time. Never chase old data again."
+      description: "Actor interest refreshes in real-time. Never chase old data again.",
+      imageSrc: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
     },
     {
       icon: "upload",
       title: "Upload Old Data",
-      description: "JAMZ imports and auto-organizes your existing database."
+      description: "JAMZ imports and auto-organizes your existing database.",
+      imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
     },
     {
       icon: "users",
       title: "Multi-user Access Control",
-      description: "Team-based permissions with role management. Secure access logs and visibility control for casting teams."
+      description: "Team-based permissions with role management. Secure access logs and visibility control for casting teams.",
+      imageSrc: "https://images.unsplash.com/photo-1518770660439-4636190af475"
     },
     {
       icon: "filter",
       title: "Smart Filters",
-      description: "Find talent by age, screen age, city, language, looks, etc."
+      description: "Find talent by age, screen age, city, language, looks, etc.",
+      imageSrc: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
     },
     {
       icon: "scan",
       title: "Face-Match AI",
-      description: "Find a Shah Rukh or Samantha lookalike in seconds."
+      description: "Find a Shah Rukh or Samantha lookalike in seconds.",
+      imageSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
     },
     {
       icon: "bell",
       title: "Talent Interest Tracker",
-      description: "Actors update availability directly. You save 100s of back-and-forth calls."
+      description: "Actors update availability directly. You save 100s of back-and-forth calls.",
+      imageSrc: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
     },
     {
       icon: "dashboard",
       title: "Team and Project Dashboard Visibility",
-      description: "Real-time project tracking with completion status, timelines, and team collaboration. Monitor multiple productions simultaneously."
+      description: "Real-time project tracking with completion status, timelines, and team collaboration. Monitor multiple productions simultaneously.",
+      imageSrc: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
     }
   ];
+
+  const handleFeatureClick = (feature: any) => {
+    setSelectedFeature(feature);
+    setIsModalOpen(true);
+  };
 
   const renderIcon = (iconType: string) => {
     const iconClasses = "transition-all duration-300 group-hover:scale-110";
@@ -156,7 +173,11 @@ export const FeaturesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
-            <Card key={index} className="group h-full hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white border-0 shadow-lg">
+            <Card 
+              key={index} 
+              className="group h-full hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white border-0 shadow-lg cursor-pointer"
+              onClick={() => handleFeatureClick(feature)}
+            >
               <CardHeader className="text-center pb-4">
                 <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-slate-50 to-slate-100 group-hover:from-slate-100 group-hover:to-slate-200 transition-all duration-300">
                   {renderIcon(feature.icon)}
@@ -167,6 +188,9 @@ export const FeaturesSection = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600 text-center group-hover:text-slate-700 transition-colors duration-300">{feature.description}</p>
+                <p className="text-xs text-slate-400 text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Click to view details
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -213,6 +237,16 @@ export const FeaturesSection = () => {
             </div>
           </CardContent>
         </Card>
+
+        {selectedFeature && (
+          <ImageModal
+            open={isModalOpen}
+            onOpenChange={setIsModalOpen}
+            title={selectedFeature.title}
+            description={selectedFeature.description}
+            imageSrc={selectedFeature.imageSrc}
+          />
+        )}
       </div>
     </section>
   );
