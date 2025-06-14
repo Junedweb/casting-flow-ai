@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, Quote, Users, Zap, TrendingUp } from "lucide-react";
 import { useState } from "react";
@@ -145,21 +144,22 @@ export const PainPointsSection = () => {
                 <Quote className="w-8 h-8 text-white" />
               </div>
               <blockquote className="text-xl text-slate-700 italic mb-6 leading-relaxed max-w-4xl mx-auto">
-                "I didn't expect much—but JAMZ's team gave solid advice, no strings attached. 
-                It actually helped fix our flow before we signed up. Now we've saved 15+ hours weekly!"
+                "JAMZ didn't charge a penny as my scale is small and I don't need a complex process. 
+                They provided excellent support and guidance that truly helped streamline my workflow. 
+                All the best and best wishes for all the good work they're doing!"
               </blockquote>
               <div className="flex items-center justify-center space-x-2">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <p className="text-green-700 font-bold text-lg">Casting Director</p>
+                  <p className="text-green-700 font-bold text-lg">Small-Scale Casting Director</p>
                   <p className="text-green-600 text-sm">Mumbai Film Industry</p>
                 </div>
               </div>
               <div className="mt-6 inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full font-semibold shadow-lg">
                 <Zap className="w-5 h-5 mr-2" />
-                15+ Hours Saved Weekly
+                Free Support for Small-Scale Operations
               </div>
             </CardContent>
           </Card>
