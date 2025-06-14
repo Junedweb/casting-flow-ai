@@ -2,8 +2,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Crown, Zap, Users, TrendingUp } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const EnterpriseSection = () => {
+  const navigate = useNavigate();
+
   const features = [
     {
       icon: Crown,
@@ -75,6 +78,7 @@ export const EnterpriseSection = () => {
             <Button 
               size="lg" 
               className="bg-white text-orange-600 hover:bg-slate-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => navigate("/contact")}
             >
               Join Founding Circle
             </Button>

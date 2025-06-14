@@ -1,8 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { Shield, Users, Database } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="absolute inset-0 opacity-40">
@@ -33,6 +36,7 @@ export const HeroSection = () => {
           <Button 
             size="lg" 
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            onClick={() => navigate("/contact")}
           >
             Book Free Process Consultation
           </Button>

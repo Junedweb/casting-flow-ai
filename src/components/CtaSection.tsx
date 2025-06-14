@@ -2,8 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, MessageCircle, CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const CtaSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-20 px-4 bg-slate-50">
       <div className="max-w-4xl mx-auto text-center">
@@ -41,6 +44,7 @@ export const CtaSection = () => {
             <Button 
               size="lg" 
               className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 text-xl font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => navigate("/contact")}
             >
               Book Free Consultation
             </Button>
