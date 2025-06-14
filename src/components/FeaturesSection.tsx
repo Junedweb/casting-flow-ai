@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   RefreshCw, 
@@ -12,7 +11,10 @@ import {
   AlertTriangle,
   MessageCircle,
   Globe,
-  Instagram
+  Instagram,
+  Lock,
+  User,
+  Check
 } from "lucide-react";
 
 export const FeaturesSection = () => {
@@ -34,8 +36,8 @@ export const FeaturesSection = () => {
     },
     {
       icon: "users",
-      title: "Multi-user Logins",
-      description: "Casting team gets separate access. With encryption and role-based safety."
+      title: "Multi-user Access Control",
+      description: "Team-based permissions with role management. Secure access logs and visibility control for casting teams."
     },
     {
       icon: "filter",
@@ -83,9 +85,21 @@ export const FeaturesSection = () => {
         );
       case "users":
         return (
-          <div className="relative">
-            <div className="absolute inset-0 bg-purple-100 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-            <Users className={`w-8 h-8 text-purple-600 ${iconClasses}`} />
+          <div className="relative flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+            <div className="relative grid grid-cols-2 gap-1">
+              <div className="relative">
+                <User className={`w-4 h-4 text-purple-600 ${iconClasses}`} />
+                <Check className="w-2 h-2 text-green-500 absolute -top-1 -right-1 bg-white rounded-full" />
+              </div>
+              <div className="relative">
+                <User className={`w-4 h-4 text-indigo-600 ${iconClasses}`} />
+                <Lock className="w-2 h-2 text-orange-500 absolute -top-1 -right-1 bg-white rounded-full" />
+              </div>
+              <div className="relative col-span-2 flex justify-center">
+                <Shield className={`w-4 h-4 text-purple-700 ${iconClasses} group-hover:animate-pulse`} />
+              </div>
+            </div>
           </div>
         );
       case "filter":
