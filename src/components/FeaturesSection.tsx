@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   RefreshCw, 
@@ -14,7 +15,8 @@ import {
   Instagram,
   Lock,
   User,
-  Check
+  Check,
+  LayoutDashboard
 } from "lucide-react";
 
 export const FeaturesSection = () => {
@@ -53,6 +55,11 @@ export const FeaturesSection = () => {
       icon: "bell",
       title: "Talent Interest Tracker",
       description: "Actors update availability directly. You save 100s of back-and-forth calls."
+    },
+    {
+      icon: "dashboard",
+      title: "Team and Project Dashboard Visibility",
+      description: "Real-time project tracking with completion status, timelines, and team collaboration. Monitor multiple productions simultaneously."
     }
   ];
 
@@ -121,6 +128,13 @@ export const FeaturesSection = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-yellow-100 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
             <Bell className={`w-8 h-8 text-yellow-600 ${iconClasses} group-hover:animate-bounce`} />
+          </div>
+        );
+      case "dashboard":
+        return (
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-blue-100 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+            <LayoutDashboard className={`w-8 h-8 text-slate-700 ${iconClasses} group-hover:animate-pulse`} />
           </div>
         );
       default:
