@@ -1,7 +1,8 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Mail, Phone, FileText } from "lucide-react";
+import { MessageCircle, Mail, Phone, FileText, Home } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Support = () => {
   const supportOptions = [
@@ -56,7 +57,16 @@ const Support = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="max-w-6xl mx-auto px-4 py-20">
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="mb-8">
+          <Link to="/">
+            <Button variant="outline" className="flex items-center gap-2">
+              <Home className="h-4 w-4" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
+        
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             Support Center

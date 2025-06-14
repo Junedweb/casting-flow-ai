@@ -1,11 +1,22 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, AlertTriangle, CheckCircle, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Shield, AlertTriangle, CheckCircle, Users, Home } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Gdpr = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
-      <div className="max-w-4xl mx-auto px-4 py-20">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="mb-8">
+          <Link to="/">
+            <Button variant="outline" className="flex items-center gap-2">
+              <Home className="h-4 w-4" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
+        
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <AlertTriangle className="h-16 w-16 text-red-600 mr-4" />
