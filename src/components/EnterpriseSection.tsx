@@ -16,7 +16,7 @@ export const EnterpriseSection = () => {
     },
     {
       icon: Crown,
-      title: "White-Label Solution",
+      title: "Co-branded App",
       description: "Complete branded solution for your business. We work behind the scenes.",
       highlight: "Your Brand"
     },
