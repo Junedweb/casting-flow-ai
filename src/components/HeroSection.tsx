@@ -52,12 +52,6 @@ export const HeroSection = () => {
         <div className="relative z-10">
           {/* Content */}
           <div className="max-w-5xl mx-auto text-center">
-            <div className="mb-4">
-              <span className="inline-block bg-white/90 text-gray-800 px-4 py-2 rounded-full text-sm font-medium border border-white/20 backdrop-blur-sm">
-                For Casting Directors • Agencies • Productions
-              </span>
-            </div>
-            
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-2xl">
               Turn Hours of Manual Work
               <span className="block text-transparent bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text">
