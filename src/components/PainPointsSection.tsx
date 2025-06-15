@@ -1,5 +1,6 @@
+
 import { Card, CardContent } from "@/components/ui/card";
-import { AlertTriangle, Quote, Users, Zap, TrendingUp, Star, Heart, CheckCircle } from "lucide-react";
+import { AlertTriangle, Quote, Users, Zap, TrendingUp, Star, Heart, CheckCircle, Database, Eye, UserX } from "lucide-react";
 import { useState } from "react";
 
 export const PainPointsSection = () => {
@@ -8,19 +9,29 @@ export const PainPointsSection = () => {
 
   const painPoints = [
     {
-      text: "Our data's scattered—WhatsApp, Instagram, Google Drive, Excel sheets. It's chaos.",
+      text: "Our data's scattered across WhatsApp, Instagram, Google Drive, Excel sheets. It's complete chaos.",
       impact: "Lost 3+ hours daily searching for profiles",
-      icon: AlertTriangle
+      icon: Database
     },
     {
-      text: "After 200+ profiles, Excel just breaks.",
-      impact: "System crashes during critical casting deadlines",
-      icon: TrendingUp
+      text: "Manually matching casting requirements with our current set of profiles is a nightmare in this setup.",
+      impact: "70% slower casting decisions",
+      icon: AlertTriangle
     },
     {
       text: "Tried building our own app. Too expensive and never fits right.",
       impact: "₹5L+ wasted on incomplete solutions",
       icon: Zap
+    },
+    {
+      text: "High iterations of assistant casting directors cause us to lose talent profiles constantly.",
+      impact: "30% talent database lost yearly",
+      icon: UserX
+    },
+    {
+      text: "Visibility of actors centrally is very low - we can't see who's available when we need them.",
+      impact: "Missing quality talent opportunities",
+      icon: Eye
     }
   ];
 
@@ -52,24 +63,24 @@ export const PainPointsSection = () => {
 
     return (
       <Card 
-        className={`border-l-4 ${borderColor} transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer bg-gradient-to-br ${gradientFrom} ${gradientTo} ${isHovered ? 'shadow-2xl scale-105' : 'shadow-md'}`}
+        className={`border-l-4 ${borderColor} transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer bg-gradient-to-br ${gradientFrom} ${gradientTo} ${isHovered ? 'shadow-2xl scale-105' : 'shadow-md'} h-full`}
         onMouseEnter={() => setHoveredCard(index + (type === 'actor' ? 100 : 0))}
         onMouseLeave={() => setHoveredCard(null)}
       >
-        <CardContent className="p-6 relative overflow-hidden">
-          <div className="flex items-start space-x-4">
-            <div className={`p-3 rounded-full bg-white shadow-lg ${iconColor}`}>
-              <item.icon className="w-6 h-6" />
+        <CardContent className="p-4 relative overflow-hidden h-full flex flex-col">
+          <div className="flex items-start space-x-3 flex-1">
+            <div className={`p-2 rounded-full bg-white shadow-lg ${iconColor} flex-shrink-0`}>
+              <item.icon className="w-4 h-4" />
             </div>
-            <div className="flex-1">
-              <div className="flex items-start mb-3">
-                <Quote className={`w-5 h-5 ${iconColor} mr-2 mt-1 flex-shrink-0`} />
-                <p className="text-slate-700 italic text-lg font-medium leading-relaxed">{item.text}</p>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-start mb-2">
+                <Quote className={`w-3 h-3 ${iconColor} mr-1 mt-1 flex-shrink-0`} />
+                <p className="text-slate-700 italic text-sm font-medium leading-relaxed">{item.text}</p>
               </div>
-              <div className={`mt-4 p-3 bg-white/60 rounded-lg border-l-4 ${borderColor} backdrop-blur-sm`}>
-                <p className={`text-sm font-semibold ${impactColor} flex items-center`}>
-                  <Zap className="w-4 h-4 mr-2" />
-                  Impact: {item.impact}
+              <div className={`mt-2 p-2 bg-white/60 rounded-lg border-l-2 ${borderColor} backdrop-blur-sm`}>
+                <p className={`text-xs font-semibold ${impactColor} flex items-center`}>
+                  <Zap className="w-3 h-3 mr-1" />
+                  {item.impact}
                 </p>
               </div>
             </div>
@@ -83,15 +94,15 @@ export const PainPointsSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+    <section className="py-16 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-red-400 to-blue-400 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-blue-400 to-green-400 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-red-500 to-blue-500 rounded-full mb-6 shadow-lg">
             <Users className="w-8 h-8 text-white" />
           </div>
@@ -104,35 +115,35 @@ export const PainPointsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          <div className="space-y-6">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl shadow-lg mb-4">
-                <AlertTriangle className="w-8 h-8 text-white mr-3" />
-                <h3 className="text-2xl font-bold text-white">Casting Directors</h3>
-              </div>
-              <p className="text-red-600 font-medium">Real pain points from industry professionals</p>
+        {/* Casting Directors Section */}
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl shadow-lg mb-4">
+              <AlertTriangle className="w-8 h-8 text-white mr-3" />
+              <h3 className="text-2xl font-bold text-white">Casting Directors</h3>
             </div>
-            <div className="space-y-6">
-              {painPoints.map((point, index) => (
-                <InteractiveCard key={index} item={point} index={index} type="cd" />
-              ))}
-            </div>
+            <p className="text-red-600 font-medium">Real pain points from industry professionals</p>
           </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {painPoints.map((point, index) => (
+              <InteractiveCard key={index} item={point} index={index} type="cd" />
+            ))}
+          </div>
+        </div>
 
-          <div className="space-y-6">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl shadow-lg mb-4">
-                <Users className="w-8 h-8 text-white mr-3" />
-                <h3 className="text-2xl font-bold text-white">Actors & Artists</h3>
-              </div>
-              <p className="text-blue-600 font-medium">Challenges faced by talented performers</p>
+        {/* Actors Section */}
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl shadow-lg mb-4">
+              <Users className="w-8 h-8 text-white mr-3" />
+              <h3 className="text-2xl font-bold text-white">Actors & Artists</h3>
             </div>
-            <div className="space-y-6">
-              {actorComplaints.map((complaint, index) => (
-                <InteractiveCard key={index} item={complaint} index={index} type="actor" />
-              ))}
-            </div>
+            <p className="text-blue-600 font-medium">Challenges faced by talented performers</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {actorComplaints.map((complaint, index) => (
+              <InteractiveCard key={index} item={complaint} index={index} type="actor" />
+            ))}
           </div>
         </div>
 
