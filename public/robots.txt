@@ -1,10 +1,9 @@
 
-# Enhanced robots.txt for better SEO and crawler accessibility
+# robots.txt for JAMZ Casting Platform
 User-agent: *
 Allow: /
-Crawl-delay: 1
 
-# Major search engines
+# Crawl delays for different bots
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -60,7 +59,7 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-# SEO and analysis tools
+# SEO tools
 User-agent: SemrushBot
 Allow: /
 Crawl-delay: 2
@@ -73,21 +72,5 @@ User-agent: MJ12bot
 Allow: /
 Crawl-delay: 3
 
-# Prevent crawling of admin/private areas (add when implemented)
-# User-agent: *
-# Disallow: /admin/
-# Disallow: /api/private/
-# Disallow: /dashboard/
-
 # Sitemap location
 Sitemap: https://jamz-casting.lovable.app/sitemap.xml
-
-# Clean param handling for better URL canonicalization
-Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&gclid&fbclid&ref&referer
-
-# Host directive for preferred domain
-Host: https://jamz-casting.lovable.app
-
-# Request rate limits
-Request-rate: 1/1s 09:00-17:00
-Request-rate: 1/2s 17:00-09:00

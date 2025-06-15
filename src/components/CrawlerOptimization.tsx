@@ -4,28 +4,25 @@ import { useEffect } from 'react';
 export const CrawlerOptimization = () => {
   useEffect(() => {
     try {
-      // Add hreflang if multiple languages are supported in future
-      const addHrefLang = () => {
-        // Check if hreflang already exists
-        if (!document.querySelector('link[hreflang="en-IN"]')) {
-          const link = document.createElement('link');
-          link.rel = 'alternate';
-          link.hreflang = 'en-IN';
-          link.href = window.location.href;
-          document.head.appendChild(link);
-        }
-      };
-
-      // Ensure proper meta tags for crawlers
-      const ensureMetaTags = () => {
-        // Add charset if not present
-        if (!document.querySelector('meta[charset]')) {
+      // Simple crawler optimization without duplicating structured data
+      const ensureBasicMetaTags = () => {
+        // Ensure charset is first
+        const existingCharset = document.querySelector('meta[charset]');
+        if (!existingCharset) {
           const charset = document.createElement('meta');
           charset.setAttribute('charset', 'UTF-8');
           document.head.insertBefore(charset, document.head.firstChild);
         }
 
-        // Add HTTP-equiv meta tags for better crawler understanding
+        // Ensure viewport meta tag
+        if (!document.querySelector('meta[name="viewport"]')) {
+          const viewport = document.createElement('meta');
+          viewport.setAttribute('name', 'viewport');
+          viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+          document.head.appendChild(viewport);
+        }
+
+        // Add X-UA-Compatible for better crawler compatibility
         if (!document.querySelector('meta[http-equiv="X-UA-Compatible"]')) {
           const httpEquiv = document.createElement('meta');
           httpEquiv.setAttribute('http-equiv', 'X-UA-Compatible');
@@ -34,34 +31,23 @@ export const CrawlerOptimization = () => {
         }
       };
 
-      // Add breadcrumb structured data for better navigation understanding
-      const addBreadcrumbData = () => {
-        // Check if breadcrumb data already exists
-        if (!document.querySelector('script[type="application/ld+json"]')) {
-          const breadcrumbData = {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://jamz-casting.lovable.app/"
-              }
-            ]
-          };
-
-          const script = document.createElement('script');
-          script.type = 'application/ld+json';
-          script.textContent = JSON.stringify(breadcrumbData);
-          document.head.appendChild(script);
+      // Log crawler access for debugging
+      const logCrawlerAccess = () => {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const crawlers = [
+          'googlebot', 'bingbot', 'slurp', 'duckduckbot', 'baiduspider',
+          'facebookexternalhit', 'twitterbot', 'linkedinbot', 'whatsapp',
+          'chatgpt-user', 'gptbot', 'anthropic-ai', 'claude-web'
+        ];
+        
+        const isCrawler = crawlers.some(crawler => userAgent.includes(crawler));
+        if (isCrawler) {
+          console.log('Crawler detected:', userAgent);
         }
       };
 
-      // Execute all functions with error handling
-      addHrefLang();
-      ensureMetaTags();
-      addBreadcrumbData();
+      ensureBasicMetaTags();
+      logCrawlerAccess();
 
     } catch (error) {
       console.error('Error in CrawlerOptimization:', error);

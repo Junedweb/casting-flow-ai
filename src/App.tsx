@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { StickyConsultationButton } from "@/components/StickyConsultationButton";
 import { CookieConsent } from "@/components/CookieConsent";
 import { CrawlerOptimization } from "@/components/CrawlerOptimization";
+import { CrawlerDebug } from "@/components/CrawlerDebug";
 import { initGA, trackPageView } from "@/utils/analytics";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
 import Index from "./pages/Index";
@@ -54,6 +55,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <CrawlerOptimization />
+            <CrawlerDebug />
             <PageTracker />
             <StickyConsultationButton />
             <CookieConsent />
