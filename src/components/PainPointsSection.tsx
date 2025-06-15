@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { AlertTriangle, Quote, Users, Zap, Database, Eye, UserX, MapPin } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AlertTriangle, Quote, Users, Zap, Database, UserX } from "lucide-react";
 
 export const PainPointsSection = () => {
   const painPoints = [
@@ -80,37 +81,36 @@ export const PainPointsSection = () => {
           </p>
         </div>
 
-        <div className="space-y-6">
-          <div>
+        <Tabs defaultValue="casting-directors" className="w-full">
+          <TabsList className="grid w-full grid-cols-2 mb-6">
+            <TabsTrigger value="casting-directors" className="text-xs">Casting Directors</TabsTrigger>
+            <TabsTrigger value="actors" className="text-xs">Actors</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="casting-directors" className="space-y-3">
             <div className="flex items-center gap-3 mb-4">
               <div className="px-3 py-2 bg-red-500 rounded-lg shadow-sm">
                 <AlertTriangle className="w-4 h-4 text-white inline mr-2" />
-                <span className="text-white font-semibold text-sm">Casting Directors</span>
+                <span className="text-white font-semibold text-sm">Daily challenges</span>
               </div>
-              <span className="text-xs text-red-600 font-medium">Daily challenges</span>
             </div>
-            <div className="space-y-3">
-              {painPoints.map((point, index) => (
-                <MobileCard key={index} item={point} index={index} type="cd" />
-              ))}
-            </div>
-          </div>
-
-          <div>
+            {painPoints.map((point, index) => (
+              <MobileCard key={index} item={point} index={index} type="cd" />
+            ))}
+          </TabsContent>
+          
+          <TabsContent value="actors" className="space-y-3">
             <div className="flex items-center gap-3 mb-4">
               <div className="px-3 py-2 bg-blue-500 rounded-lg shadow-sm">
                 <Users className="w-4 h-4 text-white inline mr-2" />
-                <span className="text-white font-semibold text-sm">Actors</span>
+                <span className="text-white font-semibold text-sm">Common issues</span>
               </div>
-              <span className="text-xs text-blue-600 font-medium">Common issues</span>
             </div>
-            <div className="space-y-3">
-              {actorComplaints.map((complaint, index) => (
-                <MobileCard key={index} item={complaint} index={index} type="actor" />
-              ))}
-            </div>
-          </div>
-        </div>
+            {actorComplaints.map((complaint, index) => (
+              <MobileCard key={index} item={complaint} index={index} type="actor" />
+            ))}
+          </TabsContent>
+        </Tabs>
 
         <Card className="bg-gradient-to-r from-emerald-50 to-green-50 border-emerald-200 shadow-md mt-6">
           <CardContent className="p-4">
