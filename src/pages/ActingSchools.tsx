@@ -164,11 +164,11 @@ const ActingSchools = () => {
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-green-100 to-emerald-100 group-hover:from-green-200 group-hover:to-emerald-200 transition-all duration-300">
                     <DollarSign className="w-8 h-8 text-green-600" />
                   </div>
-                  <CardTitle className="text-lg font-bold text-slate-900">50/50 Revenue Share</CardTitle>
+                  <CardTitle className="text-lg font-bold text-slate-900">Content Success Sharing</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-slate-600 text-center text-sm">
-                    Any YouTube income or sponsor partnerships are shared with your school.
+                    When your content performs well, you get the credit and rewards you deserve.
                   </p>
                 </CardContent>
               </Card>
