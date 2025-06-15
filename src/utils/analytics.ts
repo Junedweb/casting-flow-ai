@@ -1,3 +1,4 @@
+
 // Google Analytics 4 Configuration and Tracking Utilities
 
 declare global {
@@ -10,36 +11,47 @@ declare global {
 // GA4 Measurement ID - Your actual GA4 measurement ID
 export const GA_MEASUREMENT_ID = 'G-C6DZLWX1D6';
 
-// Initialize Google Analytics
+// Initialize Google Analytics asynchronously to prevent render blocking
 export const initGA = () => {
-  // Create gtag script
-  const script1 = document.createElement('script');
-  script1.async = true;
-  script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(script1);
+  // Use requestIdleCallback for non-critical initialization
+  const initializeGA = () => {
+    // Create gtag script asynchronously
+    const script1 = document.createElement('script');
+    script1.async = true;
+    script1.defer = true;
+    script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script1);
 
-  // Initialize dataLayer and gtag function
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag() {
-    window.dataLayer.push(arguments);
+    // Initialize dataLayer and gtag function
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      page_title: document.title,
+      page_location: window.location.href,
+      send_page_view: true,
+      // Enable enhanced measurement for automatic scroll tracking
+      enhanced_measurements: {
+        scrolls: true,
+        outbound_clicks: true,
+        site_search: false,
+        video_engagement: false,
+        file_downloads: true
+      }
+    });
+
+    console.log('Google Analytics 4 initialized asynchronously');
   };
-  
-  window.gtag('js', new Date());
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    page_title: document.title,
-    page_location: window.location.href,
-    send_page_view: true,
-    // Enable enhanced measurement for automatic scroll tracking
-    enhanced_measurements: {
-      scrolls: true,
-      outbound_clicks: true,
-      site_search: false,
-      video_engagement: false,
-      file_downloads: true
-    }
-  });
 
-  console.log('Google Analytics 4 initialized');
+  // Use requestIdleCallback if available, otherwise setTimeout
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initializeGA, { timeout: 2000 });
+  } else {
+    setTimeout(initializeGA, 100);
+  }
 };
 
 // Track page views

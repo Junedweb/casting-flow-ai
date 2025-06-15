@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Shield, Users, Database } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { trackButtonClick } from "@/utils/buttonTracker";
+import { OptimizedImage } from "./OptimizedImage";
 
 export const HeroSection = () => {
   const navigate = useNavigate();
@@ -15,10 +16,12 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center px-4 py-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="absolute inset-0">
-        <img 
+        <OptimizedImage
           src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3882&q=80"
           alt="AI Technology and Coding"
           className="w-full h-full object-cover opacity-20"
+          priority={true}
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/80 to-slate-900/80"></div>
       </div>
