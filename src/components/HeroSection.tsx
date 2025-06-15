@@ -77,21 +77,35 @@ export const HeroSection = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-4xl mx-auto font-light drop-shadow-lg">
+            <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-4xl mx-auto font-light drop-shadow-lg">
               Transform how you discover and cast talent. Our platform optimizes your workflow 
               based on your existing talent pool and enables you to invite actors from across India 
               to share their profiles.
             </p>
 
-            <div className="mb-8">
-              <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto text-left">
-                <div className="bg-white/95 backdrop-blur-md p-6 rounded-xl shadow-2xl border border-white/20">
-                  <h3 className="font-semibold text-gray-800 mb-2">Optimize Your Process</h3>
-                  <p className="text-gray-600 text-sm">Streamline casting workflows based on your current talent database and requirements</p>
+            <div className="mb-10">
+              <div className="flex flex-col md:flex-row gap-4 max-w-4xl mx-auto">
+                <div className="flex-1 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/20 text-left">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-sm font-bold text-black">⚡</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-2">Optimize Your Process</h3>
+                      <p className="text-white/80 text-sm">Streamline casting workflows based on your current talent database and requirements</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-white/95 backdrop-blur-md p-6 rounded-xl shadow-2xl border border-white/20">
-                  <h3 className="font-semibold text-gray-800 mb-2">Invite Talent Pan-India</h3>
-                  <p className="text-gray-600 text-sm">Send profile invitations to actors across India to expand your talent pool</p>
+                <div className="flex-1 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/20 text-left">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-sm font-bold text-white">🇮🇳</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-2">Invite Talent Pan-India</h3>
+                      <p className="text-white/80 text-sm">Send profile invitations to actors across India to expand your talent pool</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
