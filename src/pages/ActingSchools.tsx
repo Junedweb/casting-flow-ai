@@ -17,7 +17,7 @@ const ActingSchools = () => {
 
   const handleApplyClick = () => {
     trackButtonClick("Apply for JAMZ School Partner Program");
-    navigate("/contact");
+    navigate("/acting-school-partnership");
   };
 
   const handleHowItWorksClick = () => {
