@@ -1,29 +1,49 @@
 
 User-agent: *
 Allow: /
-
-# Block access to admin or sensitive areas (add as needed)
-Disallow: /admin/
 Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*
 
-# Allow all major search engine bots
+# Allow important crawlers
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 1
 
 User-agent: DuckDuckBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
 Allow: /
 
 # Sitemap location
 Sitemap: https://jamz-casting.lovable.app/sitemap.xml
 
-# Crawl delay to be respectful to servers
-Crawl-delay: 1
+# Clean param handling
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+
+# Host directive for preferred domain
+Host: https://jamz-casting.lovable.app
