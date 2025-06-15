@@ -34,7 +34,7 @@ export const ActorsHowItWorksSection = ({ onCreateProfileClick }: ActorsHowItWor
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Your JAMZ Profile is Your New CV.
-          <span className="block text-purple-600">And It's Free.</span>
+          <span className="block text-purple-600">₹500/month for unlimited visibility.</span>
         </h2>
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -61,7 +61,7 @@ export const ActorsHowItWorksSection = ({ onCreateProfileClick }: ActorsHowItWor
           size="lg"
           className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-10 py-6 text-xl font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
         >
-          Start Now – It's Free
+          Start Your Profile - ₹500/month
         </Button>
       </div>
     </section>

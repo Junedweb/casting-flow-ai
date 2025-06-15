@@ -39,7 +39,7 @@ export const ActorsHeroSection = ({ onCreateProfileClick, onWatchStoriesClick }:
             size="lg" 
             className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-10 py-6 text-xl font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
-            Create Your Free JAMZ Profile
+            Create Your JAMZ Profile - ₹500/month
           </Button>
           <Button 
             onClick={onWatchStoriesClick}
