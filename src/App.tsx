@@ -22,12 +22,23 @@ import { CrawlerOptimization } from "./components/CrawlerOptimization";
 import { CrawlerDebug } from "./components/CrawlerDebug";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { CrawlerAccessTest } from "./components/CrawlerAccessTest";
+import { HealthCheck } from "./components/HealthCheck";
+import { CrawlerErrorHandler } from "./components/CrawlerErrorHandler";
+import { CrawlerStatusIndicator } from "./components/CrawlerStatusIndicator";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false, // Disable retries for crawlers to prevent delays
+      staleTime: 1000 * 60 * 5, // 5 minutes
+    },
+  },
+});
 
 function App() {
   return (
     <ErrorBoundary>
+      <CrawlerErrorHandler />
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <TooltipProvider>
@@ -35,6 +46,8 @@ function App() {
               <CrawlerOptimization />
               <CrawlerDebug />
               <CrawlerAccessTest />
+              <HealthCheck />
+              <CrawlerStatusIndicator />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
