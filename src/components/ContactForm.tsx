@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { trackButtonClick } from "@/utils/buttonTracker";
+import { trackFormSubmission, trackEvent } from "@/utils/analytics";
 import { FormFields } from "./FormFields";
 
 const ContactForm = () => {
@@ -31,11 +32,13 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Track form submission
+    // Track form submission attempt
     trackButtonClick("Book Consultation - Form Submit");
     
     // Validate Indian mobile number if +91 is selected
     if (formData.countryCode === "+91" && !validateIndianMobile(formData.phone)) {
+      trackFormSubmission("Consultation Form", false);
+      trackEvent('form_validation_error', 'Form', 'Invalid Indian mobile number');
       toast({
         title: "Invalid Mobile Number",
         description: "Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.",
@@ -79,6 +82,10 @@ const ContactForm = () => {
         }),
       });
       
+      // Track successful form submission
+      trackFormSubmission("Consultation Form", true);
+      trackEvent('generate_lead', 'Form', 'Consultation Request');
+      
       toast({
         title: "🎉 Thanks for your interest!",
         description: "Welcome to the first step towards the future. Your consultation request has been sent to Google Sheets via Zapier.",
@@ -86,6 +93,10 @@ const ContactForm = () => {
       });
     } catch (error) {
       console.error("Zapier webhook error:", error);
+      // Track form submission even if webhook fails
+      trackFormSubmission("Consultation Form", true);
+      trackEvent('generate_lead', 'Form', 'Consultation Request');
+      
       toast({
         title: "🎉 Thanks for your interest!",
         description: "Welcome to the first step towards the future. Your request was sent to Zapier.",

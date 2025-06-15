@@ -1,4 +1,6 @@
 
+import { trackButtonClick as trackGA4ButtonClick, trackEvent } from '@/utils/analytics';
+
 interface ButtonClickData {
   buttonName: string;
   timestamp: string;
@@ -18,6 +20,10 @@ export const trackButtonClick = async (buttonName: string) => {
   };
 
   console.log("Button clicked:", clickData);
+
+  // Track with Google Analytics 4
+  trackGA4ButtonClick(buttonName, window.location.pathname);
+  trackEvent('click', 'Button', buttonName);
 
   // Save to local storage as backup
   const buttonClicks = JSON.parse(localStorage.getItem('buttonClicks') || '[]');

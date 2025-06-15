@@ -1,10 +1,13 @@
 
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { StickyConsultationButton } from "@/components/StickyConsultationButton";
+import { initGA, trackPageView } from "@/utils/analytics";
+import { useScrollTracking } from "@/hooks/useScrollTracking";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Submissions from "./pages/Submissions";
@@ -19,30 +22,51 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <StickyConsultationButton />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/submissions" element={<Submissions />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/gdpr" element={<Gdpr />} />
-          <Route path="/partnership" element={<Partnership />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+// Component to handle page tracking
+const PageTracker = () => {
+  const location = useLocation();
+  useScrollTracking();
+
+  useEffect(() => {
+    // Track page view on route change
+    trackPageView(document.title, window.location.href);
+  }, [location]);
+
+  return null;
+};
+
+const App = () => {
+  useEffect(() => {
+    // Initialize Google Analytics on app load
+    initGA();
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <PageTracker />
+          <StickyConsultationButton />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/submissions" element={<Submissions />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/gdpr" element={<Gdpr />} />
+            <Route path="/partnership" element={<Partnership />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
