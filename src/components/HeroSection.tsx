@@ -36,47 +36,78 @@ export const HeroSection = () => {
   return (
     <>
       <SEOHead structuredData={heroStructuredData} />
-      <section className="relative min-h-[80vh] flex items-center justify-center px-4 py-8 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* JAMZ Logo - Top Left */}
-        <div className="absolute top-6 left-6 z-20">
-          <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-lg">
-            <h2 className="text-xl font-bold text-white">
-              JAMZ
-            </h2>
+        <div className="absolute top-8 left-8 z-20">
+          <div className="flex items-center gap-3 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg border border-gray-200">
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">J</span>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-gray-800 leading-tight">JAMZ</h2>
+              <p className="text-xs text-gray-600 font-medium">Casting Platform</p>
+            </div>
           </div>
         </div>
 
         {/* Background Image */}
         <div className="absolute inset-0">
           <OptimizedImage
-            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=6052&q=80"
-            alt="Futuristic casting studio with people working on laptops and movie displays in background"
+            src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+            alt="Modern casting studio with digital screens and technology"
             className="w-full h-full object-cover"
             priority={true}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-blue-900/70 to-slate-900/80"></div>
         </div>
         
         {/* Content */}
-        <div className="relative z-10 text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
-            Advanced Casting Solutions for 
-            <span className="text-blue-400 block mt-2">Modern Filmmakers</span>
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
+          <div className="mb-6">
+            <span className="inline-block bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
+              For Casting Directors & Production Houses
+            </span>
+          </div>
+          
+          <h1 className="text-4xl md:text-7xl font-bold text-white mb-8 leading-tight">
+            Find the Perfect Actor
+            <span className="block text-transparent bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text">
+              In Minutes, Not Days
+            </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed max-w-3xl mx-auto drop-shadow-md">
-            Discover how leading production houses are streamlining their casting process 
-            with AI-powered talent matching and comprehensive database management
+          <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
+            Stop scrolling through endless portfolios. Our AI-powered platform instantly matches 
+            your casting requirements with verified talent profiles across India.
           </p>
           
-          <Button 
-            size="lg" 
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
-            onClick={handleConsultationClick}
-          >
-            Explore Our Solutions
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-black px-10 py-6 text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 border-0"
+              onClick={handleConsultationClick}
+            >
+              See How It Works
+            </Button>
+            
+            <div className="text-white/80 text-sm">
+              <span className="block">✓ Free consultation</span>
+              <span className="block">✓ No setup fees</span>
+            </div>
+          </div>
+          
+          {/* Trust indicators */}
+          <div className="mt-16 text-center">
+            <p className="text-white/60 text-sm mb-4">Trusted by leading production houses</p>
+            <div className="flex justify-center items-center gap-8 text-white/40 text-xs">
+              <span>Mumbai Film Studios</span>
+              <span>•</span>
+              <span>Bollywood Productions</span>
+              <span>•</span>
+              <span>Regional Cinema</span>
+            </div>
+          </div>
         </div>
       </section>
     </>
