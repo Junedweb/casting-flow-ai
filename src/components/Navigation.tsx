@@ -35,7 +35,7 @@ export const Navigation = () => {
             className="bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-6 py-2 text-sm font-medium rounded-lg"
             onClick={handleCastingClick}
           >
-            For Casting Directors
+            Tap For Casting Directors
           </Button>
         )}
         {(isOnCastingPage || (!isOnActingSchoolsPage && !isOnCastingPage)) && (
@@ -44,7 +44,7 @@ export const Navigation = () => {
             className="bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-6 py-2 text-sm font-medium rounded-lg"
             onClick={handleActingSchoolsClick}
           >
-            For Acting Schools
+            Tap For Acting Schools
           </Button>
         )}
       </div>
