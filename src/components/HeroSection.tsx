@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { trackButtonClick } from "@/utils/buttonTracker";
@@ -64,17 +63,17 @@ export const HeroSection = () => {
               with fitment percentages, and suggests external candidates when needed.
             </p>
 
-            {/* Formal Casting Workflow */}
+            {/* Casting with JAMZ is as simple as 1,2,3 */}
             <div className="mb-8">
-              <h3 className="text-lg font-semibold text-white mb-4">Professional Casting Workflow</h3>
-              <div className="grid md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              <h3 className="text-xl font-semibold text-white mb-6">Casting with JAMZ is as simple as 1, 2, 3</h3>
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/20">
                   <div className="text-center">
                     <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="text-xl font-bold text-white">1</span>
                     </div>
-                    <h4 className="font-semibold text-white mb-2 text-sm">Character Analysis</h4>
-                    <p className="text-white/80 text-xs">Upload script or description. AI extracts character requirements, age, appearance, and skills needed</p>
+                    <h4 className="font-semibold text-white mb-2">Character Analysis</h4>
+                    <p className="text-white/80 text-sm">Upload script or description. AI extracts character requirements, age, appearance, and skills needed</p>
                   </div>
                 </div>
                 
@@ -83,28 +82,18 @@ export const HeroSection = () => {
                     <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="text-xl font-bold text-white">2</span>
                     </div>
-                    <h4 className="font-semibold text-white mb-2 text-sm">Smart Pool Matching</h4>
-                    <p className="text-white/80 text-xs">AI scans your existing talent database and provides instant matches with fitment percentages</p>
-                  </div>
-                </div>
-                
-                <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/20">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-xl font-bold text-white">3</span>
-                    </div>
-                    <h4 className="font-semibold text-white mb-2 text-sm">External Requests</h4>
-                    <p className="text-white/80 text-xs">Request JAMZ to source additional candidates from the wider network when pool needs expansion</p>
+                    <h4 className="font-semibold text-white mb-2">Smart Matching & External Requests</h4>
+                    <p className="text-white/80 text-sm">AI instantly matches from your existing talent pool with fitment percentages and requests JAMZ for additional candidates when needed</p>
                   </div>
                 </div>
                 
                 <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/20">
                   <div className="text-center">
                     <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-xl font-bold text-white">4</span>
+                      <span className="text-xl font-bold text-white">3</span>
                     </div>
-                    <h4 className="font-semibold text-white mb-2 text-sm">Faster Decisions</h4>
-                    <p className="text-white/80 text-xs">Review ranked candidates with fitment scores and make casting decisions in minutes, not days</p>
+                    <h4 className="font-semibold text-white mb-2">Faster Casting Decisions</h4>
+                    <p className="text-white/80 text-sm">Review ranked candidates with instant results and fitment scores to make casting decisions in minutes, not days</p>
                   </div>
                 </div>
               </div>
