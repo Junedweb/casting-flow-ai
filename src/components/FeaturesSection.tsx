@@ -19,7 +19,7 @@ export const FeaturesSection = () => {
       icon: "social-campaign",
       title: "All Social Media Campaign for New Talent Search",
       description: "Post talent requirements across all social platforms in a single click. Reach thousands of potential candidates instantly.",
-      imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+      imageSrc: "/lovable-uploads/0865ae1b-66c6-4a09-9f8c-e247ac327974.png"
     },
     {
       icon: "filter",
@@ -52,10 +52,10 @@ export const FeaturesSection = () => {
       imageSrc: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
     },
     {
-      icon: "dashboard",
-      title: "Team and Project Dashboard Visibility",
-      description: "Real-time project tracking with completion status, timelines, and team collaboration. Monitor multiple productions simultaneously.",
-      imageSrc: "/lovable-uploads/36ede622-7e3c-425b-90f3-caee291b93c5.png"
+      icon: "users",
+      title: "Additional Suggestions of Actors and Actresses",
+      description: "Get intelligent suggestions of actors and actresses beyond your own database as per the requirement to match your expectations and close the requirement quickly.",
+      imageSrc: "/lovable-uploads/0e61e0b8-24e8-4882-8fee-58facc1e2214.png"
     },
     {
       icon: "users",
