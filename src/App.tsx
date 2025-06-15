@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from "@/components/ui/toaster";
@@ -20,6 +21,7 @@ import Careers from "./pages/Careers";
 import Support from "./pages/Support";
 import Gdpr from "./pages/Gdpr";
 import Partnership from "./pages/Partnership";
+import ActingSchools from "./pages/ActingSchools";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -65,6 +67,7 @@ const App = () => {
               <Route path="/support" element={<Support />} />
               <Route path="/gdpr" element={<Gdpr />} />
               <Route path="/partnership" element={<Partnership />} />
+              <Route path="/acting-schools" element={<ActingSchools />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
