@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { trackButtonClick } from "@/utils/buttonTracker";
 import { SEOHead } from "@/components/SEOHead";
 import { Footer } from "@/components/Footer";
-import { GraduationCap, Video, Award, DollarSign, Users, Star, CheckCircle } from "lucide-react";
+import { GraduationCap, Video, Award, DollarSign, Users, Star, CheckCircle, FileVideo } from "lucide-react";
 
 const ActingSchools = () => {
   const navigate = useNavigate();
@@ -63,15 +62,15 @@ const ActingSchools = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-2xl">
-              Your Students Deserve
+              Stop Sending Basic Profiles to
               <span className="block text-transparent bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text">
-                the Spotlight
+                Casting Directors
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-4xl mx-auto font-light drop-shadow-lg">
-              JAMZ gives acting schools a free platform to manage student portfolios, upload performances, 
-              and connect with casting directors nationwide. In return? You earn visibility, reputation, and revenue.
+              JAMZ transforms how you showcase students to casting directors. Instead of basic headshots and bio, 
+              share complete digital portfolios with introduction videos, monologues, scenes, and past work—all in one link.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -109,6 +108,43 @@ const ActingSchools = () => {
           </div>
         </section>
 
+        {/* Problem Solution Section */}
+        <section className="py-16 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-12">
+              The Problem with Traditional Student Sharing
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-6">
+                  <h3 className="text-xl font-bold text-red-800 mb-4">❌ The Old Way</h3>
+                  <ul className="space-y-3 text-red-700">
+                    <li>• Sending basic headshots and CVs via email</li>
+                    <li>• Limited information about acting range</li>
+                    <li>• No way to showcase actual performances</li>
+                    <li>• Casting directors can't assess real talent</li>
+                    <li>• Students get overlooked for opportunities</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div>
+                <div className="bg-green-50 border-l-4 border-green-400 p-6">
+                  <h3 className="text-xl font-bold text-green-800 mb-4">✅ The JAMZ Way</h3>
+                  <ul className="space-y-3 text-green-700">
+                    <li>• Complete digital portfolio in one shareable link</li>
+                    <li>• Introduction videos showing personality</li>
+                    <li>• Multiple monologues and scene performances</li>
+                    <li>• Past work and achievements showcase</li>
+                    <li>• Casting directors see the full talent picture</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Value Snapshot Grid */}
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
@@ -119,14 +155,14 @@ const ActingSchools = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white border-0 shadow-lg">
                 <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-amber-100 to-orange-100 group-hover:from-amber-200 group-hover:to-orange-200 transition-all duration-300">
-                    <GraduationCap className="w-8 h-8 text-amber-600" />
+                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 group-hover:from-blue-200 group-hover:to-indigo-200 transition-all duration-300">
+                    <FileVideo className="w-8 h-8 text-blue-600" />
                   </div>
-                  <CardTitle className="text-lg font-bold text-slate-900">Student Portfolio Management</CardTitle>
+                  <CardTitle className="text-lg font-bold text-slate-900">Complete Digital Portfolios</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-slate-600 text-center text-sm">
-                    Store and showcase monologues, scenes, bios—digitally.
+                    Introduction videos, monologues, scenes, past work—all in one shareable link for casting directors.
                   </p>
                 </CardContent>
               </Card>
@@ -147,8 +183,8 @@ const ActingSchools = () => {
 
               <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white border-0 shadow-lg">
                 <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 group-hover:from-blue-200 group-hover:to-indigo-200 transition-all duration-300">
-                    <Award className="w-8 h-8 text-blue-600" />
+                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-amber-100 to-orange-100 group-hover:from-amber-200 group-hover:to-orange-200 transition-all duration-300">
+                    <Award className="w-8 h-8 text-amber-600" />
                   </div>
                   <CardTitle className="text-lg font-bold text-slate-900">JAMZ Certification Badge</CardTitle>
                 </CardHeader>
