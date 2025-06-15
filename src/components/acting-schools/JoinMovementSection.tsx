@@ -10,14 +10,14 @@ export const JoinMovementSection = ({ onApplyClick }: JoinMovementSectionProps) 
     <section className="py-16 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-          We're Building India's Largest 
+          Join India's Premier 
           <span className="block text-transparent bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text">
-            Talent Launchpad—Join Us
+            Talent Development Ecosystem
           </span>
         </h2>
         <p className="text-xl text-slate-700 mb-8 leading-relaxed">
-          Whether you run a classroom in Bhopal or a campus in Mumbai, 
-          JAMZ is built to showcase your talent and amplify your impact.
+          Whether you operate an intimate studio in Bhopal or manage a comprehensive campus in Mumbai, 
+          JAMZ is designed to elevate your talent and amplify your institutional impact across the industry.
         </p>
         <Button 
           size="lg"

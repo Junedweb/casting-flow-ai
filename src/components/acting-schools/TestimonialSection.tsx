@@ -14,13 +14,13 @@ export const TestimonialSection = () => {
               ))}
             </div>
             <blockquote className="text-xl md:text-2xl text-slate-700 italic mb-6 leading-relaxed">
-              "We never had a proper platform to showcase our students. With JAMZ, casting calls started coming in directly. 
-              Plus, the YouTube model helped us fund better workshops."
+              "Previously, we lacked a professional platform to showcase our students' capabilities. With JAMZ, casting opportunities began arriving directly to our institution. 
+              Additionally, the revenue-sharing model has enabled us to invest in superior workshop facilities."
             </blockquote>
             <div className="flex items-center justify-center">
               <div>
                 <p className="font-semibold text-slate-900">Nisha R.</p>
-                <p className="text-sm text-slate-600">School Director, Indore</p>
+                <p className="text-sm text-slate-600">Director, Premier Acting Institute, Indore</p>
               </div>
             </div>
           </CardContent>

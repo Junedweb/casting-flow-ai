@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { trackButtonClick } from "@/utils/buttonTracker";
 import { SEOHead } from "@/components/SEOHead";
+import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/acting-schools/HeroSection";
 import { ProblemSolutionSection } from "@/components/acting-schools/ProblemSolutionSection";
@@ -27,7 +28,7 @@ const ActingSchools = () => {
 
   const seoData = {
     title: "JAMZ for Acting Schools | Student Portfolio Platform & Revenue Sharing",
-    description: "Free platform for acting schools to manage student portfolios, showcase performances, and connect with casting directors. Join our certified school partner program with revenue sharing.",
+    description: "Professional platform for acting schools to manage student portfolios, showcase performances, and connect with casting directors. Join our certified school partner program with revenue sharing.",
     keywords: "acting schools, student portfolios, performance platform, casting directors, acting school certification, revenue sharing, talent showcase",
     canonicalUrl: "https://jamz-casting.lovable.app/acting-schools"
   };
@@ -36,6 +37,7 @@ const ActingSchools = () => {
     <>
       <SEOHead {...seoData} />
       <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
+        <Navigation />
         <HeroSection 
           onApplyClick={handleApplyClick}
           onHowItWorksClick={handleHowItWorksClick}
