@@ -35,7 +35,7 @@ export const HeroSection = () => {
   return (
     <>
       <SEOHead structuredData={heroStructuredData} />
-      <section className="relative py-8 px-6 overflow-hidden">
+      <section className="relative py-24 px-6 overflow-hidden">
         {/* Background Image - Wall of Fame with JAMZ Platform */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
