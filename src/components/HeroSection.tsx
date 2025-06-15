@@ -36,15 +36,15 @@ export const HeroSection = () => {
     <>
       <SEOHead structuredData={heroStructuredData} />
       <section className="relative py-12 px-6 overflow-hidden">
-        {/* Background Image - Casting office with movie posters wall and JAMZ platform */}
+        {/* Background Image - Wall of Fame with JAMZ Platform */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundImage: `url('/lovable-uploads/2d4ae63f-1922-4804-9c05-ce6e7a8069fe.png')`,
           }}
         >
           {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-black/70"></div>
         </div>
 
         {/* Content - positioned above background */}
