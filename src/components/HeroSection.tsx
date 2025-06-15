@@ -37,88 +37,105 @@ export const HeroSection = () => {
   return (
     <>
       <SEOHead structuredData={heroStructuredData} />
-      <section className="min-h-screen flex items-center justify-center px-4 py-8 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <section className="min-h-screen flex items-center justify-center px-3 py-6 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="absolute inset-0">
           <OptimizedImage
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3882&q=80"
             alt="AI-powered casting technology interface with code and digital elements representing JAMZ platform innovation"
-            className="w-full h-full object-cover opacity-15"
+            className="w-full h-full object-cover opacity-10"
             priority={true}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/85 to-slate-900/85"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90"></div>
         </div>
         
-        <div className="relative w-full max-w-sm mx-auto text-center">
+        <div className="relative w-full max-w-xs mx-auto text-center">
+          {/* Who We Are */}
           <div className="mb-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-2xl">
-              <span className="text-xl font-bold text-white tracking-tight">
+            <div className="inline-flex items-center justify-center w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-2xl">
+              <span className="text-lg font-bold text-white tracking-tight">
                 JAMZ
               </span>
             </div>
+            <p className="text-orange-400 text-sm font-medium mb-2">
+              We Build Casting Tech for Directors
+            </p>
           </div>
-          
-          <h1 className="text-2xl font-bold text-white mb-4 leading-tight">
-            Your WhatsApp is NOT a<br />
-            <span className="text-orange-400">Casting Database</span>
+
+          {/* The Hook */}
+          <h1 className="text-xl font-bold text-white mb-4 leading-tight">
+            We Turn Your 3-Hour<br />
+            Actor Hunt Into a<br />
+            <span className="text-orange-400">3-Second Search</span>
           </h1>
           
-          <h2 className="text-base text-slate-300 mb-6 leading-relaxed">
-            Stop scrolling through 500+ photos at 2 AM.<br />
-            <span className="text-yellow-400 font-semibold">Find any face in 3 seconds.</span>
-          </h2>
-
-          <div className="bg-slate-800/60 backdrop-blur-sm rounded-xl p-4 mb-6 border border-slate-700">
-            <div className="text-slate-300 text-sm leading-relaxed space-y-3">
-              <p className="flex items-start">
-                <span className="text-green-400 mr-2 flex-shrink-0 text-base">✓</span>
-                <span>Upload face → 10 matches in seconds</span>
+          {/* What We Do */}
+          <div className="bg-slate-800/70 backdrop-blur-sm rounded-lg p-4 mb-6 border border-slate-700">
+            <h2 className="text-white font-semibold text-sm mb-3">
+              Here's How We Kill Your Casting Hell:
+            </h2>
+            <div className="text-slate-300 text-xs leading-relaxed space-y-2">
+              <p className="flex items-start text-left">
+                <span className="text-green-400 mr-2 flex-shrink-0">1.</span>
+                <span>Upload any face → Get 10 perfect matches instantly</span>
               </p>
-              <p className="flex items-start">
-                <span className="text-green-400 mr-2 flex-shrink-0 text-base">✓</span>
-                <span>₹5 Cr penalty-proof data protection</span>
+              <p className="flex items-start text-left">
+                <span className="text-green-400 mr-2 flex-shrink-0">2.</span>
+                <span>No more scrolling through 500+ WhatsApp photos</span>
               </p>
-              <p className="flex items-start">
-                <span className="text-green-400 mr-2 flex-shrink-0 text-base">✓</span>
-                <span>Works like Google for faces</span>
+              <p className="flex items-start text-left">
+                <span className="text-green-400 mr-2 flex-shrink-0">3.</span>
+                <span>Your data stays protected (₹5 Cr penalty-proof)</span>
               </p>
             </div>
+          </div>
+
+          {/* What's In It For You */}
+          <div className="bg-gradient-to-r from-orange-500/20 to-red-600/20 backdrop-blur-sm rounded-lg p-4 mb-6 border border-orange-500/30">
+            <h3 className="text-orange-400 font-semibold text-sm mb-2">
+              What You Get:
+            </h3>
+            <p className="text-white text-xs font-medium">
+              3 hours of your life back every single day.<br />
+              Take on 50% more projects. Make more money.
+            </p>
           </div>
           
           <div className="mb-6">
             <Button 
               size="lg" 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 text-sm font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full"
               onClick={handleConsultationClick}
             >
-              Stop the WhatsApp Hell
+              Show Me How This Works
             </Button>
           </div>
           
-          <p className="text-slate-400 text-sm mb-8">
+          <p className="text-slate-400 text-xs mb-6">
             No sales pitch. Just real solutions.
           </p>
           
-          <div className="space-y-3">
-            <div className="flex items-center text-left bg-slate-800/40 rounded-xl p-4 backdrop-blur-sm">
-              <Database className="w-8 h-8 text-blue-400 mr-3 flex-shrink-0" aria-hidden="true" />
+          {/* Proof Points */}
+          <div className="space-y-2">
+            <div className="flex items-center text-left bg-slate-800/40 rounded-lg p-3 backdrop-blur-sm">
+              <Database className="w-6 h-6 text-blue-400 mr-3 flex-shrink-0" aria-hidden="true" />
               <div>
-                <h3 className="text-white font-semibold mb-1 text-sm">End Chat Chaos</h3>
-                <p className="text-slate-400 text-xs">All actors in one searchable place</p>
+                <h4 className="text-white font-semibold mb-1 text-xs">End Photo Chaos</h4>
+                <p className="text-slate-400 text-xs">One place. All actors. Instant search.</p>
               </div>
             </div>
-            <div className="flex items-center text-left bg-slate-800/40 rounded-xl p-4 backdrop-blur-sm">
-              <Users className="w-8 h-8 text-green-400 mr-3 flex-shrink-0" aria-hidden="true" />
+            <div className="flex items-center text-left bg-slate-800/40 rounded-lg p-3 backdrop-blur-sm">
+              <Users className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" aria-hidden="true" />
               <div>
-                <h3 className="text-white font-semibold mb-1 text-sm">Face = Results</h3>
-                <p className="text-slate-400 text-xs">AI finds lookalikes instantly</p>
+                <h4 className="text-white font-semibold mb-1 text-xs">AI Face Match</h4>
+                <p className="text-slate-400 text-xs">Find lookalikes in seconds, not hours.</p>
               </div>
             </div>
-            <div className="flex items-center text-left bg-slate-800/40 rounded-xl p-4 backdrop-blur-sm">
-              <Shield className="w-8 h-8 text-orange-400 mr-3 flex-shrink-0" aria-hidden="true" />
+            <div className="flex items-center text-left bg-slate-800/40 rounded-lg p-3 backdrop-blur-sm">
+              <Shield className="w-6 h-6 text-orange-400 mr-3 flex-shrink-0" aria-hidden="true" />
               <div>
-                <h3 className="text-white font-semibold mb-1 text-sm">Legal Protection</h3>
-                <p className="text-slate-400 text-xs">GDPR bulletproof security</p>
+                <h4 className="text-white font-semibold mb-1 text-xs">Legal Shield</h4>
+                <p className="text-slate-400 text-xs">GDPR bulletproof. Zero risk.</p>
               </div>
             </div>
           </div>
