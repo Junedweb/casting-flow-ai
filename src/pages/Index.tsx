@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { PainPointsSection } from "@/components/PainPointsSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
@@ -11,7 +12,8 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 relative">
+      <Navigation />
       <HeroSection />
       <PainPointsSection />
       <FeaturesSection />
