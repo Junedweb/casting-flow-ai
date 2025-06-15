@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Play, Video, Users } from "lucide-react";
+import { Video, Users } from "lucide-react";
 
 interface ActorsHeroSectionProps {
   onCreateProfileClick: () => void;
@@ -33,22 +33,13 @@ export const ActorsHeroSection = ({ onCreateProfileClick, onWatchStoriesClick }:
           Upload monologues, share reels, and let casting directors find you directly.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <div className="flex justify-center mb-12">
           <Button 
             onClick={onCreateProfileClick}
             size="lg" 
             className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-10 py-6 text-xl font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
             Create Your JAMZ Profile - ₹500/month
-          </Button>
-          <Button 
-            onClick={onWatchStoriesClick}
-            variant="outline" 
-            size="lg" 
-            className="px-8 py-6 text-lg font-semibold border-2 border-purple-200 hover:border-purple-300"
-          >
-            <Play className="w-5 h-5 mr-2" />
-            Watch Actor Success Stories
           </Button>
         </div>
         
