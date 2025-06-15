@@ -40,8 +40,8 @@ export const HeroSection = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/lovable-uploads/2d4ae63f-1922-4804-9c05-ce6e7a8069fe.png')`,
-            opacity: 0.4
+            backgroundImage: `url('/lovable-uploads/c4bb65e6-c38a-4df8-a9ff-648d29ba7037.png')`,
+            opacity: 0.5
           }}
         />
         
