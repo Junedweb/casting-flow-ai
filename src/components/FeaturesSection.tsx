@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ImageModal } from "./ImageModal";
 import { FeatureCard } from "./FeatureCard";
@@ -56,7 +55,7 @@ export const FeaturesSection = () => {
       icon: "users",
       title: "Script Analysis & Character Identification",
       description: "Analyse scripts and based on that identify the character checklist and suggestions to fill in the roles, in no time. Cutting lots of the time consuming process.",
-      imageSrc: "/lovable-uploads/0e61e0b8-24e8-4882-8fee-58facc1e2214.png"
+      imageSrc: "/lovable-uploads/d325320a-59dc-40f2-96bb-35a0edacedfd.png"
     },
     {
       icon: "users",
