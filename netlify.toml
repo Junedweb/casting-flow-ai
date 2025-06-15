@@ -17,12 +17,20 @@
   to = "/sitemap.xml"
   status = 200
 
-# Handle crawler user agents with server-side rendering simulation
+# Enhanced crawler user agent detection for preview and production
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  conditions = {User-Agent = "Googlebot,Bingbot,Slurp,DuckDuckBot,Baiduspider,YandexBot,facebookexternalhit,Twitterbot,LinkedInBot,WhatsApp,TelegramBot,ChatGPT-User,GPTBot,Google-Extended,CCBot,anthropic-ai,Claude-Web"}
+  conditions = {User-Agent = "Googlebot,Bingbot,Slurp,DuckDuckBot,Baiduspider,YandexBot,facebookexternalhit,Twitterbot,LinkedInBot,WhatsApp,TelegramBot,ChatGPT-User,GPTBot,Google-Extended,CCBot,anthropic-ai,Claude-Web,Mozilla/5.0 AppleWebKit (KHTML like Gecko) Chrome Safari ChatGPT"}
+  force = false
+
+# Additional ChatGPT specific patterns
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {User-Agent = "*ChatGPT*,*GPT*,*OpenAI*,*anthropic*,*claude*"}
   force = false
 
 # Main SPA redirect for regular users - must be last
@@ -35,21 +43,25 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
+    X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     X-Robots-Tag = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     Cache-Control = "public, max-age=1800"
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, User-Agent"
 
-# Crawler-specific headers
+# ChatGPT and AI crawler specific headers
 [[headers]]
   for = "/"
   [headers.values]
     X-Robots-Tag = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    Cache-Control = "public, max-age=900"
+    Cache-Control = "public, max-age=300"
     Vary = "User-Agent"
+    Content-Type = "text/html; charset=utf-8"
 
 # Robots.txt headers
 [[headers]]
