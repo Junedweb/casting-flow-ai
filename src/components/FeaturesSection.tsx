@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { ImageModal } from "./ImageModal";
 import { FeatureCard } from "./FeatureCard";
@@ -53,8 +54,8 @@ export const FeaturesSection = () => {
     },
     {
       icon: "users",
-      title: "Additional Suggestions of Actors and Actresses",
-      description: "Get intelligent suggestions of actors and actresses beyond your own database as per the requirement to match your expectations and close the requirement quickly.",
+      title: "Script Analysis & Character Identification",
+      description: "Analyse scripts and based on that identify the character checklist and suggestions to fill in the roles, in no time. Cutting lots of the time consuming process.",
       imageSrc: "/lovable-uploads/0e61e0b8-24e8-4882-8fee-58facc1e2214.png"
     },
     {
