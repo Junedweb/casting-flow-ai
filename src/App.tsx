@@ -1,13 +1,11 @@
+
 import { useEffect } from "react";
-import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { StickyConsultationButton } from "@/components/StickyConsultationButton";
-import { CookieConsent } from "@/components/CookieConsent";
-import { CrawlerOptimization } from "@/components/CrawlerOptimization";
 import { initGA, trackPageView } from "@/utils/analytics";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
 import Index from "./pages/Index";
@@ -44,34 +42,30 @@ const App = () => {
   }, []);
 
   return (
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <CrawlerOptimization />
-            <PageTracker />
-            <StickyConsultationButton />
-            <CookieConsent />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/submissions" element={<Submissions />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/support" element={<Support />} />
-              <Route path="/gdpr" element={<Gdpr />} />
-              <Route path="/partnership" element={<Partnership />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <PageTracker />
+          <StickyConsultationButton />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/submissions" element={<Submissions />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/gdpr" element={<Gdpr />} />
+            <Route path="/partnership" element={<Partnership />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 };
 

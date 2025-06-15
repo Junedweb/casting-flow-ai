@@ -1,49 +1,14 @@
-
-User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /admin/
-Disallow: /*.json$
-Disallow: /*?*
-
-# Allow important crawlers
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 2
-
-User-agent: facebookexternalhit
 Allow: /
 
 User-agent: Twitterbot
 Allow: /
 
-User-agent: LinkedInBot
+User-agent: facebookexternalhit
 Allow: /
 
-User-agent: WhatsApp
+User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://jamz-casting.lovable.app/sitemap.xml
-
-# Clean param handling
-Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
-
-# Host directive for preferred domain
-Host: https://jamz-casting.lovable.app

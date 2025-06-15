@@ -1,7 +1,0 @@
-
-Contact: mailto:security@jamz-casting.com
-Expires: 2025-12-31T23:59:59.000Z
-Encryption: https://jamz-casting.lovable.app/pgp-key.txt
-Preferred-Languages: en
-Canonical: https://jamz-casting.lovable.app/.well-known/security.txt
-Policy: https://jamz-casting.lovable.app/security-policy
