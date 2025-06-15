@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ImageModal } from "./ImageModal";
 import { FeatureCard } from "./FeatureCard";
@@ -41,9 +40,9 @@ export const FeaturesSection = () => {
       imageSrc: "/lovable-uploads/5ce113b3-a5e9-428d-a3e1-fce548cf5988.png"
     },
     {
-      icon: "bell",
-      title: "Talent Interest Tracker",
-      description: "Actors update availability directly. You save 100s of back-and-forth calls.",
+      icon: "dashboard",
+      title: "Dashboard with Project level progress tracking",
+      description: "Track project milestones, casting progress, and team collaboration in real-time across multiple productions.",
       imageSrc: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
     },
     {
