@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { trackButtonClick } from "@/utils/buttonTracker";
 import { trackFormSubmission, trackEvent } from "@/utils/analytics";
 import { FormFields } from "./FormFields";
+import MathCaptcha from "./MathCaptcha";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,8 @@ const ContactForm = () => {
     preferredTime: ""
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  const [captchaReset, setCaptchaReset] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -34,6 +37,16 @@ const ContactForm = () => {
     
     // Track form submission attempt
     trackButtonClick("Book Consultation - Form Submit");
+    
+    // Validate captcha first
+    if (!isCaptchaValid) {
+      toast({
+        title: "Captcha Required",
+        description: "Please solve the math problem to verify you're human.",
+        variant: "destructive",
+      });
+      return;
+    }
     
     // Validate Indian mobile number if +91 is selected
     if (formData.countryCode === "+91" && !validateIndianMobile(formData.phone)) {
@@ -113,6 +126,9 @@ const ContactForm = () => {
       preferredDate: "",
       preferredTime: ""
     });
+    // Reset captcha
+    setCaptchaReset(true);
+    setTimeout(() => setCaptchaReset(false), 100);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -141,11 +157,16 @@ const ContactForm = () => {
             onInputChange={handleInputChange} 
           />
 
+          <MathCaptcha 
+            onValidation={setIsCaptchaValid}
+            onReset={captchaReset}
+          />
+
           <div className="space-y-4">
             <Button 
               type="submit"
               className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 text-lg font-semibold"
-              disabled={isLoading}
+              disabled={isLoading || !isCaptchaValid}
             >
               {isLoading ? "Submitting..." : "Book Consultation"}
             </Button>
