@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, X, Clock, IndianRupee } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 export const ComparisonTable = () => {
   const comparisons = [
@@ -26,13 +26,6 @@ export const ComparisonTable = () => {
       jamzIcon: Check
     },
     {
-      feature: "Daily maintenance",
-      inHouse: "Your headache",
-      jamz: "We handle it",
-      inHouseIcon: X,
-      jamzIcon: Check
-    },
-    {
       feature: "When tech breaks",
       inHouse: "Project stops",
       jamz: "Keeps running",
@@ -42,41 +35,41 @@ export const ComparisonTable = () => {
   ];
 
   return (
-    <section className="py-12 px-3 bg-white">
-      <div className="max-w-lg mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 leading-tight">
+    <section className="py-8 px-4 bg-white">
+      <div className="max-w-sm mx-auto">
+        <div className="text-center mb-6">
+          <h2 className="text-xl font-bold text-slate-900 mb-4 leading-tight">
             Build vs Buy: The Brutal Truth
           </h2>
-          <p className="text-base text-slate-600">
-            Stop burning money and months on custom disasters.
+          <p className="text-sm text-slate-600">
+            Stop burning money on custom disasters.
           </p>
         </div>
 
         <Card className="overflow-hidden shadow-lg">
-          <CardHeader className="bg-slate-900 text-white p-4">
-            <CardTitle className="text-center text-lg">Reality Check</CardTitle>
+          <CardHeader className="bg-slate-900 text-white p-3">
+            <CardTitle className="text-center text-base">Reality Check</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
-            <div className="space-y-4 p-4">
+            <div className="space-y-3 p-3">
               {comparisons.map((item, index) => (
-                <div key={index} className="bg-slate-50 rounded-lg p-4">
-                  <h3 className="font-semibold text-slate-900 mb-3 text-sm">{item.feature}</h3>
+                <div key={index} className="bg-slate-50 rounded-lg p-3">
+                  <h3 className="font-semibold text-slate-900 mb-3 text-xs">{item.feature}</h3>
                   
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between p-3 bg-red-50 rounded-md border-l-4 border-red-400">
-                      <span className="text-xs font-medium text-slate-600">Build It Yourself</span>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between p-2 bg-red-50 rounded-md border-l-4 border-red-400">
+                      <span className="text-xs font-medium text-slate-600">Build Yourself</span>
                       <div className="flex items-center">
-                        <item.inHouseIcon className="w-4 h-4 text-red-500 mr-2" />
-                        <span className="text-sm text-slate-700 font-medium">{item.inHouse}</span>
+                        <item.inHouseIcon className="w-3 h-3 text-red-500 mr-1" />
+                        <span className="text-xs text-slate-700 font-medium">{item.inHouse}</span>
                       </div>
                     </div>
                     
-                    <div className="flex items-center justify-between p-3 bg-green-50 rounded-md border-l-4 border-green-400">
+                    <div className="flex items-center justify-between p-2 bg-green-50 rounded-md border-l-4 border-green-400">
                       <span className="text-xs font-medium text-slate-600">JAMZ</span>
                       <div className="flex items-center">
-                        <item.jamzIcon className="w-4 h-4 text-green-500 mr-2" />
-                        <span className="text-sm text-slate-700 font-semibold">{item.jamz}</span>
+                        <item.jamzIcon className="w-3 h-3 text-green-500 mr-1" />
+                        <span className="text-xs text-slate-700 font-semibold">{item.jamz}</span>
                       </div>
                     </div>
                   </div>
