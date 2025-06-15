@@ -1,12 +1,28 @@
 
 # robots.txt for JAMZ Casting Platform
+# Last updated: 2025-06-15
+
+# Default rule - Allow all crawlers
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
-# Main search engine crawlers
+# Major search engine crawlers - Explicit permissions
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 User-agent: Bingbot
 Allow: /
@@ -24,8 +40,15 @@ User-agent: Baiduspider
 Allow: /
 Crawl-delay: 2
 
-# Social media crawlers
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Social media crawlers - Explicit permissions
 User-agent: facebookexternalhit
+Allow: /
+
+User-agent: facebookcatalog
 Allow: /
 
 User-agent: Twitterbot
@@ -40,14 +63,11 @@ Allow: /
 User-agent: TelegramBot
 Allow: /
 
-# AI and assistant crawlers
+# AI and assistant crawlers - Explicit permissions
 User-agent: ChatGPT-User
 Allow: /
 
 User-agent: GPTBot
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 User-agent: CCBot
@@ -59,7 +79,13 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-# SEO and analysis tools
+User-agent: Claude
+Allow: /
+
+User-agent: Anthropic
+Allow: /
+
+# SEO and analysis tools - Explicit permissions
 User-agent: SemrushBot
 Allow: /
 Crawl-delay: 2
@@ -72,5 +98,21 @@ User-agent: MJ12bot
 Allow: /
 Crawl-delay: 3
 
+User-agent: DotBot
+Allow: /
+Crawl-delay: 2
+
+# Archive crawlers
+User-agent: ia_archiver
+Allow: /
+
+User-agent: Wayback
+Allow: /
+
 # Sitemap location
 Sitemap: https://jamz-casting.lovable.app/sitemap.xml
+
+# Additional instructions for crawlers
+# This site is optimized for crawler access
+# All content is available for indexing
+# Contact: support@jamz-casting.com for crawler issues

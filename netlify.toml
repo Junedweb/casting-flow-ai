@@ -6,13 +6,32 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Main SPA redirect - must be last
+# Crawler-friendly redirects - handle known crawler paths first
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+  
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+
+# Handle crawler user agents with server-side rendering simulation
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {User-Agent = "Googlebot,Bingbot,Slurp,DuckDuckBot,Baiduspider,YandexBot,facebookexternalhit,Twitterbot,LinkedInBot,WhatsApp,TelegramBot,ChatGPT-User,GPTBot,Google-Extended,CCBot,anthropic-ai,Claude-Web"}
+  force = false
+
+# Main SPA redirect for regular users - must be last
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Security and performance headers
+# Enhanced security and performance headers
 [[headers]]
   for = "/*"
   [headers.values]
@@ -22,14 +41,15 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     X-Robots-Tag = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    Cache-Control = "public, max-age=3600"
+    Cache-Control = "public, max-age=1800"
 
-# Special handling for crawlers and bots
+# Crawler-specific headers
 [[headers]]
   for = "/"
   [headers.values]
     X-Robots-Tag = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    Cache-Control = "public, max-age=1800"
+    Cache-Control = "public, max-age=900"
+    Vary = "User-Agent"
 
 # Robots.txt headers
 [[headers]]

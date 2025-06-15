@@ -14,6 +14,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { initGA, trackPageView } from "@/utils/analytics";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
 import { performanceUtils } from "@/utils/performance";
+import { detectCrawler, enhanceCrawlerAccess } from "@/utils/crawlerUtils";
 
 // Lazy load pages for better code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -77,8 +78,18 @@ const PageTracker = () => {
 
 const App = () => {
   useEffect(() => {
-    // Initialize Google Analytics on app load
-    initGA();
+    // Enhanced crawler detection and optimization
+    const isCrawler = detectCrawler();
+    
+    if (isCrawler) {
+      console.log('🤖 Crawler detected - enhancing access');
+      enhanceCrawlerAccess();
+    }
+    
+    // Initialize Google Analytics on app load (only for non-crawlers)
+    if (!isCrawler) {
+      initGA();
+    }
     
     // Log initial performance metrics
     if (process.env.NODE_ENV === 'development') {

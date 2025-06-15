@@ -4,7 +4,10 @@ import { useEffect } from 'react';
 export const CrawlerOptimization = () => {
   useEffect(() => {
     try {
-      // Ensure basic meta tags for crawler compatibility
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isCrawler = /bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|whatsapp|telegrambot|chatgpt|gptbot|google-extended|ccbot|anthropic|claude/i.test(userAgent);
+
+      // Enhanced meta tags for crawler compatibility
       const ensureMetaTags = () => {
         // Ensure charset is first
         if (!document.querySelector('meta[charset]')) {
@@ -41,22 +44,103 @@ export const CrawlerOptimization = () => {
         if (!document.documentElement.getAttribute('lang')) {
           document.documentElement.setAttribute('lang', 'en-IN');
         }
+
+        // Add crawler-specific meta tags
+        if (isCrawler) {
+          // Add prerender meta tag for crawlers
+          if (!document.querySelector('meta[name="prerender-spa-plugin"]')) {
+            const prerender = document.createElement('meta');
+            prerender.setAttribute('name', 'prerender-spa-plugin');
+            prerender.setAttribute('content', 'processed');
+            document.head.appendChild(prerender);
+          }
+
+          // Add cache control for crawlers
+          if (!document.querySelector('meta[http-equiv="cache-control"]')) {
+            const cacheControl = document.createElement('meta');
+            cacheControl.setAttribute('http-equiv', 'cache-control');
+            cacheControl.setAttribute('content', 'no-cache, must-revalidate');
+            document.head.appendChild(cacheControl);
+          }
+        }
       };
 
-      // Add structured data for better crawler understanding
+      // Enhanced structured data for better crawler understanding
       const addStructuredData = () => {
         if (!document.querySelector('script[type="application/ld+json"]')) {
           const structuredData = {
             "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "JAMZ Casting Platform",
-            "description": "AI-powered casting platform for India's entertainment industry",
-            "url": "https://jamz-casting.lovable.app/",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://jamz-casting.lovable.app/?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://jamz-casting.lovable.app/#organization",
+                "name": "JAMZ",
+                "url": "https://jamz-casting.lovable.app/",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://jamz-casting.lovable.app/logo.png",
+                  "width": 512,
+                  "height": 512
+                },
+                "description": "AI-powered casting platform for India's entertainment industry",
+                "foundingDate": "2024",
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "India"
+                },
+                "serviceType": ["Casting Platform", "Talent Management", "AI Face Matching"],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-XXX-XXX-XXXX",
+                  "contactType": "Customer Service",
+                  "availableLanguage": ["English", "Hindi"],
+                  "areaServed": "IN"
+                }
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://jamz-casting.lovable.app/#website",
+                "url": "https://jamz-casting.lovable.app/",
+                "name": "JAMZ Casting Platform",
+                "description": "Discover and cast verified talent across India with JAMZ. AI-powered face matching, secure GDPR-compliant database, and streamlined casting workflow.",
+                "publisher": {
+                  "@id": "https://jamz-casting.lovable.app/#organization"
+                },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://jamz-casting.lovable.app/?q={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                },
+                "inLanguage": "en-IN"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "JAMZ Casting Platform",
+                "description": "AI-powered casting platform for India's entertainment industry",
+                "url": "https://jamz-casting.lovable.app/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web Browser",
+                "softwareVersion": "1.0",
+                "datePublished": "2024-01-01",
+                "dateModified": new Date().toISOString(),
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "INR",
+                  "description": "Free consultation available",
+                  "availability": "https://schema.org/InStock"
+                },
+                "provider": {
+                  "@id": "https://jamz-casting.lovable.app/#organization"
+                },
+                "featureList": [
+                  "AI-powered character analysis",
+                  "Smart talent pool matching",
+                  "GDPR compliant database",
+                  "Verified talent profiles"
+                ]
+              }
+            ]
           };
           
           const script = document.createElement('script');
@@ -88,6 +172,36 @@ export const CrawlerOptimization = () => {
         const mainContent = document.querySelector('main') || document.querySelector('#root > div');
         if (mainContent && !mainContent.id) {
           mainContent.id = 'main-content';
+          mainContent.setAttribute('role', 'main');
+        }
+
+        // Add proper heading structure
+        const h1 = document.querySelector('h1');
+        if (h1 && !h1.id) {
+          h1.id = 'main-heading';
+        }
+      };
+
+      // Crawler-specific optimizations
+      const crawlerSpecificOptimizations = () => {
+        if (isCrawler) {
+          // Disable animations for crawlers
+          const style = document.createElement('style');
+          style.textContent = `
+            *, *::before, *::after {
+              animation-duration: 0.01ms !important;
+              animation-iteration-count: 1 !important;
+              transition-duration: 0.01ms !important;
+              scroll-behavior: auto !important;
+            }
+          `;
+          document.head.appendChild(style);
+
+          // Add crawler identification in body class
+          document.body.classList.add('crawler-detected');
+          
+          // Log crawler access for debugging
+          console.log('🤖 Crawler optimizations applied for:', userAgent);
         }
       };
 
@@ -95,9 +209,10 @@ export const CrawlerOptimization = () => {
       ensureMetaTags();
       addStructuredData();
       enhanceAccessibility();
+      crawlerSpecificOptimizations();
 
       // Log optimization completion
-      console.log('✅ Crawler optimization completed');
+      console.log('✅ Enhanced crawler optimization completed');
 
     } catch (error) {
       console.error('❌ Error in CrawlerOptimization:', error);
