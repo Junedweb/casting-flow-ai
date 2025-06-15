@@ -30,7 +30,7 @@ export const Footer = () => {
 
           <Separator className="bg-slate-700 mb-8" />
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="font-bold text-lg mb-4">Legal</h3>
               <ul className="space-y-2 text-slate-300">
@@ -48,16 +48,6 @@ export const Footer = () => {
                 <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors">Partner With Us</a></li>
                 <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-lg mb-4">Resources</h3>
-              <ul className="space-y-2 text-slate-300">
-                <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-                <li><Link to="/support" className="hover:text-white transition-colors">Support Center</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
               </ul>
             </div>
 
