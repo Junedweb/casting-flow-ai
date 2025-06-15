@@ -6,22 +6,17 @@ export const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleActingSchoolsClick = () => {
-    navigate("/acting-schools");
-  };
-
   const handleCastingClick = () => {
     navigate("/");
+  };
+
+  const handleActingSchoolsClick = () => {
+    navigate("/acting-schools");
   };
 
   const handleActorsClick = () => {
     navigate("/actors");
   };
-
-  // Determine which button to show based on current route
-  const isOnActingSchoolsPage = location.pathname === "/acting-schools" || location.pathname === "/acting-school-partnership";
-  const isOnCastingPage = location.pathname === "/";
-  const isOnActorsPage = location.pathname === "/actors";
 
   return (
     <nav className="relative z-50 flex justify-between items-center p-6 bg-white/90 backdrop-blur-sm border-b border-gray-200">
@@ -34,33 +29,38 @@ export const Navigation = () => {
 
       {/* Navigation - Top Right */}
       <div className="flex items-center gap-3">
-        {isOnActingSchoolsPage && (
-          <Button 
-            variant="outline"
-            className="bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-6 py-2 text-sm font-medium rounded-lg"
-            onClick={handleCastingClick}
-          >
-            Tap For Casting Directors
-          </Button>
-        )}
-        {isOnActorsPage && (
-          <Button 
-            variant="outline"
-            className="bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-6 py-2 text-sm font-medium rounded-lg"
-            onClick={handleCastingClick}
-          >
-            Tap For Casting Directors
-          </Button>
-        )}
-        {(isOnCastingPage || (!isOnActingSchoolsPage && !isOnCastingPage && !isOnActorsPage)) && (
-          <Button 
-            variant="outline"
-            className="bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-6 py-2 text-sm font-medium rounded-lg"
-            onClick={handleActorsClick}
-          >
-            Tap For Actors
-          </Button>
-        )}
+        <Button 
+          variant={location.pathname === "/" ? "default" : "outline"}
+          className={location.pathname === "/" 
+            ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white px-4 py-2 text-sm font-medium rounded-lg"
+            : "bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-4 py-2 text-sm font-medium rounded-lg"
+          }
+          onClick={handleCastingClick}
+        >
+          Casting Directors
+        </Button>
+        
+        <Button 
+          variant={location.pathname === "/acting-schools" || location.pathname === "/acting-school-partnership" ? "default" : "outline"}
+          className={location.pathname === "/acting-schools" || location.pathname === "/acting-school-partnership"
+            ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white px-4 py-2 text-sm font-medium rounded-lg"
+            : "bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-4 py-2 text-sm font-medium rounded-lg"
+          }
+          onClick={handleActingSchoolsClick}
+        >
+          Acting Schools
+        </Button>
+        
+        <Button 
+          variant={location.pathname === "/actors" ? "default" : "outline"}
+          className={location.pathname === "/actors"
+            ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white px-4 py-2 text-sm font-medium rounded-lg"
+            : "bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-4 py-2 text-sm font-medium rounded-lg"
+          }
+          onClick={handleActorsClick}
+        >
+          Actors
+        </Button>
       </div>
     </nav>
   );
