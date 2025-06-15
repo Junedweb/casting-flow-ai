@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ImageModal } from "./ImageModal";
 import { FeatureCard } from "./FeatureCard";
@@ -49,7 +48,7 @@ export const FeaturesSection = () => {
     {
       icon: "refresh",
       title: "Self-Updating Talent Profiles",
-      description: "Real-time actor availability updates. No more 100+ calls and messages to check if actors are available for auditions. Know instantly who's free and interested.",
+      description: "Actors can update their profiles in real-time with latest information, upload up to 3 recent images, and share YouTube monologue or introduction video links. No more 100+ calls and messages to check if actors are available for auditions. CDs can screen candidates easily with current portfolios and know instantly who's free and interested.",
       imageSrc: "/lovable-uploads/63c340ac-9936-409d-a1aa-4d63608998ec.png"
     },
     {
