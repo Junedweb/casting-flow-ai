@@ -1,5 +1,4 @@
 
-
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { trackButtonClick } from "@/utils/buttonTracker";
@@ -60,8 +59,14 @@ export const HeroSection = () => {
               In Seconds
             </h1>
             
-            <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-light drop-shadow-lg sm:text-xl">
+            <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto font-light drop-shadow-lg sm:text-xl">
               AI-powered character analysis and smart talent matching for faster casting decisions.
+              <br />
+              <span className="text-yellow-300">Resulting multiple hours saved per month or project.</span>
+            </p>
+
+            <p className="text-base text-white/80 mb-8 max-w-2xl mx-auto">
+              Outsource requirements when needed - key information preserved for professional casting workflow.
             </p>
 
             {/* How it works - simplified */}
@@ -119,4 +124,3 @@ export const HeroSection = () => {
     </>
   );
 };
-
