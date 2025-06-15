@@ -50,17 +50,6 @@ export const HeroSection = () => {
 
         {/* Content - positioned above background */}
         <div className="relative z-10">
-          {/* JAMZ Logo - matching footer style */}
-          <div className="max-w-5xl mx-auto mb-4">
-            <div className="flex items-center justify-center">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-2xl border-4 border-white/20">
-                <h2 className="text-xl font-bold text-white">
-                  JAMZ
-                </h2>
-              </div>
-            </div>
-          </div>
-          
           {/* Content */}
           <div className="max-w-5xl mx-auto text-center">
             <div className="mb-4">
