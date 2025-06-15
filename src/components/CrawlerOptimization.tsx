@@ -7,7 +7,7 @@ export const CrawlerOptimization = () => {
     const addHrefLang = () => {
       const link = document.createElement('link');
       link.rel = 'alternate';
-      link.hrefLang = 'en-IN';
+      link.hreflang = 'en-IN';
       link.href = window.location.href;
       document.head.appendChild(link);
     };
