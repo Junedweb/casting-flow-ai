@@ -1,5 +1,3 @@
-
-
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { trackButtonClick } from "@/utils/buttonTracker";
@@ -54,10 +52,10 @@ export const HeroSection = () => {
           {/* Content */}
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-3xl font-bold text-white mb-3 leading-tight drop-shadow-2xl sm:text-4xl md:text-5xl lg:text-6xl sm:mb-4">
-              Turn Hours of Manual Work
               <span className="block text-transparent bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text">
-                Into Minutes of Smart Casting
+                3 Hours of Manual Work
               </span>
+              In Seconds
             </h1>
             
             <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-4xl mx-auto font-light drop-shadow-lg sm:text-xl md:text-2xl">
