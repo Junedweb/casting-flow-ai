@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Shield, Users, Database } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -20,10 +19,24 @@ export const HeroSection = () => {
       
       <div className="relative max-w-5xl mx-auto text-center">
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-64 h-64 md:w-80 md:h-80 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-2xl">
-            <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight">
-              JAMZ
-            </h1>
+          <div className="relative inline-block">
+            {/* Rotating background circle with enhanced glow */}
+            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-2xl animate-spin-slow opacity-90"></div>
+            
+            {/* Multiple glowing layers */}
+            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full blur-md opacity-60 animate-pulse"></div>
+            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-red-400 to-orange-600 rounded-full blur-lg opacity-40 animate-pulse delay-300"></div>
+            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-orange-300 to-yellow-500 rounded-full blur-xl opacity-20 animate-pulse delay-700"></div>
+            
+            {/* Main logo container */}
+            <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-2xl flex items-center justify-center backdrop-blur-sm">
+              {/* JAMz text with circular motion and glow */}
+              <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight relative animate-circular-glow">
+                <span className="relative inline-block animate-text-glow">
+                  JAMZ
+                </span>
+              </h1>
+            </div>
           </div>
         </div>
         
@@ -80,3 +93,72 @@ export const HeroSection = () => {
     </section>
   );
 };
+
+<style jsx>{`
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes circular-glow {
+      0% {
+        transform: translateX(-10px) rotate(0deg);
+        text-shadow: 0 0 20px #ff6b35, 0 0 40px #ff6b35, 0 0 60px #ff6b35, 0 0 80px #ff6b35;
+      }
+      25% {
+        transform: translateX(0px) translateY(-10px) rotate(90deg);
+        text-shadow: 0 0 25px #ffa500, 0 0 50px #ffa500, 0 0 75px #ffa500, 0 0 100px #ffa500;
+      }
+      50% {
+        transform: translateX(10px) rotate(180deg);
+        text-shadow: 0 0 30px #ffff00, 0 0 60px #ffff00, 0 0 90px #ffff00, 0 0 120px #ffff00;
+      }
+      75% {
+        transform: translateX(0px) translateY(10px) rotate(270deg);
+        text-shadow: 0 0 25px #ff4500, 0 0 50px #ff4500, 0 0 75px #ff4500, 0 0 100px #ff4500;
+      }
+      100% {
+        transform: translateX(-10px) rotate(360deg);
+        text-shadow: 0 0 20px #ff6b35, 0 0 40px #ff6b35, 0 0 60px #ff6b35, 0 0 80px #ff6b35;
+      }
+    }
+
+    @keyframes text-glow {
+      0%, 100% {
+        text-shadow: 
+          0 0 5px #fff,
+          0 0 10px #fff,
+          0 0 15px #ff6b35,
+          0 0 20px #ff6b35,
+          0 0 35px #ff6b35,
+          0 0 40px #ff6b35;
+        filter: brightness(1);
+      }
+      50% {
+        text-shadow: 
+          0 0 2px #fff,
+          0 0 5px #fff,
+          0 0 25px #ffa500,
+          0 0 30px #ffa500,
+          0 0 45px #ffa500,
+          0 0 50px #ffa500;
+        filter: brightness(1.3);
+      }
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 8s linear infinite;
+    }
+
+    .animate-circular-glow {
+      animation: circular-glow 6s ease-in-out infinite;
+    }
+
+    .animate-text-glow {
+      animation: text-glow 3s ease-in-out infinite;
+    }
+  `}</style>
