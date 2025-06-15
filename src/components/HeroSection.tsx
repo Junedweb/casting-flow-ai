@@ -55,26 +55,27 @@ export const HeroSection = () => {
             priority={true}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
         
         {/* Content */}
-        <div className="relative z-10 text-center max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-            AI-Powered 
-            <span className="text-yellow-400 block mt-2">Casting Revolution</span>
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
+            Advanced Casting Solutions for 
+            <span className="text-blue-400 block mt-2">Modern Filmmakers</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed">
-            Transform hours of talent search into instant perfect matches
+          <p className="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed max-w-3xl mx-auto drop-shadow-md">
+            Discover how leading production houses are streamlining their casting process 
+            with AI-powered talent matching and comprehensive database management
           </p>
           
           <Button 
             size="lg" 
-            className="bg-yellow-500 hover:bg-yellow-600 text-black px-10 py-5 text-xl font-semibold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
             onClick={handleConsultationClick}
           >
-            Discover the Future
+            Explore Our Solutions
           </Button>
         </div>
       </section>
