@@ -101,36 +101,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* Custom animations for JAMz logo - More subtle and refined */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes gentle-breathing {
-  0%, 100% {
-    text-shadow: 
-      0 0 8px #cbd5e1,
-      0 0 12px #64748b,
-      0 0 16px #475569;
-    filter: brightness(1);
-    transform: scale(1);
-  }
-  50% {
-    text-shadow: 
-      0 0 10px #e2e8f0,
-      0 0 15px #94a3b8,
-      0 0 20px #64748b;
-    filter: brightness(1.02);
-    transform: scale(1.002);
-  }
-}
-
-.animate-text-glow {
-  animation: gentle-breathing 4s ease-in-out infinite;
-}
