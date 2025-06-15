@@ -19,9 +19,9 @@ export const HeroSection = () => {
       </div>
       
       <div className="relative max-w-5xl mx-auto text-center">
-        <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-64 h-64 md:w-80 md:h-80 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-2xl">
-            <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight">
+        <div className="mb-6">
+          <div className="inline-flex items-center justify-center w-32 h-32 md:w-40 md:h-40 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-2xl">
+            <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
               JAMZ
             </h1>
           </div>
