@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -64,7 +63,7 @@ const Contact = () => {
     submissions.push(newSubmission);
     localStorage.setItem('consultationSubmissions', JSON.stringify(submissions));
 
-    // Send to Zapier webhook
+    // Send to Zapier webhook - simplified payload to avoid duplicates
     try {
       await fetch(ZAPIER_WEBHOOK_URL, {
         method: "POST",
@@ -78,8 +77,6 @@ const Contact = () => {
           preferredDate: formData.preferredDate,
           preferredTime: formData.preferredTime,
           timestamp: submissionTimestamp,
-          buttonName: "Book Consultation - Form Submit",
-          submitted: `${submissionTimestamp} - Book Consultation - Form Submit`,
           source: "JAMZ Consultation Form"
         }),
       });
