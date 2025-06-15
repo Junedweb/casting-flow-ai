@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ImageModal } from "./ImageModal";
@@ -46,7 +47,7 @@ export const FeaturesSection = () => {
       icon: "centralized",
       title: "Centralized Inbox",
       description: "Profiles from WhatsApp, Insta, site—synced and organized.",
-      imageSrc: "/public/lovable-uploads/63c340ac-9936-409d-a1aa-4d63608998ec.png"
+      imageSrc: "/lovable-uploads/5ce113b3-a5e9-428d-a3e1-fce548cf5988.png"
     },
     {
       icon: "bell",
@@ -70,7 +71,7 @@ export const FeaturesSection = () => {
       icon: "users",
       title: "Multi-user Access Control",
       description: "Team-based permissions with role management. Secure access logs and visibility control for casting teams.",
-      imageSrc: "https://images.unsplash.com/photo-1518770660439-4636190af475"
+      imageSrc: "/lovable-uploads/0e61e0b8-24e8-4882-8fee-58facc1e2214.png"
     }
   ];
 
