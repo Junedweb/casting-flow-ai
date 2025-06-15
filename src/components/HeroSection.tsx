@@ -54,19 +54,19 @@ export const HeroSection = () => {
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-3xl font-bold text-white mb-6 leading-tight drop-shadow-2xl sm:text-4xl md:text-5xl lg:text-6xl">
               <span className="block text-transparent bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text">
-                3 Hours of Manual Work
+                Stop Spending Hours
               </span>
-              In Seconds
+              On Character Breakdowns
             </h1>
             
             <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto font-light drop-shadow-lg sm:text-xl">
-              AI-powered character analysis and smart talent matching for faster casting decisions.
+              AI analyzes your script instantly. Smart matching from your talent pool with fitment scores.
               <br />
-              <span className="text-yellow-300">Save multiple hours per month on every project.</span>
+              <span className="text-yellow-300">Focus on creative decisions, not administrative work.</span>
             </p>
 
             <p className="text-base text-white/80 mb-8 max-w-2xl mx-auto">
-              Outsource requirements when needed - all key information is preserved for professional casting workflow.
+              Need external talent? Outsource seamlessly while keeping all casting details organized for your workflow.
             </p>
 
             {/* How it works - simplified */}
@@ -77,8 +77,8 @@ export const HeroSection = () => {
                     <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:w-12 sm:h-12">
                       <span className="text-lg font-bold text-white sm:text-xl">1</span>
                     </div>
-                    <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Analyze Character</h4>
-                    <p className="text-white/80 text-xs sm:text-sm">Upload script. AI extracts requirements.</p>
+                    <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Upload Script</h4>
+                    <p className="text-white/80 text-xs sm:text-sm">AI extracts character requirements instantly.</p>
                   </div>
                 </div>
                 
@@ -87,8 +87,8 @@ export const HeroSection = () => {
                     <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:w-12 sm:h-12">
                       <span className="text-lg font-bold text-white sm:text-xl">2</span>
                     </div>
-                    <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Smart Matching</h4>
-                    <p className="text-white/80 text-xs sm:text-sm">Match from your pool with fitment scores.</p>
+                    <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Get Matches</h4>
+                    <p className="text-white/80 text-xs sm:text-sm">Ranked talent from your pool with scores.</p>
                   </div>
                 </div>
                 
@@ -97,8 +97,8 @@ export const HeroSection = () => {
                     <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:w-12 sm:h-12">
                       <span className="text-lg font-bold text-white sm:text-xl">3</span>
                     </div>
-                    <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Review & Cast</h4>
-                    <p className="text-white/80 text-xs sm:text-sm">Review ranked candidates instantly.</p>
+                    <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Make Decisions</h4>
+                    <p className="text-white/80 text-xs sm:text-sm">Review top candidates and cast faster.</p>
                   </div>
                 </div>
               </div>
