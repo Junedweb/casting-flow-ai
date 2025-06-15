@@ -14,9 +14,14 @@ export const Navigation = () => {
     navigate("/");
   };
 
+  const handleActorsClick = () => {
+    navigate("/actors");
+  };
+
   // Determine which button to show based on current route
   const isOnActingSchoolsPage = location.pathname === "/acting-schools" || location.pathname === "/acting-school-partnership";
   const isOnCastingPage = location.pathname === "/";
+  const isOnActorsPage = location.pathname === "/actors";
 
   return (
     <nav className="relative z-50 flex justify-between items-center p-6 bg-white/90 backdrop-blur-sm border-b border-gray-200">
@@ -38,13 +43,22 @@ export const Navigation = () => {
             Tap For Casting Directors
           </Button>
         )}
-        {(isOnCastingPage || (!isOnActingSchoolsPage && !isOnCastingPage)) && (
+        {isOnActorsPage && (
           <Button 
             variant="outline"
             className="bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-6 py-2 text-sm font-medium rounded-lg"
-            onClick={handleActingSchoolsClick}
+            onClick={handleCastingClick}
           >
-            Tap For Acting Schools
+            Tap For Casting Directors
+          </Button>
+        )}
+        {(isOnCastingPage || (!isOnActingSchoolsPage && !isOnCastingPage && !isOnActorsPage)) && (
+          <Button 
+            variant="outline"
+            className="bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-6 py-2 text-sm font-medium rounded-lg"
+            onClick={handleActorsClick}
+          >
+            Tap For Actors
           </Button>
         )}
       </div>

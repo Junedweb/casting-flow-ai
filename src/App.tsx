@@ -23,6 +23,7 @@ import Gdpr from "./pages/Gdpr";
 import Partnership from "./pages/Partnership";
 import ActingSchools from "./pages/ActingSchools";
 import ActingSchoolPartnership from "./pages/ActingSchoolPartnership";
+import Actors from "./pages/Actors";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -70,6 +71,7 @@ const App = () => {
               <Route path="/partnership" element={<Partnership />} />
               <Route path="/acting-schools" element={<ActingSchools />} />
               <Route path="/acting-school-partnership" element={<ActingSchoolPartnership />} />
+              <Route path="/actors" element={<Actors />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
