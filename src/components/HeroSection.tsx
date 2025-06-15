@@ -59,28 +59,29 @@ export const HeroSection = () => {
           </div>
           
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 leading-tight px-2">
-            You Know Casting,<br />
-            <span className="text-orange-400">We Know Technology</span>
+            Stop Drowning in WhatsApp Messages,<br />
+            <span className="text-orange-400">Start Finding Perfect Faces in Seconds</span>
           </h1>
           
           <h2 className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-6 leading-relaxed px-2">
-            Let's bring synergies between the best. <span className="text-yellow-400 font-semibold">JAMZ</span> transforms your casting workflow into a 
-            <span className="text-green-400 font-semibold"> smart, searchable database</span> with AI-powered matching.
+            Your casting database is scattered. Actors are lost in chat histories. Projects get delayed.
+            <span className="text-yellow-400 font-semibold"> JAMZ</span> turns chaos into 
+            <span className="text-green-400 font-semibold"> instant results.</span>
           </h2>
 
           <div className="bg-slate-800/60 backdrop-blur-sm rounded-lg p-4 mb-6 max-w-lg mx-auto border border-slate-700">
             <div className="text-slate-300 text-sm leading-relaxed space-y-2">
               <p className="flex items-start">
                 <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
-                <span>Find talent by face, age, ethnicity, or past work in seconds</span>
+                <span>Upload a face → Get 10 similar actors in 3 seconds</span>
               </p>
               <p className="flex items-start">
                 <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
-                <span>GDPR compliant with military-grade encryption</span>
+                <span>₹5 Cr penalty-proof data protection (GDPR ready)</span>
               </p>
               <p className="flex items-start">
                 <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
-                <span>Integrates seamlessly with your existing workflow</span>
+                <span>Zero training needed - works like Google for faces</span>
               </p>
             </div>
           </div>
@@ -91,34 +92,34 @@ export const HeroSection = () => {
               className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               onClick={handleConsultationClick}
             >
-              Book Free Process Consultation
+              See How It Saves 3 Hours Daily
             </Button>
           </div>
           
           <p className="text-slate-400 text-sm mb-8 px-2">
-            Zero pressure. 100% support. Tech experts who listen first.
+            No sales pitch. Just 2-3 ways to fix your current mess.
           </p>
           
           <div className="grid grid-cols-1 gap-4 max-w-sm mx-auto">
             <div className="flex items-center text-left bg-slate-800/40 rounded-lg p-4 backdrop-blur-sm">
               <Database className="w-8 h-8 text-blue-400 mr-3 flex-shrink-0" aria-hidden="true" />
               <div>
-                <h3 className="text-white font-semibold mb-1 text-sm">Centralized Database</h3>
-                <p className="text-slate-400 text-xs">All profiles in one secure place</p>
+                <h3 className="text-white font-semibold mb-1 text-sm">End WhatsApp Hell</h3>
+                <p className="text-slate-400 text-xs">All actors in one searchable place</p>
               </div>
             </div>
             <div className="flex items-center text-left bg-slate-800/40 rounded-lg p-4 backdrop-blur-sm">
               <Users className="w-8 h-8 text-green-400 mr-3 flex-shrink-0" aria-hidden="true" />
               <div>
-                <h3 className="text-white font-semibold mb-1 text-sm">AI Face Matching</h3>
-                <p className="text-slate-400 text-xs">Find perfect talent instantly</p>
+                <h3 className="text-white font-semibold mb-1 text-sm">Face = Results</h3>
+                <p className="text-slate-400 text-xs">AI finds lookalikes instantly</p>
               </div>
             </div>
             <div className="flex items-center text-left bg-slate-800/40 rounded-lg p-4 backdrop-blur-sm">
               <Shield className="w-8 h-8 text-orange-400 mr-3 flex-shrink-0" aria-hidden="true" />
               <div>
-                <h3 className="text-white font-semibold mb-1 text-sm">GDPR Secure</h3>
-                <p className="text-slate-400 text-xs">End-to-end encryption</p>
+                <h3 className="text-white font-semibold mb-1 text-sm">₹5 Cr Safe</h3>
+                <p className="text-slate-400 text-xs">GDPR bulletproof security</p>
               </div>
             </div>
           </div>

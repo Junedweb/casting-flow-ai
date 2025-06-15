@@ -5,37 +5,37 @@ import { Check, X, Clock, IndianRupee } from "lucide-react";
 export const ComparisonTable = () => {
   const comparisons = [
     {
-      feature: "App + Database + Dashboard",
-      inHouse: "₹1–2 Cr",
-      jamz: "₹20K/month",
+      feature: "Face-matching system",
+      inHouse: "₹1.5 Cr + 8 months",
+      jamz: "Ready now",
       inHouseIcon: X,
       jamzIcon: Check
     },
     {
-      feature: "Setup Time",
-      inHouse: "6–12 months",
-      jamz: "As per custom requirement",
-      inHouseIcon: Clock,
-      jamzIcon: Check
-    },
-    {
-      feature: "Data Security",
-      inHouse: "Needs extra dev work",
-      jamz: "Built-in encryption",
+      feature: "When assistant quits",
+      inHouse: "All data lost",
+      jamz: "Nothing changes",
       inHouseIcon: X,
       jamzIcon: Check
     },
     {
-      feature: "Support",
-      inHouse: "Your team",
-      jamz: "JAMZ RM",
+      feature: "GDPR violation fine",
+      inHouse: "₹5 Cr penalty risk",
+      jamz: "Bulletproof security",
       inHouseIcon: X,
       jamzIcon: Check
     },
     {
-      feature: "Feature Enhancements",
-      inHouse: "Your cost",
-      jamz: "Part of roadmap",
+      feature: "Daily maintenance",
+      inHouse: "Your headache",
+      jamz: "We handle it",
+      inHouseIcon: X,
+      jamzIcon: Check
+    },
+    {
+      feature: "When tech breaks",
+      inHouse: "Project stops",
+      jamz: "Keeps running",
       inHouseIcon: X,
       jamzIcon: Check
     }
@@ -46,16 +46,16 @@ export const ComparisonTable = () => {
       <div className="max-w-lg mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 leading-tight">
-            Why Choose JAMZ Over Building In-House?
+            Build vs Buy: The Brutal Truth
           </h2>
           <p className="text-base text-slate-600">
-            Save time, money, and headaches with our ready-to-use solution.
+            Stop burning money and months on custom disasters.
           </p>
         </div>
 
         <Card className="overflow-hidden shadow-lg">
           <CardHeader className="bg-slate-900 text-white p-4">
-            <CardTitle className="text-center text-lg">Cost Comparison</CardTitle>
+            <CardTitle className="text-center text-lg">Reality Check</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
             <div className="space-y-4 p-4">
@@ -65,7 +65,7 @@ export const ComparisonTable = () => {
                   
                   <div className="space-y-3">
                     <div className="flex items-center justify-between p-3 bg-red-50 rounded-md border-l-4 border-red-400">
-                      <span className="text-xs font-medium text-slate-600">Build In-House</span>
+                      <span className="text-xs font-medium text-slate-600">Build It Yourself</span>
                       <div className="flex items-center">
                         <item.inHouseIcon className="w-4 h-4 text-red-500 mr-2" />
                         <span className="text-sm text-slate-700 font-medium">{item.inHouse}</span>

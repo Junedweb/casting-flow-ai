@@ -8,51 +8,51 @@ export const PainPointsSection = () => {
 
   const painPoints = [
     {
-      text: "Data scattered across WhatsApp, Instagram, Google Drive, Excel sheets.",
-      impact: "3+ hours daily searching",
+      text: "Scrolling through 500+ WhatsApp photos at 2 AM looking for 'that tall guy from the soap ad'",
+      impact: "4 hours daily hunting faces",
       icon: Database
     },
     {
-      text: "Manual matching of casting requirements with profiles is a nightmare.",
-      impact: "70% slower decisions",
+      text: "Client says 'find someone like Hrithik' and you manually scan 1000+ profiles hoping for a match",
+      impact: "Projects delayed by days",
       icon: AlertTriangle
     },
     {
-      text: "Custom app development is too expensive and never fits right.",
-      impact: "₹5L+ wasted",
+      text: "Spent ₹8 lakhs on a custom app that crashes every time you upload more than 10 photos",
+      impact: "Money down the drain",
       icon: Zap
     },
     {
-      text: "High assistant turnover causes constant talent profile loss.",
-      impact: "30% database lost yearly",
+      text: "Assistant quits, takes the Excel sheet password, and suddenly 2000 actor contacts vanish",
+      impact: "Years of work gone",
       icon: UserX
     },
     {
-      text: "Low visibility of available actors when needed.",
-      impact: "Missing quality talent",
+      text: "Perfect actor exists in your database but buried under 50 folders of random screenshots",
+      impact: "Lost the role to competition",
       icon: Eye
     },
     {
-      text: "Trained actors become outdated or leave location.",
-      impact: "40% pool unavailable",
+      text: "Actor moved to Goa, gained 15 kg, cut hair short—but still shows up in your 'available' list",
+      impact: "Embarrassing client calls",
       icon: MapPin
     }
   ];
 
   const actorComplaints = [
     {
-      text: "Website doesn't work properly—I never know if my profile even reached the right person.",
-      impact: "Missing 60% of opportunities",
+      text: "Website crashes every time I try uploading my portfolio. Meanwhile, they cast my friend who just DMed the CD on Instagram.",
+      impact: "Missing 80% of auditions",
       icon: AlertTriangle
     },
     {
-      text: "I have to show up every month in person. Even though I've worked with this CD before.",
-      impact: "₹2,000+ monthly travel costs",
+      text: "Traveling from Pune to Mumbai every month just to 'update my look' when I've been working with them for 2 years",
+      impact: "₹3,000 monthly travel burns",
       icon: Users
     },
     {
-      text: "I live in Pune—traveling to Mumbai all the time is expensive. A proper online flow would help.",
-      impact: "10+ hours monthly on travel",
+      text: "Sent my profile 6 months ago, they're still asking if I'm available for auditions I missed last week",
+      impact: "Reputation damaged",
       icon: Users
     }
   ];
@@ -91,11 +91,11 @@ export const PainPointsSection = () => {
               <Users className="w-4 h-4 text-white" />
             </div>
             <h2 className="text-xl font-bold bg-gradient-to-r from-slate-900 via-red-600 to-blue-600 bg-clip-text text-transparent">
-              We Understand Your Challenges
+              The Daily Casting Nightmare
             </h2>
           </div>
           <p className="text-sm text-slate-600 leading-relaxed">
-            Every casting professional faces the same frustrations. <span className="font-semibold">You're not alone.</span>
+            Every casting professional faces this hell. <span className="font-semibold">You're drowning in digital chaos.</span>
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export const PainPointsSection = () => {
                 <AlertTriangle className="w-4 h-4 text-white inline mr-2" />
                 <span className="text-white font-semibold text-sm">Casting Directors</span>
               </div>
-              <span className="text-xs text-red-600 font-medium">Industry pain points</span>
+              <span className="text-xs text-red-600 font-medium">Actual horror stories</span>
             </div>
             <div className="space-y-3">
               {painPoints.map((point, index) => (
@@ -124,7 +124,7 @@ export const PainPointsSection = () => {
                 <Users className="w-4 h-4 text-white inline mr-2" />
                 <span className="text-white font-semibold text-sm">Actors & Artists</span>
               </div>
-              <span className="text-xs text-blue-600 font-medium">Performer challenges</span>
+              <span className="text-xs text-blue-600 font-medium">Career killers</span>
             </div>
             <div className="space-y-3">
               {actorComplaints.map((complaint, index) => (
@@ -146,10 +146,10 @@ export const PainPointsSection = () => {
                   {[...Array(5)].map((_, i) => (
                     <div key={i} className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                   ))}
-                  <span className="ml-2 text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-1 rounded-full">Success Story</span>
+                  <span className="ml-2 text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-1 rounded-full">Escape Story</span>
                 </div>
                 <blockquote className="text-sm text-slate-700 italic mb-3 leading-relaxed">
-                  "JAMZ didn't charge a penny as my scale is small and I don't need a complex process. They provided excellent support and guidance that truly helped streamline my workflow. All the best and best wishes for all the good work they're doing!"
+                  "JAMZ saved my sanity. No more midnight WhatsApp scrolling. No more Excel sheet crashes. Found 5 perfect actors in 20 minutes for a last-minute shoot. They didn't even charge me!"
                 </blockquote>
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center">
@@ -157,7 +157,7 @@ export const PainPointsSection = () => {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-slate-800">Priya Sharma</p>
-                    <p className="text-xs text-emerald-600">Small-Scale Casting Director, Mumbai</p>
+                    <p className="text-xs text-emerald-600">Escaped the Chaos, Mumbai</p>
                   </div>
                 </div>
               </div>

@@ -10,27 +10,27 @@ export const EnterpriseSection = () => {
   const features = [
     {
       icon: Clock,
-      title: "60% Faster Casting",
-      description: "Cut casting turnaround time (TAT) by over 60% with AI-powered workflows",
-      highlight: "Proven Results"
+      title: "3 Hours Back Daily",
+      description: "Stop hunting through WhatsApp screenshots. Find any face in 10 seconds.",
+      highlight: "Time = Money"
     },
     {
       icon: Crown,
-      title: "Co-branded App",
-      description: "Complete branding control - your studio identity preserved",
-      highlight: "Your Brand"
+      title: "Your Brand, Our Brain",
+      description: "Complete white-label solution. Your clients never know we exist.",
+      highlight: "Invisible Partner"
     },
     {
       icon: Target,
-      title: "Zero Technology Cost",
-      description: "No upfront fees, no monthly charges for partnership tier",
-      highlight: "Cost-Free Tech"
+      title: "₹0 Upfront Cost",
+      description: "Zero investment. Zero monthly fees. Zero risk.",
+      highlight: "Pure Profit"
     },
     {
       icon: TrendingUp,
-      title: "30% Revenue Share",
-      description: "We earn only when you grow - 30% of incremental casting revenue",
-      highlight: "Win-Win Model"
+      title: "We Grow When You Grow",
+      description: "30% of extra revenue you make from saved time. Fair deal.",
+      highlight: "Win-Win Reality"
     }
   ];
 
@@ -39,10 +39,10 @@ export const EnterpriseSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Technology Partnership Program
+            Partnership That Actually Makes Sense
           </h2>
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Scale your casting business with our proven technology. We reduce your operational time by 60%+ while you focus on taking more projects and growing revenue.
+            You master casting. We handle the tech chaos. Together we double your project capacity while cutting your stress in half.
           </p>
         </div>
 
@@ -70,17 +70,17 @@ export const EnterpriseSection = () => {
         <Card className="bg-gradient-to-r from-orange-500 to-red-600 border-none mb-8">
           <CardContent className="p-12 text-center">
             <h3 className="text-3xl font-bold text-white mb-6">
-              The Partnership Deal
+              The Deal That Works
             </h3>
             <div className="text-white/95 text-lg space-y-4 mb-8">
               <p className="font-semibold">
-                🚀 <strong>You Get:</strong> 60%+ faster casting operations + Zero technology costs
+                🚀 <strong>You Get:</strong> 3 hours daily back + Zero tech headaches + More projects
               </p>
               <p className="font-semibold">
-                💰 <strong>You Give:</strong> 30% share of incremental business revenue (quarterly basis)
+                💰 <strong>We Get:</strong> 30% of the extra revenue you earn from saved time
               </p>
               <p className="text-white/90">
-                Take on more casting projects with saved time. We grow together as your technology partner.
+                Take on 50% more projects with the time you save. We both win when you win.
               </p>
             </div>
             <Button 
@@ -88,14 +88,14 @@ export const EnterpriseSection = () => {
               className="bg-white text-orange-600 hover:bg-slate-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               onClick={() => navigate("/contact")}
             >
-              Become a Technology Partner
+              Let's Kill Your Tech Problems
             </Button>
           </CardContent>
         </Card>
 
         <div className="text-center">
           <p className="text-slate-300 text-lg">
-            <strong>Limited partnership slots available.</strong> Exclusively for India's major casting agencies and directors already scaling with JAMZ technology.
+            <strong>Only 12 partnership slots left.</strong> For casting directors already drowning in Excel sheets and WhatsApp chaos.
           </p>
         </div>
       </div>
