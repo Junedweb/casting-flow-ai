@@ -10,27 +10,27 @@ export const EnterpriseSection = () => {
   const features = [
     {
       icon: Clock,
-      title: "3 Hours Back Daily",
-      description: "Stop hunting through screenshots. Find any face in 10 seconds.",
-      highlight: "Time = Money"
+      title: "3 Hours Saved Daily",
+      description: "Organize actor searches efficiently. Find profiles in seconds instead of hours.",
+      highlight: "Time Efficiency"
     },
     {
       icon: Crown,
-      title: "Your Brand, Our Brain",
-      description: "Complete white-label solution. Your clients never know we exist.",
-      highlight: "Invisible Partner"
+      title: "White-Label Solution",
+      description: "Complete branded solution for your business. We work behind the scenes.",
+      highlight: "Your Brand"
     },
     {
       icon: Target,
-      title: "₹0 Upfront Cost",
-      description: "Zero investment. Zero monthly fees. Zero risk.",
-      highlight: "Pure Profit"
+      title: "No Upfront Investment",
+      description: "Zero initial costs. No monthly fees. No financial risk.",
+      highlight: "Risk-Free Start"
     },
     {
       icon: TrendingUp,
-      title: "We Grow When You Grow",
-      description: "30% of extra revenue you make from saved time. Fair deal.",
-      highlight: "Win-Win Reality"
+      title: "Revenue Sharing Model",
+      description: "We earn 30% of the additional revenue you generate from time savings.",
+      highlight: "Mutual Success"
     }
   ];
 
@@ -39,10 +39,10 @@ export const EnterpriseSection = () => {
       <div className="max-w-sm mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-white mb-4">
-            Partnership That Actually Makes Sense
+            Partnership That Works for Both Sides
           </h2>
           <p className="text-base text-slate-300 leading-relaxed">
-            You master casting. We handle tech chaos. Together we double your project capacity.
+            You focus on casting excellence. We handle the technology. Together we increase your project capacity.
           </p>
         </div>
 
@@ -70,17 +70,17 @@ export const EnterpriseSection = () => {
         <Card className="bg-gradient-to-r from-orange-500 to-red-600 border-none mb-6">
           <CardContent className="p-6 text-center">
             <h3 className="text-xl font-bold text-white mb-4">
-              The Deal That Works
+              Partnership Structure
             </h3>
             <div className="text-white/95 text-sm space-y-3 mb-6">
               <p className="font-semibold">
-                🚀 <strong>You Get:</strong> 3 hours daily back + Zero tech headaches + More projects
+                📈 <strong>You Get:</strong> 3 hours daily back + Organized workflow + More project capacity
               </p>
               <p className="font-semibold">
-                💰 <strong>We Get:</strong> 30% of the extra revenue you earn from saved time
+                💰 <strong>We Get:</strong> 30% of additional revenue from your improved efficiency
               </p>
               <p className="text-white/90 text-xs">
-                Take on 50% more projects with saved time. We both win.
+                Handle 50% more projects with organized workflows. Mutual growth.
               </p>
             </div>
             <Button 
@@ -88,14 +88,14 @@ export const EnterpriseSection = () => {
               className="bg-white text-orange-600 hover:bg-slate-100 px-6 py-3 text-base font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full"
               onClick={() => navigate("/contact")}
             >
-              Kill Your Tech Problems
+              Explore Partnership
             </Button>
           </CardContent>
         </Card>
 
         <div className="text-center">
           <p className="text-slate-300 text-sm">
-            <strong>Only 12 partnership slots left.</strong> For casting directors drowning in Excel chaos.
+            <strong>Limited partnership slots available.</strong> For casting directors seeking workflow improvements.
           </p>
         </div>
       </div>

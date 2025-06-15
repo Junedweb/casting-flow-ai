@@ -6,29 +6,29 @@ export const ComparisonTable = () => {
   const comparisons = [
     {
       feature: "Face-matching system",
-      inHouse: "₹1.5 Cr + 8 months",
-      jamz: "Ready now",
+      inHouse: "₹1.5 Cr + 8 months development",
+      jamz: "Available immediately",
       inHouseIcon: X,
       jamzIcon: Check
     },
     {
-      feature: "When assistant quits",
-      inHouse: "All data lost",
-      jamz: "Nothing changes",
+      feature: "When staff changes",
+      inHouse: "Data organization lost",
+      jamz: "System continues smoothly",
       inHouseIcon: X,
       jamzIcon: Check
     },
     {
-      feature: "GDPR violation fine",
-      inHouse: "₹5 Cr penalty risk",
-      jamz: "Bulletproof security",
-      inHouseIcon: X,
-      jamzIcon: Check
+      feature: "GDPR compliance risk",
+      inHouse: "₹5 Cr potential penalty",
+      jamzIcon: Check,
+      jamz: "Built-in compliance",
+      inHouseIcon: X
     },
     {
-      feature: "When tech breaks",
-      inHouse: "Project stops",
-      jamz: "Keeps running",
+      feature: "Technical maintenance",
+      inHouse: "Work stops during issues",
+      jamz: "Continuous operation",
       inHouseIcon: X,
       jamzIcon: Check
     }
@@ -39,10 +39,10 @@ export const ComparisonTable = () => {
       <div className="max-w-sm mx-auto">
         <div className="text-center mb-6">
           <h2 className="text-xl font-bold text-slate-900 mb-4 leading-tight">
-            Build vs Buy: The Brutal Truth
+            Build vs Buy: Cost Comparison
           </h2>
           <p className="text-sm text-slate-600">
-            Stop burning money on custom disasters.
+            Understanding the real investment required.
           </p>
         </div>
 

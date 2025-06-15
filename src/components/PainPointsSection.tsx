@@ -5,36 +5,36 @@ import { AlertTriangle, Quote, Users, Zap, Database, Eye, UserX, MapPin } from "
 export const PainPointsSection = () => {
   const painPoints = [
     {
-      text: "2 AM, scrolling through 500+ WhatsApp photos looking for 'that tall guy from the soap ad'",
-      impact: "4 hours daily hunting faces",
+      text: "Spending hours searching through hundreds of photos to find 'that actor from the commercial'",
+      impact: "3-4 hours daily on photo searches",
       icon: Database
     },
     {
-      text: "Client: 'Find someone like Hrithik.' You: *manually scans 1000+ profiles*",
-      impact: "Projects delayed by days",
+      text: "Client asks for 'someone like this actor' and you manually review hundreds of profiles",
+      impact: "Projects delayed by several days",
       icon: AlertTriangle
     },
     {
-      text: "₹8 lakhs on custom app that crashes with 10+ photos",
-      impact: "Money down the drain",
+      text: "Expensive custom software that crashes when handling large photo files",
+      impact: "Wasted investment and lost time",
       icon: Zap
     },
     {
-      text: "Assistant quits → Excel password gone → 2000 contacts vanish",
-      impact: "Years of work gone",
+      text: "Assistant leaves and takes all the organized contact data with them",
+      impact: "Years of organized data lost",
       icon: UserX
     }
   ];
 
   const actorComplaints = [
     {
-      text: "Website crashes every upload. Meanwhile, friend gets cast via Instagram DM.",
-      impact: "Missing 80% of auditions",
+      text: "Platform crashes during every photo upload while opportunities are shared via social media",
+      impact: "Missing most audition opportunities",
       icon: AlertTriangle
     },
     {
-      text: "Pune to Mumbai monthly just to 'update my look' after 2 years of working together",
-      impact: "₹3,000 monthly travel waste",
+      text: "Monthly travel from other cities just to update profile photos after years of collaboration",
+      impact: "₹3,000 monthly unnecessary travel costs",
       icon: Users
     }
   ];
@@ -72,11 +72,11 @@ export const PainPointsSection = () => {
               <Users className="w-4 h-4 text-white" />
             </div>
             <h2 className="text-xl font-bold bg-gradient-to-r from-slate-900 via-red-600 to-blue-600 bg-clip-text text-transparent">
-              The Daily Hell
+              Common Challenges
             </h2>
           </div>
           <p className="text-sm text-slate-600 leading-relaxed">
-            <span className="font-semibold">You're drowning in digital chaos.</span>
+            <span className="font-semibold">Many face similar workflow issues.</span>
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export const PainPointsSection = () => {
                 <AlertTriangle className="w-4 h-4 text-white inline mr-2" />
                 <span className="text-white font-semibold text-sm">Casting Directors</span>
               </div>
-              <span className="text-xs text-red-600 font-medium">Horror stories</span>
+              <span className="text-xs text-red-600 font-medium">Daily challenges</span>
             </div>
             <div className="space-y-3">
               {painPoints.map((point, index) => (
@@ -102,7 +102,7 @@ export const PainPointsSection = () => {
                 <Users className="w-4 h-4 text-white inline mr-2" />
                 <span className="text-white font-semibold text-sm">Actors</span>
               </div>
-              <span className="text-xs text-blue-600 font-medium">Career killers</span>
+              <span className="text-xs text-blue-600 font-medium">Common issues</span>
             </div>
             <div className="space-y-3">
               {actorComplaints.map((complaint, index) => (
@@ -123,10 +123,10 @@ export const PainPointsSection = () => {
                   {[...Array(5)].map((_, i) => (
                     <div key={i} className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                   ))}
-                  <span className="ml-2 text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-1 rounded-full">Escape</span>
+                  <span className="ml-2 text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-1 rounded-full">Success Story</span>
                 </div>
                 <blockquote className="text-sm text-slate-700 italic mb-3 leading-relaxed">
-                  "JAMZ saved my sanity. Found 5 perfect actors in 20 minutes for last-minute shoot. They didn't even charge me!"
+                  "JAMZ helped organize our workflow. Found 5 suitable actors in 20 minutes for a last-minute project."
                 </blockquote>
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center">
