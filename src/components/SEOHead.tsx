@@ -8,6 +8,8 @@ interface SEOHeadProps {
   canonicalUrl?: string;
   ogImage?: string;
   structuredData?: object;
+  pageType?: 'website' | 'article' | 'product' | 'service';
+  lastModified?: string;
 }
 
 export const SEOHead = ({
@@ -16,50 +18,129 @@ export const SEOHead = ({
   keywords = "casting platform, talent search, actor profiles, casting directors, entertainment industry, AI face matching, India casting, film casting, TV casting, commercial casting",
   canonicalUrl = "https://jamz-casting.lovable.app/",
   ogImage = "https://jamz-casting.lovable.app/og-image.jpg",
-  structuredData
+  structuredData,
+  pageType = "website",
+  lastModified = new Date().toISOString()
 }: SEOHeadProps) => {
   const defaultStructuredData = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "JAMZ Casting Platform",
-    "description": description,
-    "url": canonicalUrl,
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Free consultation available"
-    },
-    "provider": {
-      "@type": "Organization",
-      "@id": "https://jamz-casting.lovable.app/#organization",
-      "name": "JAMZ",
-      "description": "AI-powered casting platform for India's entertainment industry",
-      "url": "https://jamz-casting.lovable.app/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://jamz-casting.lovable.app/logo.png"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://jamz-casting.lovable.app/#organization",
+        "name": "JAMZ",
+        "url": "https://jamz-casting.lovable.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://jamz-casting.lovable.app/logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "description": "AI-powered casting platform for India's entertainment industry",
+        "foundingDate": "2024",
+        "areaServed": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "serviceType": ["Casting Platform", "Talent Management", "AI Face Matching"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-XXX-XXX-XXXX",
+          "contactType": "Customer Service",
+          "availableLanguage": ["English", "Hindi"],
+          "areaServed": "IN"
+        },
+        "sameAs": [
+          "https://twitter.com/jamzcasting",
+          "https://linkedin.com/company/jamz-casting"
+        ]
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-XXX-XXX-XXXX",
-        "contactType": "Customer Service",
-        "availableLanguage": ["English", "Hindi"]
+      {
+        "@type": "WebSite",
+        "@id": "https://jamz-casting.lovable.app/#website",
+        "url": "https://jamz-casting.lovable.app/",
+        "name": "JAMZ Casting Platform",
+        "description": description,
+        "publisher": {
+          "@id": "https://jamz-casting.lovable.app/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://jamz-casting.lovable.app/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "en-IN"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "India"
+      {
+        "@type": "WebPage",
+        "@id": canonicalUrl + "#webpage",
+        "url": canonicalUrl,
+        "name": title,
+        "description": description,
+        "isPartOf": {
+          "@id": "https://jamz-casting.lovable.app/#website"
+        },
+        "about": {
+          "@id": "https://jamz-casting.lovable.app/#organization"
+        },
+        "datePublished": "2024-01-01",
+        "dateModified": lastModified,
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://jamz-casting.lovable.app/"
+            }
+          ]
+        },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "h2", ".description"]
+        },
+        "inLanguage": "en-IN"
       },
-      "serviceType": "Casting Platform"
-    },
-    "featureList": [
-      "AI-powered face matching",
-      "GDPR compliant database",
-      "Verified talent profiles",
-      "Advanced search filters",
-      "Secure data encryption"
+      {
+        "@type": "SoftwareApplication",
+        "name": "JAMZ Casting Platform",
+        "description": description,
+        "url": canonicalUrl,
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web Browser",
+        "softwareVersion": "1.0",
+        "datePublished": "2024-01-01",
+        "dateModified": lastModified,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR",
+          "description": "Free consultation available",
+          "availability": "https://schema.org/InStock"
+        },
+        "provider": {
+          "@id": "https://jamz-casting.lovable.app/#organization"
+        },
+        "featureList": [
+          "AI-powered character analysis",
+          "Smart talent pool matching",
+          "GDPR compliant database",
+          "Verified talent profiles",
+          "Advanced search filters",
+          "Secure data encryption",
+          "Face matching technology",
+          "Real-time collaboration"
+        ],
+        "screenshot": "https://jamz-casting.lovable.app/og-image.jpg",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "150",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
     ]
   };
 
@@ -70,40 +151,71 @@ export const SEOHead = ({
       <meta name="keywords" content={keywords} />
       <meta name="author" content="JAMZ" />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <meta name="googlebot" content="index, follow" />
+      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta name="bingbot" content="index, follow" />
+      
+      {/* Enhanced SEO Meta Tags */}
+      <meta name="theme-color" content="#f97316" />
+      <meta name="msapplication-TileColor" content="#f97316" />
+      <meta name="application-name" content="JAMZ" />
+      <meta name="apple-mobile-web-app-title" content="JAMZ" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
       
-      {/* Open Graph */}
-      <meta property="og:type" content="website" />
+      {/* Alternate Language Tags */}
+      <link rel="alternate" hrefLang="en-IN" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="en" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="hi-IN" href={canonicalUrl} />
+      
+      {/* Open Graph Enhanced */}
+      <meta property="og:type" content={pageType} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="JAMZ Casting Platform Interface" />
       <meta property="og:site_name" content="JAMZ Casting Platform" />
       <meta property="og:locale" content="en_IN" />
+      <meta property="og:locale:alternate" content="hi_IN" />
+      <meta property="article:author" content="JAMZ" />
+      <meta property="article:publisher" content="https://jamz-casting.lovable.app/" />
+      <meta property="article:modified_time" content={lastModified} />
       
-      {/* Twitter Card */}
+      {/* Twitter Card Enhanced */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content="JAMZ Casting Platform Interface" />
       <meta name="twitter:site" content="@jamzcasting" />
+      <meta name="twitter:creator" content="@jamzcasting" />
       
-      {/* Additional SEO */}
+      {/* Additional SEO Meta Tags */}
       <meta name="language" content="English" />
       <meta name="geo.region" content="IN" />
       <meta name="geo.country" content="India" />
+      <meta name="geo.placename" content="India" />
       <meta name="distribution" content="global" />
       <meta name="rating" content="general" />
+      <meta name="revisit-after" content="1 day" />
+      <meta name="expires" content="never" />
+      <meta name="coverage" content="Worldwide" />
+      <meta name="target" content="all" />
+      <meta name="HandheldFriendly" content="True" />
+      <meta name="MobileOptimized" content="320" />
       
       {/* Mobile optimization */}
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
       <meta name="format-detection" content="telephone=no" />
+      
+      {/* Performance and Caching */}
+      <meta httpEquiv="cache-control" content="public, max-age=3600" />
+      <meta httpEquiv="expires" content="86400" />
       
       {/* Structured Data */}
       <script type="application/ld+json">

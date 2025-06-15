@@ -1,18 +1,41 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <title>JAMZ | AI-Powered Casting Platform for India's Entertainment Industry</title>
     <meta name="description" content="Discover and cast verified talent across India with JAMZ. AI-powered face matching, secure GDPR-compliant database, and streamlined casting workflow for directors and talent agencies." />
     <meta name="author" content="JAMZ" />
-    <meta name="keywords" content="casting platform, talent search, actor profiles, casting directors, entertainment industry, AI face matching, India casting" />
+    <meta name="keywords" content="casting platform, talent search, actor profiles, casting directors, entertainment industry, AI face matching, India casting, film casting, TV casting, commercial casting, bollywood casting, regional cinema, talent management" />
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.country" content="India" />
+    <meta name="geo.placename" content="India" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="target" content="all" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="theme-color" content="#f97316" />
+    <meta name="msapplication-TileColor" content="#f97316" />
+    <meta name="application-name" content="JAMZ" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://jamz-casting.lovable.app/" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Alternate Language Tags -->
+    <link rel="alternate" hrefLang="en-IN" href="https://jamz-casting.lovable.app/" />
+    <link rel="alternate" hrefLang="en" href="https://jamz-casting.lovable.app/" />
+    <link rel="alternate" hrefLang="hi-IN" href="https://jamz-casting.lovable.app/" />
+
+    <!-- Open Graph Enhanced -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="JAMZ – India's AI-Powered Casting Platform" />
     <meta property="og:description" content="Streamline your casting process with AI-powered face matching. Verified actor video profiles, secure database, and intelligent talent discovery for casting directors." />
@@ -20,27 +43,30 @@
     <meta property="og:image" content="https://jamz-casting.lovable.app/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="JAMZ Casting Platform Interface" />
     <meta property="og:site_name" content="JAMZ Casting Platform" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="hi_IN" />
 
-    <!-- Twitter -->
+    <!-- Twitter Enhanced -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JAMZ – India's AI-Powered Casting Platform" />
     <meta name="twitter:description" content="Streamline your casting process with AI-powered face matching. Verified actor video profiles, secure database, and intelligent talent discovery." />
     <meta name="twitter:image" content="https://jamz-casting.lovable.app/og-image.jpg" />
+    <meta name="twitter:image:alt" content="JAMZ Casting Platform Interface" />
     <meta name="twitter:site" content="@jamzcasting" />
-
-    <!-- Additional SEO Meta Tags -->
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="language" content="English" />
-    <meta name="geo.region" content="IN" />
-    <meta name="geo.country" content="India" />
+    <meta name="twitter:creator" content="@jamzcasting" />
 
     <!-- Preconnect to external domains for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- DNS Prefetch for better performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//images.unsplash.com">
     
     <!-- Optimized font loading with font-display: swap -->
     <style>
@@ -52,7 +78,49 @@
         font-display: swap;
         src: local('Inter');
       }
+      
+      /* Critical CSS for above-the-fold content */
+      body {
+        font-family: Inter, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      
+      /* Prevent layout shift */
+      #root {
+        min-height: 100vh;
+      }
     </style>
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "JAMZ",
+      "url": "https://jamz-casting.lovable.app/",
+      "logo": "https://jamz-casting.lovable.app/logo.png",
+      "description": "AI-powered casting platform for India's entertainment industry",
+      "foundingDate": "2024",
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "serviceType": ["Casting Platform", "Talent Management", "AI Face Matching"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-XXX-XXX-XXXX",
+        "contactType": "Customer Service",
+        "availableLanguage": ["English", "Hindi"],
+        "areaServed": "IN"
+      },
+      "sameAs": [
+        "https://twitter.com/jamzcasting",
+        "https://linkedin.com/company/jamz-casting"
+      ]
+    }
+    </script>
   </head>
 
   <body>
