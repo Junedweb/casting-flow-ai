@@ -46,7 +46,7 @@ export const Footer = () => {
               <ul className="space-y-2 text-slate-300">
                 <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
                 <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">Partner With Us</a></li>
+                <li><Link to="/partnership" className="hover:text-white transition-colors">Technology Partnership Program</Link></li>
                 <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
