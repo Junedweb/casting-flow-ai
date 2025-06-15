@@ -25,13 +25,13 @@ export const FeaturesSection = () => {
       icon: "filter",
       title: "Smart Filters",
       description: "Find talent by age, screen age, city, language, looks, etc.",
-      imageSrc: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+      imageSrc: "/lovable-uploads/98d0f9f3-76ae-4244-a498-a348579d591a.png"
     },
     {
       icon: "scan",
       title: "Face-Match AI",
       description: "Find a Shah Rukh or Samantha lookalike in seconds.",
-      imageSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      imageSrc: "/lovable-uploads/ed79ee1d-052a-4ff3-983a-dcfc31607bdf.png"
     },
     {
       icon: "centralized",
@@ -43,7 +43,7 @@ export const FeaturesSection = () => {
       icon: "dashboard",
       title: "Dashboard with Project level progress tracking",
       description: "Track project milestones, casting progress, and team collaboration in real-time across multiple productions.",
-      imageSrc: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
+      imageSrc: "/lovable-uploads/36ede622-7e3c-425b-90f3-caee291b93c5.png"
     },
     {
       icon: "refresh",
@@ -55,7 +55,7 @@ export const FeaturesSection = () => {
       icon: "dashboard",
       title: "Team and Project Dashboard Visibility",
       description: "Real-time project tracking with completion status, timelines, and team collaboration. Monitor multiple productions simultaneously.",
-      imageSrc: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+      imageSrc: "/lovable-uploads/36ede622-7e3c-425b-90f3-caee291b93c5.png"
     },
     {
       icon: "users",
