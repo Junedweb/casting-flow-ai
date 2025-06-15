@@ -16,7 +16,7 @@ export const HeroSection = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "JAMZ - AI-Powered Casting Platform",
-    "description": "Transform your casting workflow with AI-powered face matching, secure GDPR-compliant database, and streamlined talent discovery.",
+    "description": "Transform your casting workflow with AI-powered character analysis, smart matching from existing talent pool, and faster casting decisions.",
     "url": "https://jamz-casting.lovable.app/",
     "mainEntity": {
       "@type": "SoftwareApplication",
@@ -24,10 +24,10 @@ export const HeroSection = () => {
       "applicationCategory": "BusinessApplication",
       "description": "AI-powered casting platform for India's entertainment industry",
       "featureList": [
-        "AI Face Matching",
-        "GDPR Compliant Database",
-        "Centralized Talent Profiles",
-        "Advanced Search Filters"
+        "AI Character Analysis",
+        "Smart Pool Matching",
+        "External Candidate Requests",
+        "Fitment Percentage Scoring"
       ]
     }
   };
@@ -60,40 +60,51 @@ export const HeroSection = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed max-w-4xl mx-auto font-light drop-shadow-lg">
-              AI analyzes your scripts, organizes your existing talent pool, and instantly suggests 
-              perfect character matches from your database.
+              AI analyzes character requirements from scripts, matches from your existing talent pool 
+              with fitment percentages, and suggests external candidates when needed.
             </p>
 
-            {/* Clear Expectations */}
-            <div className="mb-6">
-              <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-                <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+            {/* Formal Casting Workflow */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold text-white mb-4">Professional Casting Workflow</h3>
+              <div className="grid md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/20">
                   <div className="text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-lg font-bold text-black">📋</span>
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-xl font-bold text-white">1</span>
                     </div>
-                    <h3 className="font-semibold text-white mb-1 text-sm">Script Analysis</h3>
-                    <p className="text-white/80 text-xs">Upload your script and get instant character breakdowns with casting requirements</p>
+                    <h4 className="font-semibold text-white mb-2 text-sm">Character Analysis</h4>
+                    <p className="text-white/80 text-xs">Upload script or description. AI extracts character requirements, age, appearance, and skills needed</p>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/20">
                   <div className="text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-lg font-bold text-white">🎯</span>
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-xl font-bold text-white">2</span>
                     </div>
-                    <h3 className="font-semibold text-white mb-1 text-sm">Smart Matching</h3>
-                    <p className="text-white/80 text-xs">AI matches characters with actors from your existing talent database automatically</p>
+                    <h4 className="font-semibold text-white mb-2 text-sm">Smart Pool Matching</h4>
+                    <p className="text-white/80 text-xs">AI scans your existing talent database and provides instant matches with fitment percentages</p>
                   </div>
                 </div>
                 
-                <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/20">
                   <div className="text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-lg font-bold text-white">⚡</span>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-xl font-bold text-white">3</span>
                     </div>
-                    <h3 className="font-semibold text-white mb-1 text-sm">Instant Results</h3>
-                    <p className="text-white/80 text-xs">Get casting suggestions in minutes, not hours or days of manual searching</p>
+                    <h4 className="font-semibold text-white mb-2 text-sm">External Requests</h4>
+                    <p className="text-white/80 text-xs">Request JAMZ to source additional candidates from the wider network when pool needs expansion</p>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-xl font-bold text-white">4</span>
+                    </div>
+                    <h4 className="font-semibold text-white mb-2 text-sm">Faster Decisions</h4>
+                    <p className="text-white/80 text-xs">Review ranked candidates with fitment scores and make casting decisions in minutes, not days</p>
                   </div>
                 </div>
               </div>
