@@ -67,19 +67,19 @@ export const PainPointsSection = () => {
         onMouseEnter={() => setHoveredCard(index + (type === 'actor' ? 100 : 0))}
         onMouseLeave={() => setHoveredCard(null)}
       >
-        <CardContent className="p-4 relative overflow-hidden h-full flex flex-col">
-          <div className="flex items-start space-x-3 flex-1">
-            <div className={`p-2 rounded-full bg-white shadow-lg ${iconColor} flex-shrink-0`}>
-              <item.icon className="w-4 h-4" />
+        <CardContent className="p-3 relative overflow-hidden h-full flex flex-col">
+          <div className="flex items-start space-x-2 flex-1">
+            <div className={`p-1.5 rounded-full bg-white shadow-lg ${iconColor} flex-shrink-0`}>
+              <item.icon className="w-3 h-3" />
             </div>
             <div className="flex-1 min-w-0">
-              <div className="flex items-start mb-2">
-                <Quote className={`w-3 h-3 ${iconColor} mr-1 mt-1 flex-shrink-0`} />
-                <p className="text-slate-700 italic text-sm font-medium leading-relaxed">{item.text}</p>
+              <div className="flex items-start mb-1.5">
+                <Quote className={`w-2.5 h-2.5 ${iconColor} mr-1 mt-0.5 flex-shrink-0`} />
+                <p className="text-slate-700 italic text-xs font-medium leading-tight">{item.text}</p>
               </div>
-              <div className={`mt-2 p-2 bg-white/60 rounded-lg border-l-2 ${borderColor} backdrop-blur-sm`}>
-                <p className={`text-xs font-semibold ${impactColor} flex items-center`}>
-                  <Zap className="w-3 h-3 mr-1" />
+              <div className={`mt-1.5 p-1.5 bg-white/60 rounded-lg border-l-2 ${borderColor} backdrop-blur-sm`}>
+                <p className={`text-[10px] font-semibold ${impactColor} flex items-center`}>
+                  <Zap className="w-2.5 h-2.5 mr-1" />
                   {item.impact}
                 </p>
               </div>
@@ -94,7 +94,7 @@ export const PainPointsSection = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+    <section className="py-8 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-red-400 to-blue-400 rounded-full blur-3xl" />
@@ -102,29 +102,29 @@ export const PainPointsSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-red-500 to-blue-500 rounded-full mb-6 shadow-lg">
-            <Users className="w-8 h-8 text-white" />
+        <div className="text-center mb-6">
+          <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-red-500 to-blue-500 rounded-full mb-3 shadow-lg">
+            <Users className="w-6 h-6 text-white" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 via-red-600 to-blue-600 bg-clip-text text-transparent mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-slate-900 via-red-600 to-blue-600 bg-clip-text text-transparent mb-3">
             We Understand Your Challenges
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Every casting director and actor faces the same frustrations. 
             <span className="font-semibold text-slate-800"> You're not alone in this struggle.</span>
           </p>
         </div>
 
         {/* Casting Directors Section */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl shadow-lg mb-4">
-              <AlertTriangle className="w-8 h-8 text-white mr-3" />
-              <h3 className="text-2xl font-bold text-white">Casting Directors</h3>
+        <div className="mb-6">
+          <div className="text-center mb-4">
+            <div className="inline-flex items-center justify-center p-2 bg-gradient-to-r from-red-500 to-red-600 rounded-xl shadow-lg mb-2">
+              <AlertTriangle className="w-5 h-5 text-white mr-2" />
+              <h3 className="text-lg font-bold text-white">Casting Directors</h3>
             </div>
-            <p className="text-red-600 font-medium">Real pain points from industry professionals</p>
+            <p className="text-red-600 font-medium text-sm">Real pain points from industry professionals</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3">
             {painPoints.map((point, index) => (
               <InteractiveCard key={index} item={point} index={index} type="cd" />
             ))}
@@ -132,60 +132,60 @@ export const PainPointsSection = () => {
         </div>
 
         {/* Actors Section */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl shadow-lg mb-4">
-              <Users className="w-8 h-8 text-white mr-3" />
-              <h3 className="text-2xl font-bold text-white">Actors & Artists</h3>
+        <div className="mb-6">
+          <div className="text-center mb-4">
+            <div className="inline-flex items-center justify-center p-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl shadow-lg mb-2">
+              <Users className="w-5 h-5 text-white mr-2" />
+              <h3 className="text-lg font-bold text-white">Actors & Artists</h3>
             </div>
-            <p className="text-blue-600 font-medium">Challenges faced by talented performers</p>
+            <p className="text-blue-600 font-medium text-sm">Challenges faced by talented performers</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {actorComplaints.map((complaint, index) => (
               <InteractiveCard key={index} item={complaint} index={index} type="actor" />
             ))}
           </div>
         </div>
 
-        {/* Dynamic Success Story Card */}
+        {/* Compact Success Story Card */}
         <div className="relative">
           <Card 
             className={`bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 border-2 border-emerald-200 shadow-xl transform transition-all duration-700 overflow-hidden ${testimonialHovered ? 'scale-[1.02] shadow-2xl border-emerald-300' : 'hover:scale-[1.01]'}`}
             onMouseEnter={() => setTestimonialHovered(true)}
             onMouseLeave={() => setTestimonialHovered(false)}
           >
-            <CardContent className="p-10 text-center relative">
+            <CardContent className="p-6 text-center relative">
               {/* Animated Background Elements */}
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 animate-pulse" />
               
               {/* Floating Stars */}
-              <div className="absolute top-6 left-8 animate-bounce delay-100">
-                <Star className="w-4 h-4 text-emerald-400 fill-current" />
+              <div className="absolute top-4 left-6 animate-bounce delay-100">
+                <Star className="w-3 h-3 text-emerald-400 fill-current" />
               </div>
-              <div className="absolute top-12 right-12 animate-bounce delay-300">
-                <Heart className="w-5 h-5 text-green-400 fill-current" />
+              <div className="absolute top-8 right-8 animate-bounce delay-300">
+                <Heart className="w-4 h-4 text-green-400 fill-current" />
               </div>
-              <div className="absolute bottom-16 left-16 animate-bounce delay-500">
-                <CheckCircle className="w-4 h-4 text-teal-400 fill-current" />
+              <div className="absolute bottom-12 left-12 animate-bounce delay-500">
+                <CheckCircle className="w-3 h-3 text-teal-400 fill-current" />
               </div>
 
               {/* Main Icon with Animation */}
-              <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full mb-8 shadow-lg transition-all duration-500 ${testimonialHovered ? 'animate-pulse scale-110' : ''}`}>
-                <Quote className="w-8 h-8 text-white" />
+              <div className={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full mb-4 shadow-lg transition-all duration-500 ${testimonialHovered ? 'animate-pulse scale-110' : ''}`}>
+                <Quote className="w-6 h-6 text-white" />
               </div>
 
               {/* Star Rating */}
-              <div className="flex justify-center space-x-1 mb-6">
+              <div className="flex justify-center space-x-1 mb-3">
                 {[...Array(5)].map((_, i) => (
                   <Star 
                     key={i} 
-                    className={`w-6 h-6 text-yellow-400 fill-current transition-all duration-300 delay-${i * 100} ${testimonialHovered ? 'animate-pulse scale-110' : ''}`} 
+                    className={`w-4 h-4 text-yellow-400 fill-current transition-all duration-300 delay-${i * 100} ${testimonialHovered ? 'animate-pulse scale-110' : ''}`} 
                   />
                 ))}
               </div>
 
               {/* Quote Text with Dynamic Colors */}
-              <blockquote className="text-xl text-slate-700 italic mb-8 leading-relaxed max-w-4xl mx-auto font-medium">
+              <blockquote className="text-base text-slate-700 italic mb-4 leading-relaxed max-w-4xl mx-auto font-medium">
                 <span className="text-emerald-600">"</span>
                 <span className="bg-gradient-to-r from-slate-700 via-emerald-700 to-teal-700 bg-clip-text text-transparent">
                   JAMZ didn't charge a penny as my scale is small and I don't need a complex process. 
@@ -196,21 +196,21 @@ export const PainPointsSection = () => {
               </blockquote>
 
               {/* Author Info with Enhanced Design */}
-              <div className="flex items-center justify-center space-x-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center shadow-lg">
-                  <Users className="w-6 h-6 text-white" />
+              <div className="flex items-center justify-center space-x-3 mb-3">
+                <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center shadow-lg">
+                  <Users className="w-4 h-4 text-white" />
                 </div>
                 <div className="text-left">
-                  <p className="text-slate-800 font-bold text-lg">Priya Sharma (Small-Scale Casting Director)</p>
-                  <p className="text-emerald-600 font-medium">Mumbai Film Industry</p>
+                  <p className="text-slate-800 font-bold text-sm">Priya Sharma (Small-Scale Casting Director)</p>
+                  <p className="text-emerald-600 font-medium text-xs">Mumbai Film Industry</p>
                 </div>
               </div>
 
               {/* Success Badge */}
-              <div className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-full font-semibold shadow-lg text-base hover:shadow-xl transition-all duration-300">
-                <CheckCircle className="w-5 h-5 mr-2" />
+              <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-full font-semibold shadow-lg text-sm hover:shadow-xl transition-all duration-300">
+                <CheckCircle className="w-4 h-4 mr-1" />
                 Success Story
-                <Zap className="w-5 h-5 ml-2 animate-pulse" />
+                <Zap className="w-4 h-4 ml-1 animate-pulse" />
               </div>
 
               {/* Hover Effect Overlay */}
