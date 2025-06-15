@@ -1,9 +1,10 @@
 
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { trackButtonClick } from "@/utils/buttonTracker";
 import { SEOHead } from "@/components/SEOHead";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ComingSoonModal } from "@/components/ComingSoonModal";
 import { ActorsHeroSection } from "@/components/actors/ActorsHeroSection";
 import { ActorsPainPointsSection } from "@/components/actors/ActorsPainPointsSection";
 import { ActorsFeaturesSection } from "@/components/actors/ActorsFeaturesSection";
@@ -13,11 +14,11 @@ import { ActorsMovementSection } from "@/components/actors/ActorsMovementSection
 import { ActorsTrustSection } from "@/components/actors/ActorsTrustSection";
 
 const Actors = () => {
-  const navigate = useNavigate();
+  const [showComingSoonModal, setShowComingSoonModal] = useState(false);
 
   const handleCreateProfileClick = () => {
-    trackButtonClick("Create Your Free JAMZ Profile");
-    navigate("/contact");
+    trackButtonClick("Create Your JAMZ Profile - ₹500/month");
+    setShowComingSoonModal(true);
   };
 
   const handleWatchStoriesClick = () => {
@@ -27,7 +28,7 @@ const Actors = () => {
 
   const seoData = {
     title: "JAMZ for Actors | Build Your Profile & Get Discovered",
-    description: "Create your actor profile on JAMZ - showcase monologues, get discovered by casting directors, and build your career without agents. Free for actors.",
+    description: "Create your actor profile on JAMZ - showcase monologues, get discovered by casting directors, and build your career without agents. ₹500/month subscription.",
     keywords: "actor profile, casting calls, monologue showcase, actor portfolio, casting directors, auditions, actor career",
     canonicalUrl: "https://jamz-casting.lovable.app/actors"
   };
@@ -49,6 +50,12 @@ const Actors = () => {
         <ActorsTrustSection />
         <Footer />
       </div>
+      
+      <ComingSoonModal 
+        isOpen={showComingSoonModal}
+        onClose={() => setShowComingSoonModal(false)}
+        platform="UPI Payment Integration"
+      />
     </>
   );
 };
