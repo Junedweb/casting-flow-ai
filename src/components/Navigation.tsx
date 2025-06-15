@@ -9,20 +9,24 @@ export const Navigation = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleCastingClick = () => {
-    navigate("/");
+  const handleCastingDirectorsClick = () => {
+    navigate("/casting-directors");
     setIsMobileMenuOpen(false);
   };
 
   const handleActingSchoolsClick = () => {
-    navigate("/acting-schools");
+    navigate("/for-schools");
     setIsMobileMenuOpen(false);
   };
 
   const handleActorsClick = () => {
-    navigate("/actors");
+    navigate("/for-actors");
     setIsMobileMenuOpen(false);
   };
+
+  const isCastingDirectorsActive = location.pathname === "/" || location.pathname === "/casting-directors";
+  const isActingSchoolsActive = location.pathname === "/for-schools" || location.pathname === "/acting-schools" || location.pathname === "/acting-school-partnership";
+  const isActorsActive = location.pathname === "/for-actors" || location.pathname === "/actors";
 
   return (
     <nav className="relative z-50 flex justify-between items-center p-4 bg-white/90 backdrop-blur-sm border-b border-gray-200 sm:p-6">
@@ -48,39 +52,39 @@ export const Navigation = () => {
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center gap-2">
         <Button 
-          variant={location.pathname === "/" ? "default" : "outline"}
+          variant={isCastingDirectorsActive ? "default" : "outline"}
           size="sm"
-          className={location.pathname === "/" 
+          className={isCastingDirectorsActive
             ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white px-3 py-2 text-xs font-medium rounded-lg"
             : "bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-3 py-2 text-xs font-medium rounded-lg"
           }
-          onClick={handleCastingClick}
+          onClick={handleCastingDirectorsClick}
         >
-          Casting Directors
+          For Directors
         </Button>
         
         <Button 
-          variant={location.pathname === "/acting-schools" || location.pathname === "/acting-school-partnership" ? "default" : "outline"}
+          variant={isActingSchoolsActive ? "default" : "outline"}
           size="sm"
-          className={location.pathname === "/acting-schools" || location.pathname === "/acting-school-partnership"
+          className={isActingSchoolsActive
             ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white px-3 py-2 text-xs font-medium rounded-lg"
             : "bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-3 py-2 text-xs font-medium rounded-lg"
           }
           onClick={handleActingSchoolsClick}
         >
-          Acting Schools
+          For Schools
         </Button>
         
         <Button 
-          variant={location.pathname === "/actors" ? "default" : "outline"}
+          variant={isActorsActive ? "default" : "outline"}
           size="sm"
-          className={location.pathname === "/actors"
+          className={isActorsActive
             ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white px-3 py-2 text-xs font-medium rounded-lg"
             : "bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-3 py-2 text-xs font-medium rounded-lg"
           }
           onClick={handleActorsClick}
         >
-          Actors
+          For Actors
         </Button>
       </div>
 
@@ -89,39 +93,39 @@ export const Navigation = () => {
         <div className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg md:hidden">
           <div className="flex flex-col p-4 gap-2">
             <Button 
-              variant={location.pathname === "/" ? "default" : "outline"}
+              variant={isCastingDirectorsActive ? "default" : "outline"}
               size="sm"
-              className={location.pathname === "/" 
+              className={isCastingDirectorsActive
                 ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white justify-start"
                 : "bg-white border-gray-300 text-gray-700 hover:bg-gray-100 justify-start"
               }
-              onClick={handleCastingClick}
+              onClick={handleCastingDirectorsClick}
             >
-              Casting Directors
+              For Directors
             </Button>
             
             <Button 
-              variant={location.pathname === "/acting-schools" || location.pathname === "/acting-school-partnership" ? "default" : "outline"}
+              variant={isActingSchoolsActive ? "default" : "outline"}
               size="sm"
-              className={location.pathname === "/acting-schools" || location.pathname === "/acting-school-partnership"
+              className={isActingSchoolsActive
                 ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white justify-start"
                 : "bg-white border-gray-300 text-gray-700 hover:bg-gray-100 justify-start"
               }
               onClick={handleActingSchoolsClick}
             >
-              Acting Schools
+              For Schools
             </Button>
             
             <Button 
-              variant={location.pathname === "/actors" ? "default" : "outline"}
+              variant={isActorsActive ? "default" : "outline"}
               size="sm"
-              className={location.pathname === "/actors"
+              className={isActorsActive
                 ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white justify-start"
                 : "bg-white border-gray-300 text-gray-700 hover:bg-gray-100 justify-start"
               }
               onClick={handleActorsClick}
             >
-              Actors
+              For Actors
             </Button>
           </div>
         </div>

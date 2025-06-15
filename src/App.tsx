@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from "@/components/ui/toaster";
@@ -59,7 +58,17 @@ const App = () => {
             <StickyConsultationButton />
             <CookieConsent />
             <Routes>
+              {/* Main landing pages for each target audience */}
               <Route path="/" element={<Index />} />
+              <Route path="/casting-directors" element={<Index />} />
+              <Route path="/for-actors" element={<Actors />} />
+              <Route path="/for-schools" element={<ActingSchools />} />
+              
+              {/* Legacy routes for backward compatibility */}
+              <Route path="/actors" element={<Actors />} />
+              <Route path="/acting-schools" element={<ActingSchools />} />
+              
+              {/* Other pages */}
               <Route path="/contact" element={<Contact />} />
               <Route path="/submissions" element={<Submissions />} />
               <Route path="/about" element={<About />} />
@@ -69,9 +78,8 @@ const App = () => {
               <Route path="/support" element={<Support />} />
               <Route path="/gdpr" element={<Gdpr />} />
               <Route path="/partnership" element={<Partnership />} />
-              <Route path="/acting-schools" element={<ActingSchools />} />
               <Route path="/acting-school-partnership" element={<ActingSchoolPartnership />} />
-              <Route path="/actors" element={<Actors />} />
+              
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
