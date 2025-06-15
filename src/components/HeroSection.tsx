@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { trackButtonClick } from "@/utils/buttonTracker";
@@ -58,9 +59,13 @@ export const HeroSection = () => {
               In Seconds
             </h1>
             
-            <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-4xl mx-auto font-light drop-shadow-lg sm:text-xl md:text-2xl">
+            <p className="text-lg text-white/90 mb-4 leading-relaxed max-w-4xl mx-auto font-light drop-shadow-lg sm:text-xl md:text-2xl">
               AI analyzes character requirements from scripts, matches from your existing talent pool 
               with fitment percentages, and suggests external candidates when needed.
+            </p>
+
+            <p className="text-base text-yellow-300 mb-6 font-medium drop-shadow-lg sm:text-lg">
+              Resulting multiple hours saved in a month or on a project.
             </p>
 
             {/* Casting with JAMZ is as simple as 1,2,3 */}
