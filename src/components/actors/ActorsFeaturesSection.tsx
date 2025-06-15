@@ -1,6 +1,6 @@
 
-import { Card, CardContent } from "@/components/ui/card";
 import { Video, Briefcase, Brain, Trophy, Smartphone } from "lucide-react";
+import { FeatureCard } from "./FeatureCard";
 
 export const ActorsFeaturesSection = () => {
   const features = [
@@ -48,15 +48,13 @@ export const ActorsFeaturesSection = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <CardContent className="p-6 text-center">
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br ${feature.color} flex items-center justify-center`}>
-                  <feature.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-                <p className="text-slate-600">{feature.description}</p>
-              </CardContent>
-            </Card>
+            <FeatureCard
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+              color={feature.color}
+            />
           ))}
         </div>
       </div>

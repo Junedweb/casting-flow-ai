@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Video, Users } from "lucide-react";
+import { SectionCard } from "./SectionCard";
 
 interface ActorsHeroSectionProps {
   onCreateProfileClick: () => void;
@@ -45,21 +46,17 @@ export const ActorsHeroSection = ({ onCreateProfileClick, onWatchStoriesClick }:
         
         {/* Visual representation of split-screen concept */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="bg-white p-8 rounded-2xl shadow-xl">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Video className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Film Your Talent</h3>
-            <p className="text-slate-600">Upload monologues, scenes, and reels from anywhere. Your smartphone is your studio.</p>
-          </div>
+          <SectionCard
+            icon={Video}
+            title="Film Your Talent"
+            description="Upload monologues, scenes, and reels from anywhere. Your smartphone is your studio."
+          />
           
-          <div className="bg-white p-8 rounded-2xl shadow-xl">
-            <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Get Discovered</h3>
-            <p className="text-slate-600">Casting directors shortlist talent directly on JAMZ dashboard. No middlemen needed.</p>
-          </div>
+          <SectionCard
+            icon={Users}
+            title="Get Discovered"
+            description="Casting directors shortlist talent directly on JAMZ dashboard. No middlemen needed."
+          />
         </div>
       </div>
     </section>

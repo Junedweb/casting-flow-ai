@@ -30,7 +30,7 @@ const Actors = () => {
     title: "JAMZ for Actors | Build Your Profile & Get Discovered",
     description: "Create your actor profile on JAMZ - showcase monologues, get discovered by casting directors, and build your career without agents. ₹500/month subscription.",
     keywords: "actor profile, casting calls, monologue showcase, actor portfolio, casting directors, auditions, actor career",
-    canonicalUrl: "https://jamz-casting.lovable.app/actors"
+    canonicalUrl: "https://jamz-casting.lovable.app/for-actors"
   };
 
   return (

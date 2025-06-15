@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Upload, Eye, TrendingUp } from "lucide-react";
+import { StepCard } from "./StepCard";
 
 interface ActorsHowItWorksSectionProps {
   onCreateProfileClick: () => void;
@@ -39,20 +39,14 @@ export const ActorsHowItWorksSection = ({ onCreateProfileClick }: ActorsHowItWor
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {steps.map((step, index) => (
-            <Card key={index} className="h-full">
-              <CardContent className="p-6 text-center">
-                <div className="relative mb-6">
-                  <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center`}>
-                    <step.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-slate-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                    {index + 1}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                <p className="text-slate-600">{step.description}</p>
-              </CardContent>
-            </Card>
+            <StepCard
+              key={index}
+              icon={step.icon}
+              title={step.title}
+              description={step.description}
+              color={step.color}
+              stepNumber={index + 1}
+            />
           ))}
         </div>
         
