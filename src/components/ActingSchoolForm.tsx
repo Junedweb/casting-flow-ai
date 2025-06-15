@@ -46,7 +46,21 @@ const ActingSchoolForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    console.log("Form submission started");
+    console.log("Form data:", formData);
+    console.log("Captcha valid:", isCaptchaValid);
+    
     trackButtonClick("Apply for School Partnership - Form Submit");
+    
+    // Check required fields
+    if (!formData.schoolName || !formData.principalName || !formData.email || !formData.phone || !formData.city || !formData.state || !formData.studentCount || !formData.establishedYear) {
+      toast({
+        title: "Required Fields Missing",
+        description: "Please fill in all required fields marked with *",
+        variant: "destructive",
+      });
+      return;
+    }
     
     if (!isCaptchaValid) {
       toast({
@@ -120,6 +134,7 @@ const ActingSchoolForm = () => {
         }),
       });
       
+      console.log("Form submitted successfully");
       trackFormSubmission("Acting School Partnership Form", true);
       trackEvent('generate_lead', 'Form', 'Acting School Partnership');
       
@@ -128,6 +143,24 @@ const ActingSchoolForm = () => {
         description: "Thank you for your interest in JAMZ School Partnership. We'll contact you within 24 hours to discuss the next steps.",
         className: "w-full max-w-md mx-auto text-center [&>div]:text-center [&>div]:font-bold [&>div]:text-lg [&>div+div]:font-semibold"
       });
+      
+      // Reset form after successful submission
+      setFormData({
+        schoolName: "",
+        principalName: "",
+        email: "",
+        countryCode: "+91",
+        phone: "",
+        city: "",
+        state: "",
+        studentCount: "",
+        establishedYear: "",
+        affiliations: ""
+      });
+      setIsCaptchaValid(false);
+      setCaptchaReset(true);
+      setTimeout(() => setCaptchaReset(false), 100);
+      
     } catch (error) {
       console.error("Zapier webhook error:", error);
       trackFormSubmission("Acting School Partnership Form", true);
@@ -138,25 +171,26 @@ const ActingSchoolForm = () => {
         description: "Thank you for your interest in JAMZ School Partnership. We'll contact you within 24 hours.",
         className: "w-full max-w-md mx-auto text-center [&>div]:text-center [&>div]:font-bold [&>div]:text-lg [&>div+div]:font-semibold"
       });
+      
+      // Reset form even if webhook fails (since data is saved locally)
+      setFormData({
+        schoolName: "",
+        principalName: "",
+        email: "",
+        countryCode: "+91",
+        phone: "",
+        city: "",
+        state: "",
+        studentCount: "",
+        establishedYear: "",
+        affiliations: ""
+      });
+      setIsCaptchaValid(false);
+      setCaptchaReset(true);
+      setTimeout(() => setCaptchaReset(false), 100);
     }
 
     setIsLoading(false);
-    // Reset form
-    setFormData({
-      schoolName: "",
-      principalName: "",
-      email: "",
-      countryCode: "+91",
-      phone: "",
-      city: "",
-      state: "",
-      studentCount: "",
-      establishedYear: "",
-      affiliations: ""
-    });
-    // Reset captcha
-    setCaptchaReset(true);
-    setTimeout(() => setCaptchaReset(false), 100);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -360,7 +394,7 @@ const ActingSchoolForm = () => {
             <Button 
               type="submit"
               className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 text-lg font-semibold"
-              disabled={isLoading || !isCaptchaValid}
+              disabled={isLoading}
             >
               {isLoading ? "Submitting Application..." : "Apply for Partnership"}
             </Button>
