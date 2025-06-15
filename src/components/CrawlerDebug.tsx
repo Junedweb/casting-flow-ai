@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 
 export const CrawlerDebug = () => {
@@ -27,10 +28,10 @@ export const CrawlerDebug = () => {
 
     const isCrawler = crawlerPatterns.some(pattern => userAgent.includes(pattern));
     
-    // Check for headless browsers (often used by crawlers)
+    // Check for headless browsers (often used by crawlers) - Fixed TypeScript error
     const isHeadless = navigator.webdriver || 
-                     window.navigator.webdriver || 
-                     !window.chrome ||
+                     (window.navigator as any).webdriver || 
+                     !(window as any).chrome ||
                      userAgent.includes('headless');
 
     // Enhanced logging
@@ -74,8 +75,8 @@ export const CrawlerDebug = () => {
       
       // Try to send to analytics (silently fail if not available)
       try {
-        if (window.gtag) {
-          window.gtag('event', 'crawler_visit', {
+        if ((window as any).gtag) {
+          (window as any).gtag('event', 'crawler_visit', {
             event_category: 'crawler',
             event_label: userAgent,
             custom_map: { custom1: 'crawler_type' }
