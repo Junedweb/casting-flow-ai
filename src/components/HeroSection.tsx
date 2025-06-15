@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { trackButtonClick } from "@/utils/buttonTracker";
@@ -92,8 +93,8 @@ export const HeroSection = () => {
                     <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="text-xl font-bold text-white">3</span>
                     </div>
-                    <h4 className="font-semibold text-white mb-2">Faster Casting Decisions</h4>
-                    <p className="text-white/80 text-sm">Review ranked candidates with instant results and fitment scores to make casting decisions in minutes, not days</p>
+                    <h4 className="font-semibold text-white mb-2">Review & Screen Test</h4>
+                    <p className="text-white/80 text-sm">Review ranked candidates with fitment scores and shortlist for screen tests in minutes, not days</p>
                   </div>
                 </div>
               </div>
