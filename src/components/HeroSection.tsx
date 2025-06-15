@@ -62,11 +62,11 @@ export const HeroSection = () => {
             <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto font-light drop-shadow-lg sm:text-xl">
               AI-powered character analysis and smart talent matching for faster casting decisions.
               <br />
-              <span className="text-yellow-300">Resulting multiple hours saved per month or project.</span>
+              <span className="text-yellow-300">Save multiple hours per month on every project.</span>
             </p>
 
             <p className="text-base text-white/80 mb-8 max-w-2xl mx-auto">
-              Outsource requirements when needed - key information preserved for professional casting workflow.
+              Outsource requirements when needed - all key information is preserved for professional casting workflow.
             </p>
 
             {/* How it works - simplified */}
