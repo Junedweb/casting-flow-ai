@@ -14,7 +14,7 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center p-6">
+    <nav className="relative z-50 flex justify-between items-center p-6 bg-white/90 backdrop-blur-sm border-b border-gray-200">
       {/* JAMZ Logo - Top Left */}
       <div className="flex items-center">
         <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full shadow-lg border-2 border-white/20">
@@ -26,14 +26,14 @@ export const Navigation = () => {
       <div className="flex items-center gap-3">
         <Button 
           variant="outline"
-          className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 px-6 py-2 text-sm font-medium rounded-lg"
+          className="bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-6 py-2 text-sm font-medium rounded-lg"
           onClick={handleCastingClick}
         >
           For Casting Directors
         </Button>
         <Button 
           variant="outline"
-          className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 px-6 py-2 text-sm font-medium rounded-lg"
+          className="bg-white/80 backdrop-blur-md border-gray-300 text-gray-700 hover:bg-gray-100 px-6 py-2 text-sm font-medium rounded-lg"
           onClick={handleActingSchoolsClick}
         >
           For Acting Schools
