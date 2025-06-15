@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -102,7 +103,7 @@
   }
 }
 
-/* Custom animations for JAMz logo */
+/* Custom animations for JAMz logo - much calmer and subdued */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -114,61 +115,61 @@
 
 @keyframes circular-glow-settle {
   0% {
-    transform: translateX(-5px) rotate(0deg);
-    text-shadow: 0 0 20px #c2410c, 0 0 35px #ea580c, 0 0 50px #f97316;
+    transform: translateX(-2px) rotate(0deg);
+    text-shadow: 0 0 8px #94a3b8, 0 0 12px #cbd5e1, 0 0 16px #e2e8f0;
   }
   12.5% {
-    transform: translateX(-2px) translateY(-5px) rotate(45deg);
-    text-shadow: 0 0 25px #dc2626, 0 0 40px #ef4444, 0 0 55px #f87171;
+    transform: translateX(-1px) translateY(-2px) rotate(45deg);
+    text-shadow: 0 0 8px #a1a1aa, 0 0 12px #d4d4d8, 0 0 16px #e4e4e7;
   }
   25% {
-    transform: translateX(0px) translateY(-3px) rotate(90deg);
-    text-shadow: 0 0 22px #7c2d12, 0 0 38px #c2410c, 0 0 52px #ea580c;
+    transform: translateX(0px) translateY(-1px) rotate(90deg);
+    text-shadow: 0 0 8px #9ca3af, 0 0 12px #d1d5db, 0 0 16px #e5e7eb;
   }
   37.5% {
-    transform: translateX(2px) translateY(-2px) rotate(135deg);
-    text-shadow: 0 0 25px #92400e, 0 0 40px #d97706, 0 0 55px #f59e0b;
+    transform: translateX(1px) translateY(-1px) rotate(135deg);
+    text-shadow: 0 0 8px #a8a29e, 0 0 12px #d6d3d1, 0 0 16px #e7e5e4;
   }
   50% {
-    transform: translateX(3px) rotate(180deg);
-    text-shadow: 0 0 23px #78350f, 0 0 38px #b45309, 0 0 53px #d97706;
+    transform: translateX(1px) rotate(180deg);
+    text-shadow: 0 0 8px #a3a3a3, 0 0 12px #d4d4d4, 0 0 16px #e5e5e5;
   }
   62.5% {
-    transform: translateX(1px) translateY(1px) rotate(225deg);
-    text-shadow: 0 0 20px #7c2d12, 0 0 35px #c2410c, 0 0 50px #ea580c;
+    transform: translateX(0px) translateY(1px) rotate(225deg);
+    text-shadow: 0 0 8px #94a3b8, 0 0 12px #cbd5e1, 0 0 16px #e2e8f0;
   }
   75% {
-    transform: translateX(0px) translateY(2px) rotate(270deg);
-    text-shadow: 0 0 18px #92400e, 0 0 33px #d97706, 0 0 48px #f59e0b;
+    transform: translateX(0px) translateY(1px) rotate(270deg);
+    text-shadow: 0 0 8px #9ca3af, 0 0 12px #d1d5db, 0 0 16px #e5e7eb;
   }
   87.5% {
-    transform: translateX(-1px) translateY(1px) rotate(315deg);
-    text-shadow: 0 0 20px #c2410c, 0 0 35px #ea580c, 0 0 50px #f97316;
+    transform: translateX(-1px) translateY(0px) rotate(315deg);
+    text-shadow: 0 0 8px #94a3b8, 0 0 12px #cbd5e1, 0 0 16px #e2e8f0;
   }
   100% {
     transform: translateX(0px) translateY(0px) rotate(360deg);
-    text-shadow: 0 0 12px #7c2d12, 0 0 22px #c2410c, 0 0 32px #ea580c;
+    text-shadow: 0 0 6px #94a3b8, 0 0 10px #cbd5e1, 0 0 14px #e2e8f0;
   }
 }
 
 @keyframes gentle-breathing {
   0%, 100% {
     text-shadow: 
-      0 0 10px #fef7f0,
-      0 0 18px #fed7aa,
-      0 0 25px #c2410c,
-      0 0 32px #ea580c;
-    filter: brightness(1);
+      0 0 4px #f8fafc,
+      0 0 8px #e2e8f0,
+      0 0 12px #cbd5e1,
+      0 0 16px #94a3b8;
+    filter: brightness(0.9);
     transform: scale(1);
   }
   50% {
     text-shadow: 
-      0 0 12px #fef7f0,
-      0 0 22px #fed7aa,
-      0 0 30px #92400e,
-      0 0 38px #d97706;
-    filter: brightness(1.05);
-    transform: scale(1.005);
+      0 0 5px #f8fafc,
+      0 0 9px #e2e8f0,
+      0 0 13px #cbd5e1,
+      0 0 17px #94a3b8;
+    filter: brightness(0.95);
+    transform: scale(1.002);
   }
 }
 

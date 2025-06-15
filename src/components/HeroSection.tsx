@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Shield, Users, Database } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -20,18 +21,18 @@ export const HeroSection = () => {
       <div className="relative max-w-5xl mx-auto text-center">
         <div className="mb-8">
           <div className="relative inline-block">
-            {/* Rotating background circle with enhanced glow */}
-            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-2xl animate-spin-slow opacity-90"></div>
+            {/* Much more subdued rotating background circle */}
+            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-slate-600 to-slate-700 rounded-full shadow-lg animate-spin-slow opacity-60"></div>
             
-            {/* Multiple glowing layers */}
-            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full blur-md opacity-60 animate-pulse"></div>
-            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-red-400 to-orange-600 rounded-full blur-lg opacity-40 animate-pulse delay-300"></div>
-            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-orange-300 to-yellow-500 rounded-full blur-xl opacity-20 animate-pulse delay-700"></div>
+            {/* Subtle glowing layers with muted colors */}
+            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-slate-500 to-slate-600 rounded-full blur-md opacity-30 animate-pulse"></div>
+            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-slate-400 to-slate-500 rounded-full blur-lg opacity-20 animate-pulse delay-300"></div>
+            <div className="absolute inset-0 w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-slate-300 to-slate-400 rounded-full blur-xl opacity-10 animate-pulse delay-700"></div>
             
-            {/* Main logo container */}
-            <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-red-600 rounded-full shadow-2xl flex items-center justify-center backdrop-blur-sm">
-              {/* JAMz text with circular motion and glow */}
-              <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight relative animate-circular-glow">
+            {/* Main logo container with calmer colors */}
+            <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-6 bg-gradient-to-br from-slate-600 to-slate-700 rounded-full shadow-lg flex items-center justify-center backdrop-blur-sm">
+              {/* JAMz text with much more subtle animation and muted glow */}
+              <h1 className="text-6xl md:text-8xl font-bold text-slate-100 tracking-tight relative animate-circular-glow">
                 <span className="relative inline-block animate-text-glow">
                   JAMZ
                 </span>
