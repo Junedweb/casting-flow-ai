@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-# Allow important crawlers
+# Enhanced crawler directives
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -33,6 +33,19 @@ User-agent: LinkedInBot
 Allow: /
 
 User-agent: WhatsApp
+Allow: /
+
+# ChatGPT and AI crawlers
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 # Sitemap location
