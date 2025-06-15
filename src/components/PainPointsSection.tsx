@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AlertTriangle, Quote, Users, Zap, Database, UserX } from "lucide-react";
@@ -6,24 +5,14 @@ import { AlertTriangle, Quote, Users, Zap, Database, UserX } from "lucide-react"
 export const PainPointsSection = () => {
   const painPoints = [
     {
-      text: "Spending hours searching through hundreds of photos to find 'that actor from the commercial'",
-      impact: "3-4 hours daily on photo searches",
+      text: "Spending hours searching through hundreds of photos to find actors who match client requirements, then manually reviewing profiles when clients ask for 'someone like this actor'",
+      impact: "3-4 hours daily on searches and comparisons",
       icon: Database
     },
     {
-      text: "Client asks for 'someone like this actor' and you manually review hundreds of profiles",
-      impact: "Projects delayed by several days",
+      text: "Relying on expensive custom software that crashes with large files, and losing years of organized contact data when assistants leave",
+      impact: "Wasted investment and lost productivity",
       icon: AlertTriangle
-    },
-    {
-      text: "Expensive custom software that crashes when handling large photo files",
-      impact: "Wasted investment and lost time",
-      icon: Zap
-    },
-    {
-      text: "Assistant leaves and takes all the organized contact data with them",
-      impact: "Years of organized data lost",
-      icon: UserX
     }
   ];
 
