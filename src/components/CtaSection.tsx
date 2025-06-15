@@ -14,41 +14,41 @@ export const CtaSection = () => {
   };
 
   return (
-    <section className="py-8 px-4 bg-slate-50">
+    <section className="py-6 px-4 bg-slate-50">
       <div className="max-w-sm mx-auto text-center">
-        <div className="mb-6">
-          <Heart className="w-12 h-12 text-red-500 mx-auto mb-4" />
-          <h2 className="text-xl font-bold text-slate-900 mb-4 leading-tight">
+        <div className="mb-4">
+          <Heart className="w-10 h-10 text-red-500 mx-auto mb-3" />
+          <h2 className="text-lg font-bold text-slate-900 mb-3 leading-tight">
             Ready to Improve Your Casting Process?
           </h2>
-          <p className="text-sm text-slate-600 leading-relaxed">
+          <p className="text-xs text-slate-600 leading-relaxed">
             Let's show you how to reduce casting time by 60% with organized workflows.
           </p>
         </div>
 
-        <Card className="bg-white shadow-lg border-0 mb-6">
-          <CardContent className="p-4">
-            <div className="space-y-4 mb-6">
+        <Card className="bg-white shadow-lg border-0 mb-4">
+          <CardContent className="p-3">
+            <div className="space-y-3 mb-4">
               <div className="text-center">
-                <MessageCircle className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-                <h3 className="font-bold text-slate-900 mb-1 text-sm">We Understand Your Challenges</h3>
+                <MessageCircle className="w-6 h-6 text-blue-500 mx-auto mb-1.5" />
+                <h3 className="font-bold text-slate-900 mb-1 text-xs">We Understand Your Challenges</h3>
                 <p className="text-slate-600 text-xs">Disorganized data, lost profiles, project delays</p>
               </div>
               <div className="text-center">
-                <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2" />
-                <h3 className="font-bold text-slate-900 mb-1 text-sm">We Provide Solutions</h3>
+                <CheckCircle className="w-6 h-6 text-green-500 mx-auto mb-1.5" />
+                <h3 className="font-bold text-slate-900 mb-1 text-xs">We Provide Solutions</h3>
                 <p className="text-slate-600 text-xs">Practical steps to organize your workflow</p>
               </div>
               <div className="text-center">
-                <Heart className="w-8 h-8 text-red-500 mx-auto mb-2" />
-                <h3 className="font-bold text-slate-900 mb-1 text-sm">No Sales Pressure</h3>
+                <Heart className="w-6 h-6 text-red-500 mx-auto mb-1.5" />
+                <h3 className="font-bold text-slate-900 mb-1 text-xs">No Sales Pressure</h3>
                 <p className="text-slate-600 text-xs">Genuine help focused on your needs</p>
               </div>
             </div>
             
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 text-sm font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full"
               onClick={handleConsultationClick}
             >
               Learn About Time Savings
