@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, Quote, Users, Zap, TrendingUp, Star, Heart, CheckCircle } from "lucide-react";
 import { useState } from "react";
@@ -191,7 +190,7 @@ export const PainPointsSection = () => {
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-left">
-                  <p className="text-slate-800 font-bold text-lg">Small-Scale Casting Director</p>
+                  <p className="text-slate-800 font-bold text-lg">Priya Sharma (Small-Scale Casting Director)</p>
                   <p className="text-emerald-600 font-medium">Mumbai Film Industry</p>
                 </div>
               </div>
