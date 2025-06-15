@@ -27,7 +27,7 @@ export const CookieConsent = () => {
     }
   };
 
-  const handleDecline = () => {
+  const handleClose = () => {
     localStorage.setItem('cookie-consent', 'declined');
     setIsVisible(false);
     // Disable Google Analytics tracking
@@ -59,14 +59,7 @@ export const CookieConsent = () => {
                       onClick={handleAccept}
                       className="bg-orange-500 hover:bg-orange-600 text-white px-6"
                     >
-                      Accept All
-                    </Button>
-                    <Button 
-                      onClick={handleDecline}
-                      variant="outline"
-                      className="border-slate-600 text-slate-300 hover:bg-slate-800"
-                    >
-                      Decline
+                      Accept
                     </Button>
                   </div>
                   <Link 
@@ -80,7 +73,7 @@ export const CookieConsent = () => {
               </div>
             </div>
             <Button
-              onClick={handleDecline}
+              onClick={handleClose}
               variant="ghost"
               size="sm"
               className="text-slate-400 hover:text-white hover:bg-slate-800 p-1"
