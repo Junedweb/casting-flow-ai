@@ -14,42 +14,42 @@ export const CtaSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-slate-50">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="mb-12">
-          <Heart className="w-16 h-16 text-red-500 mx-auto mb-6" />
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+    <section className="py-12 px-3 bg-slate-50">
+      <div className="max-w-lg mx-auto text-center">
+        <div className="mb-8">
+          <Heart className="w-12 h-12 text-red-500 mx-auto mb-4" />
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 leading-tight">
             We're Here to Support and Add Value to Your Casting Process
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base text-slate-600 leading-relaxed">
             Let's talk about your current system. No commitment—just 2–3 actionable suggestions 
             from our tech experts to improve your casting workflow.
           </p>
         </div>
 
-        <Card className="bg-white shadow-xl border-0 mb-12">
-          <CardContent className="p-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <Card className="bg-white shadow-lg border-0 mb-8">
+          <CardContent className="p-6">
+            <div className="space-y-6 mb-6">
               <div className="text-center">
-                <MessageCircle className="w-12 h-12 text-blue-500 mx-auto mb-4" />
+                <MessageCircle className="w-10 h-10 text-blue-500 mx-auto mb-3" />
                 <h3 className="font-bold text-slate-900 mb-2">Listen First</h3>
-                <p className="text-slate-600">We understand your current challenges</p>
+                <p className="text-slate-600 text-sm">We understand your current challenges</p>
               </div>
               <div className="text-center">
-                <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                <CheckCircle className="w-10 h-10 text-green-500 mx-auto mb-3" />
                 <h3 className="font-bold text-slate-900 mb-2">Actionable Advice</h3>
-                <p className="text-slate-600">Immediate improvements you can implement</p>
+                <p className="text-slate-600 text-sm">Immediate improvements you can implement</p>
               </div>
               <div className="text-center">
-                <Heart className="w-12 h-12 text-red-500 mx-auto mb-4" />
+                <Heart className="w-10 h-10 text-red-500 mx-auto mb-3" />
                 <h3 className="font-bold text-slate-900 mb-2">Zero Pressure</h3>
-                <p className="text-slate-600">100% support, no strings attached</p>
+                <p className="text-slate-600 text-sm">100% support, no strings attached</p>
               </div>
             </div>
             
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 text-xl font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full"
               onClick={handleConsultationClick}
             >
               Book Free Consultation
@@ -57,7 +57,7 @@ export const CtaSection = () => {
           </CardContent>
         </Card>
 
-        <p className="text-slate-500 text-lg">
+        <p className="text-slate-500 text-sm leading-relaxed">
           Meet tech and data experts who listen first, advise second. Zero pressure. 100% support.
         </p>
       </div>
