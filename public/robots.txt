@@ -1,14 +1,29 @@
+
+User-agent: *
+Allow: /
+
+# Block access to admin or sensitive areas (add as needed)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all major search engine bots
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Twitterbot
+User-agent: Slurp
 Allow: /
 
-User-agent: facebookexternalhit
+User-agent: DuckDuckBot
 Allow: /
 
-User-agent: *
+User-agent: Baiduspider
 Allow: /
+
+# Sitemap location
+Sitemap: https://jamz-casting.lovable.app/sitemap.xml
+
+# Crawl delay to be respectful to servers
+Crawl-delay: 1
