@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { StickyConsultationButton } from "@/components/StickyConsultationButton";
+import { CookieConsent } from "@/components/CookieConsent";
 import { initGA, trackPageView } from "@/utils/analytics";
 import { useScrollTracking } from "@/hooks/useScrollTracking";
 import Index from "./pages/Index";
@@ -49,6 +50,7 @@ const App = () => {
         <BrowserRouter>
           <PageTracker />
           <StickyConsultationButton />
+          <CookieConsent />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/contact" element={<Contact />} />
