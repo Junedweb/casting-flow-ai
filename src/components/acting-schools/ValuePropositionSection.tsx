@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileVideo, Video, Award, DollarSign } from "lucide-react";
+import { FileVideo, Video, Award, DollarSign, Users } from "lucide-react";
 
 export const ValuePropositionSection = () => {
   return (
@@ -10,7 +10,7 @@ export const ValuePropositionSection = () => {
           What Your School Gets – <span className="text-amber-600">Completely Free</span>
         </h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
           <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white border-0 shadow-lg">
             <CardHeader className="text-center pb-4">
               <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 group-hover:from-blue-200 group-hover:to-indigo-200 transition-all duration-300">
@@ -35,6 +35,20 @@ export const ValuePropositionSection = () => {
             <CardContent>
               <p className="text-slate-600 text-center text-sm">
                 All uploads go to JAMZ's verified channel for exposure and monetization.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white border-0 shadow-lg">
+            <CardHeader className="text-center pb-4">
+              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-purple-100 to-violet-100 group-hover:from-purple-200 group-hover:to-violet-200 transition-all duration-300">
+                <Users className="w-8 h-8 text-purple-600" />
+              </div>
+              <CardTitle className="text-lg font-bold text-slate-900">Alumni Management System</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-slate-600 text-center text-sm">
+                Track student careers, placements, and achievements—worth crores, but free for partner schools.
               </p>
             </CardContent>
           </Card>
