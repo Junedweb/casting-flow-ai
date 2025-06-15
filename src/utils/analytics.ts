@@ -1,4 +1,3 @@
-
 // Google Analytics 4 Configuration and Tracking Utilities
 
 declare global {
@@ -8,8 +7,8 @@ declare global {
   }
 }
 
-// GA4 Measurement ID - Replace with your actual GA4 measurement ID
-export const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // You'll need to replace this with your actual GA4 ID
+// GA4 Measurement ID - Your actual GA4 measurement ID
+export const GA_MEASUREMENT_ID = 'G-C6DZLWX1D6';
 
 // Initialize Google Analytics
 export const initGA = () => {
