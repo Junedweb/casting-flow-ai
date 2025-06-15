@@ -3,7 +3,7 @@
 User-agent: *
 Allow: /
 
-# Crawl delays for different bots
+# Main search engine crawlers
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -59,7 +59,7 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-# SEO tools
+# SEO and analysis tools
 User-agent: SemrushBot
 Allow: /
 Crawl-delay: 2

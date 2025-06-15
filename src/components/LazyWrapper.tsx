@@ -28,8 +28,8 @@ export const LazyWrapper = ({
   );
 };
 
-// HOC for lazy loading components with proper TypeScript constraints
-export const withLazyLoading = <P extends Record<string, any>>(
+// Simplified HOC for lazy loading components
+export const withLazyLoading = <P extends {}>(
   Component: React.ComponentType<P>,
   fallback?: React.ReactNode
 ) => {
@@ -37,7 +37,7 @@ export const withLazyLoading = <P extends Record<string, any>>(
   
   return (props: P) => (
     <LazyWrapper fallback={fallback}>
-      <LazyComponent {...props} />
+      <LazyComponent {...(props as any)} />
     </LazyWrapper>
   );
 };
