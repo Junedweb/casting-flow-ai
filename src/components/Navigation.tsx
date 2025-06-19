@@ -33,7 +33,7 @@ export const Navigation = () => {
       {/* JAMZ Logo - Top Left */}
       <div className="flex items-center">
         <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full shadow-lg border-2 border-white/20 sm:w-12 sm:h-12">
-          <h2 className="text-sm font-bold text-white sm:text-lg">JAMZ</h2>
+          <h2 className="text-xs font-bold text-white sm:text-sm">JAMZ</h2>
         </div>
       </div>
 
